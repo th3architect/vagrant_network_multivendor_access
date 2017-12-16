@@ -162,31 +162,31 @@ Vagrant.configure(2) do |config|
 
     # Install Rules for the interface re-map
     device.vm.provision :shell , :inline => <<-delete_udev_directory
-if [ -d "/etc/udev/rules.d/70-persistent-net.rules" ]; then
+    if [ -d "/etc/udev/rules.d/70-persistent-net.rules" ]; then
+        rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
+    fi
     rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
-fi
-rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
-delete_udev_directory
+    delete_udev_directory
 
-device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: a0:00:00:00:00:61 --> swp1"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="a0:00:00:00:00:61", NAME="swp1", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:43 --> swp2"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:43", NAME="swp2", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4c --> swp3"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4c", NAME="swp3", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
+    device.vm.provision :shell , :inline => <<-udev_rule
+    echo "  INFO: Adding UDEV Rule: a0:00:00:00:00:61 --> swp1"
+    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="a0:00:00:00:00:61", NAME="swp1", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+    udev_rule
+    device.vm.provision :shell , :inline => <<-udev_rule
+    echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:43 --> swp2"
+    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:43", NAME="swp2", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+    udev_rule
+    device.vm.provision :shell , :inline => <<-udev_rule
+    echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4c --> swp3"
+    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4c", NAME="swp3", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+    udev_rule
 
-      device.vm.provision :shell , :inline => <<-vagrant_interface_rule
-echo "  INFO: Adding UDEV Rule: Vagrant interface = eth0"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{ifindex}=="2", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-echo "#### UDEV Rules (/etc/udev/rules.d/70-persistent-net.rules) ####"
-cat /etc/udev/rules.d/70-persistent-net.rules
-vagrant_interface_rule
+    device.vm.provision :shell , :inline => <<-vagrant_interface_rule
+    echo "  INFO: Adding UDEV Rule: Vagrant interface = eth0"
+    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{ifindex}=="2", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+    echo "#### UDEV Rules (/etc/udev/rules.d/70-persistent-net.rules) ####"
+    cat /etc/udev/rules.d/70-persistent-net.rules
+    vagrant_interface_rule
 
 # Run Any Platform Specific Code and Apply the interface Re-map
     #   (may or may not perform a reboot depending on platform)
