@@ -104,15 +104,17 @@ Vagrant.configure(2) do |config|
   wbid = ENV['USER']
   offset = 0
 
-  ##### DEFINE VM for cumulus-test #####
-  config.vm.define "cumulus-test" do |device|
+  # ######################################
+  # ###    aggregation01 - build vm    ###
+  # ######################################
+  config.vm.define "aggregation01" do |device|
 
-    device.vm.hostname = "cumulus-test"
+    device.vm.hostname = "aggregation01"
 
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.4.3"
     device.vm.provider "virtualbox" do |v|
-      v.name = "#{wbid}_cumulus-test"
+      v.name = "#{wbid}_aggregation01"
       v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
       v.memory = 768
     end
@@ -188,39 +190,25 @@ Vagrant.configure(2) do |config|
     cat /etc/udev/rules.d/70-persistent-net.rules
     vagrant_interface_rule
 
-# Run Any Platform Specific Code and Apply the interface Re-map
-    #   (may or may not perform a reboot depending on platform)
+    # Run Any Platform Specific Code and Apply the interface Re-map
     device.vm.provision :shell , :inline => $script
 
-end
+  end
 
-  # ######################################
-  # ###    aggregation01 - build vm    ###
-  # ######################################
-  config.vm.define 'aggregation01' do |aggregation01|
-    aggregation01.vm.box = cumulus
-    aggregation01.vm.network "forwarded_port", guest: 80, host: 8101
-    aggregation01.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation01_spine01',
-                       ip: '169.254.1.11', auto_config: false
-    aggregation01.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation01_spine02',
-                       ip: '169.254.1.11', auto_config: false
-   end
 
-   # ######################################
-   # ###    aggregation02 - build vm    ###
-   # ######################################
-   config.vm.define 'aggregation02' do |aggregation02|
-     aggregation02.vm.box = cumulus
-     aggregation02.vm.network "forwarded_port", guest: 80, host: 8101
-     aggregation02.vm.network 'private_network',
-                        virtualbox__intnet: 'aggregation02_spine01',
-                        ip: '169.254.1.11', auto_config: false
-     aggregation02.vm.network 'private_network',
-                        virtualbox__intnet: 'aggregation02_spine02',
-                        ip: '169.254.1.11', auto_config: false
-    end
+ # ######################################
+ # ###    aggregation02 - build vm    ###
+ # ######################################
+ config.vm.define 'aggregation02' do |aggregation02|
+   aggregation02.vm.box = cumulus
+   aggregation02.vm.network "forwarded_port", guest: 80, host: 8101
+   aggregation02.vm.network 'private_network',
+                      virtualbox__intnet: 'aggregation02_spine01',
+                      ip: '169.254.1.11', auto_config: false
+   aggregation02.vm.network 'private_network',
+                      virtualbox__intnet: 'aggregation02_spine02',
+                      ip: '169.254.1.11', auto_config: false
+  end
 
   # ######################################
   # ###       spine01 - build vm       ###
