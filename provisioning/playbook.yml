@@ -1,0 +1,26 @@
+# This task gets all Junos configuration from all devices
+- name: Build and deploy configuration
+  hosts: aggregation
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Build configuration
+      template: src=vqfx.conf.j2 dest=/tmp/{{ inventory_hostname }}.conf
+    - name: Deploy config to device ... please wait
+      junos_install_config:
+        host={{ ansible_ssh_host }}
+        port={{ ansible_ssh_port }}
+        user=root
+        passwd=Juniper
+        file=/tmp/{{ inventory_hostname }}.conf
+        overwrite=yes
+        replace=no
+        logfile=/tmp/changes.log
+
+      #junos_template:
+        #host={{ ansible_ssh_host }}
+        #port={{ ansible_ssh_port }}
+        #username=root
+        #password=Juniper
+        #src=/tmp/{{ inventory_hostname }}.conf
+        #action=overwrite

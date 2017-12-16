@@ -25,9 +25,64 @@
 #   |    leaf01    |        |    leaf02     |         |    leaf03     |        |    leaf04    |
 #   +--------------+        +---------------+         +---------------+        +--------------+
 
-arista = 'arista_veos'
-junos_pfe = 'junos_pfe'
-junos_re = 'junos_re'
+arista = 'arista_vEOS_4_20'
+junos_pfe = 'vqfx_pfe_15_1X53'
+junos_re = 'vqfx_re_15_1X53'
+cumulus = 'CumulusCommunity/cumulus-vx'
+
+$script = <<-SCRIPT
+if grep -q -i 'cumulus' /etc/lsb-release &> /dev/null; then
+    echo "### RUNNING CUMULUS EXTRA CONFIG ###"
+    source /etc/lsb-release
+    if [[ $DISTRIB_RELEASE =~ ^2.* ]]; then
+        echo "  INFO: Detected a 2.5.x Based Release"
+
+        echo "  adding fake cl-acltool..."
+        echo -e "#!/bin/bash\nexit 0" > /usr/bin/cl-acltool
+        chmod 755 /usr/bin/cl-acltool
+
+        echo "  adding fake cl-license..."
+        echo -e "#!/bin/bash\nexit 0" > /usr/bin/cl-license
+        chmod 755 /usr/bin/cl-license
+
+        echo "  Disabling default remap on Cumulus VX..."
+        mv -v /etc/init.d/rename_eth_swp /etc/init.d/rename_eth_swp.backup
+
+        echo "### Rebooting to Apply Remap..."
+
+    elif [[ $DISTRIB_RELEASE =~ ^3.* ]]; then
+        echo "  INFO: Detected a 3.x Based Release"
+        echo "### Disabling default remap on Cumulus VX..."
+        mv -v /etc/hw_init.d/S10rename_eth_swp.sh /etc/S10rename_eth_swp.sh.backup &> /dev/null
+        echo "### Disabling ZTP service..."
+        systemctl stop ztp.service
+        ztp -d 2>&1
+        echo "### Resetting ZTP to work next boot..."
+        ztp -R 2>&1
+        echo "  INFO: Detected Cumulus Linux v$DISTRIB_RELEASE Release"
+        if [[ $DISTRIB_RELEASE =~ ^3.[1-9].* ]]; then
+            echo "### Fixing ONIE DHCP to avoid Vagrant Interface ###"
+            echo "     Note: Installing from ONIE will undo these changes."
+            mkdir /tmp/foo
+            mount LABEL=ONIE-BOOT /tmp/foo
+            sed -i 's/eth0/eth1/g' /tmp/foo/grub/grub.cfg
+            sed -i 's/eth0/eth1/g' /tmp/foo/onie/grub/grub-extra.cfg
+            umount /tmp/foo
+        fi
+        if [[ $DISTRIB_RELEASE =~ ^3.[2-9].* ]]; then
+            if [[ $(grep "vagrant" /etc/netd.conf | wc -l ) == 0 ]]; then
+                echo "### Giving Vagrant User Ability to Run NCLU Commands ###"
+                sed -i 's/users_with_edit = root, cumulus/users_with_edit = root, cumulus, vagrant/g' /etc/netd.conf
+                sed -i 's/users_with_show = root, cumulus/users_with_show = root, cumulus, vagrant/g' /etc/netd.conf
+            fi
+        fi
+
+    fi
+fi
+echo "### DONE ###"
+echo "### Rebooting Device to Apply Remap..."
+nohup bash -c 'sleep 10; shutdown now -r "Rebooting to Remap Interfaces"' &
+SCRIPT
 
 Vagrant.configure(2) do |config|
 
@@ -46,65 +101,210 @@ Vagrant.configure(2) do |config|
   # leaf03_pfe = "leaf03_pfe"
   # leaf04_re = "leaf04_re"
   # leaf04_pfe = "leaf04_pfe"
+  wbid = ENV['USER']
+  offset = 0
+
+  ##### DEFINE VM for cumulus-test #####
+  config.vm.define "cumulus-test" do |device|
+
+    device.vm.hostname = "cumulus-test"
+
+    device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box_version = "3.4.3"
+    device.vm.provider "virtualbox" do |v|
+      v.name = "#{wbid}_cumulus-test"
+      v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
+      v.memory = 768
+    end
+    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    device.vm.synced_folder ".", "/vagrant", disabled: true
 
 
-  # ######################################
-  # ###       router1 - build vm       ###
-  # ######################################
-  # config.vm.define 'router1' do |router1|
-  #   router1.vm.box = arista
-  #   router1.vm.network "forwarded_port", guest: 80, host: 8101
-  #   router1.vm.network 'private_network',
-  #                      virtualbox__intnet: 'router1mlag01a',
-  #                      ip: '169.254.1.11', auto_config: false
-  #   router1.vm.network 'private_network',
-  #                      virtualbox__intnet: 'router1mlag01b',
-  #                      ip: '169.254.1.11', auto_config: false
-  #
-  #  # ######################################
-  #  # ###       router1 - provision      ###
-  #  # ######################################
-  #   router1.vm.provision 'shell', inline: <<-SHELL
-  #     sleep 30
-  #     FastCli -p 15 -c "configure
-  #     hostname router1
-  #     username ansible privilege 15 secret ansible1
-  #     management api http-commands
-  #       protocol http
-  #       no shut
-  #     interface Management1
-  #       ip address 192.168.56.101/24 secondary"
-  #   SHELL
-  # end
+
+    # NETWORK INTERFACES
+      # link for swp1 --> oob-mgmt-server:eth1
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net54", auto_config: false , :mac => "a00000000061"
+
+      # link for swp2 --> server01:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net42", auto_config: false , :mac => "443839000043"
+
+      # link for swp3 --> server02:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net47", auto_config: false , :mac => "44383900004c"
+
+      # link for swp4 --> server03:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net3", auto_config: false , :mac => "443839000004"
+
+      # link for swp5 --> server04:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net49", auto_config: false , :mac => "44383900004e"
+
+      # link for swp6 --> leaf01:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net20", auto_config: false , :mac => "443839000020"
+
+      # link for swp7 --> leaf02:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , :mac => "44383900003d"
+
+      # link for swp8 --> leaf03:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net28", auto_config: false , :mac => "44383900002d"
+
+      # link for swp9 --> leaf04:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net34", auto_config: false , :mac => "443839000037"
+
+      # link for swp10 --> spine01:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false , :mac => "443839000032"
+
+      # link for swp11 --> spine02:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net59", auto_config: false , :mac => "44383900005f"
+
+      # link for swp12 --> exit01:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net9", auto_config: false , :mac => "44383900000f"
+
+      # link for swp13 --> exit02:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net48", auto_config: false , :mac => "44383900004d"
+
+      # link for swp14 --> edge01:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net40", auto_config: false , :mac => "443839000040"
+
+      # link for swp15 --> internet:eth0
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net35", auto_config: false , :mac => "443839000038"
+
+
+    device.vm.provider "virtualbox" do |vbox|
+      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc5', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc6', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc7', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc8', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc9', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc10', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc11', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc12', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc13', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc14', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc15', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc16', 'allow-all']
+      vbox.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    end
+
+    # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device"  messages --> https://github.com/mitchellh/vagrant/issues/1673
+    device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
+
+
+    # Run the Config specified in the Node Attributes
+    device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
+    device.vm.provision :shell , path: "./helper_scripts/config_oob_switch.sh"
+
+
+    # Install Rules for the interface re-map
+    device.vm.provision :shell , :inline => <<-delete_udev_directory
+if [ -d "/etc/udev/rules.d/70-persistent-net.rules" ]; then
+    rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
+fi
+rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
+delete_udev_directory
+
+device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: a0:00:00:00:00:61 --> swp1"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="a0:00:00:00:00:61", NAME="swp1", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:43 --> swp2"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:43", NAME="swp2", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4c --> swp3"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4c", NAME="swp3", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:04 --> swp4"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:04", NAME="swp4", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4e --> swp5"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4e", NAME="swp5", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:20 --> swp6"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:20", NAME="swp6", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:3d --> swp7"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:3d", NAME="swp7", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:2d --> swp8"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:2d", NAME="swp8", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:37 --> swp9"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:37", NAME="swp9", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:32 --> swp10"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:32", NAME="swp10", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:5f --> swp11"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:5f", NAME="swp11", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:0f --> swp12"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:0f", NAME="swp12", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4d --> swp13"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4d", NAME="swp13", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:40 --> swp14"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:40", NAME="swp14", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+     device.vm.provision :shell , :inline => <<-udev_rule
+echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:38 --> swp15"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:38", NAME="swp15", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+udev_rule
+
+      device.vm.provision :shell , :inline => <<-vagrant_interface_rule
+echo "  INFO: Adding UDEV Rule: Vagrant interface = eth0"
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{ifindex}=="2", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+echo "#### UDEV Rules (/etc/udev/rules.d/70-persistent-net.rules) ####"
+cat /etc/udev/rules.d/70-persistent-net.rules
+vagrant_interface_rule
+
+# Run Any Platform Specific Code and Apply the interface Re-map
+    #   (may or may not perform a reboot depending on platform)
+    device.vm.provision :shell , :inline => $script
+
+end
 
   # ######################################
-  # ###       router2 - build vm       ###
+  # ###    aggregation01 - build vm    ###
   # ######################################
-  # config.vm.define 'router2' do |router2|
-  #   router2.vm.box = arista
-  #   router2.vm.network "forwarded_port", guest: 80, host: 8102
-  #   router2.vm.network 'private_network',
-  #                      virtualbox__intnet: 'router2mlag01a',
-  #                      ip: '169.254.1.11', auto_config: false
-  #   router2.vm.network 'private_network',
-  #                      virtualbox__intnet: 'router2mlag01b',
-  #                      ip: '169.254.1.11', auto_config: false
-  #
-  #  # ######################################
-  #  # ###       router2 - provision      ###
-  #  # ######################################
-  #   router2.vm.provision 'shell', inline: <<-SHELL
-  #     sleep 30
-  #     FastCli -p 15 -c "configure
-  #     hostname router2
-  #     username ansible privilege 15 secret ansible1
-  #     management api http-commands
-  #       protocol http
-  #       no shut
-  #     interface Management1
-  #       ip address 192.168.56.102/24 secondary"
-  #   SHELL
-  # end
+  config.vm.define 'aggregation01' do |aggregation01|
+    aggregation01.vm.box = cumulus
+    aggregation01.vm.network "forwarded_port", guest: 80, host: 8101
+    aggregation01.vm.network 'private_network',
+                       virtualbox__intnet: 'aggregation01_spine01',
+                       ip: '169.254.1.11', auto_config: false
+    aggregation01.vm.network 'private_network',
+                       virtualbox__intnet: 'aggregation01_spine02',
+                       ip: '169.254.1.11', auto_config: false
+   end
+
+   # ######################################
+   # ###    aggregation02 - build vm    ###
+   # ######################################
+   config.vm.define 'aggregation02' do |aggregation02|
+     aggregation02.vm.box = cumulus
+     aggregation02.vm.network "forwarded_port", guest: 80, host: 8101
+     aggregation02.vm.network 'private_network',
+                        virtualbox__intnet: 'aggregation02_spine01',
+                        ip: '169.254.1.11', auto_config: false
+     aggregation02.vm.network 'private_network',
+                        virtualbox__intnet: 'aggregation02_spine02',
+                        ip: '169.254.1.11', auto_config: false
+    end
 
   # ######################################
   # ###       spine01 - build vm       ###
@@ -339,5 +539,25 @@ Vagrant.configure(2) do |config|
       leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan2"
       leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan3"
   end
+
+  ##############################
+  ## Box provisioning        ###
+  ## exclude Windows host    ###
+  ##############################
+  # if !Vagrant::Util::Platform.windows?
+  #     config.vm.provision "ansible" do |ansible|
+  #         ansible.groups = {
+  #             "aggregation" => ["aggregation0[1:2]"],
+  #             "spine" => ["spine0[1:2]"],
+  #             "leaf_re" => ["leaf0[1:4]_re"],
+  #             "leaf_pfe" => ["leaf0[1:4]_pfe"],
+  #             "arista:children" => ["spine"],
+  #             "juniper:children" => ["leaf_re", "leaf_pfe"],
+  #             "cumulus:children" => ["aggregation"],
+  #             "all:children" => ["arista", "cumulus", "juniper"]
+  #         }
+  #         ansible.playbook = "provisioning/playbook.yml"
+  # end
+  # end
 
 end
