@@ -1,0 +1,12 @@
+- name: "# ### DEPLOY INTERFACE CONFIGURATIONS ### #"
+  hosts: aggregation01
+  become: True
+  tasks:
+
+    - name: "# PUSH CONFIGURATION TO REMOTE HOST #"
+      copy:
+        src: "/tmp/{{ inventory_hostname }}.conf"
+        dest: /etc/network/interfaces
+        owner: root
+        group: root
+        mode: 0644

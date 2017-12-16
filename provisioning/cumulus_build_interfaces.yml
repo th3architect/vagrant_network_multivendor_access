@@ -1,0 +1,15 @@
+- name: "# ### BUILD INTERFACE CONFIGURATIONS ### #"
+  hosts: all
+  gather_facts: False
+  connection: local
+  tasks:
+
+    - name: "# REMOVE CONFIGURATION IF IT EXISTS #"
+      file:
+        path: "/tmp/{{ inventory_hostname }}.conf"
+        state: absent
+
+    - name: "# BUILD INTERFACE CONFIGURATION #"
+      template:
+        src: "templates/cumulus_iface.j2"
+        dest: "/tmp/{{ inventory_hostname }}.conf"

@@ -1,0 +1,72 @@
+- name: Standing up the Cumulus system
+  hosts: aggregation01
+  become: True
+  tasks:
+
+    - name: "### PREVENT DEFAULT INTERFACE REMAPPING ###"
+      file:
+        path: "/etc/hw_init.d/S10rename_eth_swp.sh"
+        state: absent
+
+    - name: "### STOPPING ZTP SERVICE ###"
+      systemd:
+        name: ztp
+        state: stopped
+
+    - name: "### DISABLE ZTP FROM BOOT LIST ###"
+      service:
+        name: ztp
+        enabled: no
+
+    - name: "### ADD VAGRANT USER TO EDIT PERMISSIONS FOR NETD ###"
+      lineinfile:
+        path: /etc/netd.conf
+        regexp: '^users_with_edit = root, cumulus'
+        line: 'users_with_edit = root, cumulus, vagrant'
+
+    - name: "### ADD VAGRANT USER TO SHOW PERMISSIONS FOR NETD ###"
+      lineinfile:
+        path: /etc/netd.conf
+        regexp: '^users_with_show = root, cumulus'
+        line: 'users_with_show = root, cumulus, vagrant'
+
+- name: Standing up the Cumulus system
+  hosts: aggregation01
+  become: True
+  tasks:
+
+    - name: "### PREVENT DEFAULT INTERFACE REMAPPING ###"
+      file:
+        path: "/etc/hw_init.d/S10rename_eth_swp.sh"
+        state: absent
+
+    - name: "### STOPPING ZTP SERVICE ###"
+      systemd:
+        name: ztp
+        state: stopped
+
+    - name: "### DISABLE ZTP FROM BOOT LIST ###"
+      service:
+        name: ztp
+        enabled: no
+
+    - name: "### ADD VAGRANT USER TO EDIT PERMISSIONS FOR NETD ###"
+      lineinfile:
+        path: /etc/netd.conf
+        regexp: '^users_with_edit = root, cumulus'
+        line: 'users_with_edit = root, cumulus, vagrant'
+
+    - name: "### ADD VAGRANT USER TO SHOW PERMISSIONS FOR NETD ###"
+      lineinfile:
+        path: /etc/netd.conf
+        regexp: '^users_with_show = root, cumulus'
+        line: 'users_with_show = root, cumulus, vagrant'
+
+    # - name: restart server
+    #   command: /sbin/reboot
+    #   async: 1
+    #   poll: 0
+    #   ignore_errors: true
+    #
+    # - name: waiting for server to come back after reboot
+    #   local_action: wait_for host={{ ansible_ssh_host }} state=started port=22 delay=30 timeout=300 connect_timeout=15

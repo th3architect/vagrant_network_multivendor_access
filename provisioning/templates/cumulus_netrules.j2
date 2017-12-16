@@ -1,0 +1,7 @@
+{% for rule in netrules %}
+{% if rule.attr_key == "ifindex" %}
+ACTION=="{{ rule.action }}", SUBSYSTEM=="{{ rule.subsystem }}", ATTR{ifindex}=="{{ rule.attr_value }}", NAME="{{ rule.name }}", SUBSYSTEMS=="{{ rule.subsystems }}"
+{% else %}
+ACTION=="{{ rule.action }}", SUBSYSTEM=="{{ rule.subsystem }}", ATTR{address}=="{{ rule.attr_value }}", NAME="{{ rule.name }}", SUBSYSTEMS=="{{ rule.subsystems }}"
+{% endif %}
+{% endfor %}

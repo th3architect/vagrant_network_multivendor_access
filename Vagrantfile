@@ -121,18 +121,13 @@ Vagrant.configure(2) do |config|
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
-
-
     # NETWORK INTERFACES
       # link for swp1 --> spine01
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net54", auto_config: false , :mac => "a00000000061"
-
       # link for swp2 --> spine02
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net42", auto_config: false , :mac => "443839000043"
-
       # link for swp3 --> tbd
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net47", auto_config: false , :mac => "44383900004c"
-
 
     device.vm.provider "virtualbox" do |vbox|
       vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
@@ -144,44 +139,13 @@ Vagrant.configure(2) do |config|
     # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device"  messages --> https://github.com/mitchellh/vagrant/issues/1673
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
 
-
     # Run the Config specified in the Node Attributes
-    device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
     device.vm.provision "ansible" do |ansible|
-        ansible.playbook = "provisioning/playbook.yml"
+        ansible.playbook = "provisioning/cumulus_provision.yml"
     end
 
-
-    # Install Rules for the interface re-map
-    device.vm.provision :shell , :inline => <<-delete_udev_directory
-    if [ -d "/etc/udev/rules.d/70-persistent-net.rules" ]; then
-        rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
-    fi
-    rm -rfv /etc/udev/rules.d/70-persistent-net.rules &> /dev/null
-    delete_udev_directory
-
-    device.vm.provision :shell , :inline => <<-udev_rule
-    echo "  INFO: Adding UDEV Rule: a0:00:00:00:00:61 --> swp1"
-    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="a0:00:00:00:00:61", NAME="swp1", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-    udev_rule
-    device.vm.provision :shell , :inline => <<-udev_rule
-    echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:43 --> swp2"
-    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:43", NAME="swp2", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-    udev_rule
-    device.vm.provision :shell , :inline => <<-udev_rule
-    echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4c --> swp3"
-    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4c", NAME="swp3", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-    udev_rule
-
-    device.vm.provision :shell , :inline => <<-vagrant_interface_rule
-    echo "  INFO: Adding UDEV Rule: Vagrant interface = eth0"
-    echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{ifindex}=="2", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-    echo "#### UDEV Rules (/etc/udev/rules.d/70-persistent-net.rules) ####"
-    cat /etc/udev/rules.d/70-persistent-net.rules
-    vagrant_interface_rule
-
-    # Run Any Platform Specific Code and Apply the interface Re-map
-    device.vm.provision :shell , :inline => $script
+    # Reboot the deveice to apply the interface Re-map
+    device.vm.provision :shell , inline: "sleep 10; shutdown now -r"
 
   end
 

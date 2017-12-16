@@ -1,0 +1,25 @@
+netrules:
+  - action: add
+    subsystem: net
+    attr_key: address
+    attr_value: "a0:00:00:00:00:61"
+    name: swp1
+    subsystems: pci
+  - action: add
+    subsystem: net
+    attr_key: address
+    attr_value: "44:38:39:00:00:43"
+    name: swp2
+    subsystems: pci
+  - action: add
+    subsystem: net
+    attr_key: address
+    attr_value: "44:38:39:00:00:4c"
+    name: swp3
+    subsystems: pci
+  - action: add
+    subsystem: net
+    attr_key: ifindex
+    attr_value: "2"
+    name: eth0
+    subsystems: pci

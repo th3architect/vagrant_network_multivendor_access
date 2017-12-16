@@ -1,0 +1,15 @@
+- name: "# ### BUILD NETRULES CONFIGURATION ### #"
+  hosts: all
+  gather_facts: False
+  connection: local
+  tasks:
+
+    - name: "# REMOVE NETRULES CONFIGURATION IF IT EXISTS #"
+      file:
+        path: "/tmp/{{ inventory_hostname }}_netrules.conf"
+        state: absent
+
+    - name: "# BUILD NETRULES CONFIGURATION #"
+      template:
+        src: "templates/cumulus_netrules.j2"
+        dest: "/tmp/{{ inventory_hostname }}_netrules.conf"
