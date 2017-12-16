@@ -122,50 +122,14 @@ Vagrant.configure(2) do |config|
 
 
     # NETWORK INTERFACES
-      # link for swp1 --> oob-mgmt-server:eth1
+      # link for swp1 --> spine01
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net54", auto_config: false , :mac => "a00000000061"
 
-      # link for swp2 --> server01:eth0
+      # link for swp2 --> spine02
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net42", auto_config: false , :mac => "443839000043"
 
-      # link for swp3 --> server02:eth0
+      # link for swp3 --> tbd
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net47", auto_config: false , :mac => "44383900004c"
-
-      # link for swp4 --> server03:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net3", auto_config: false , :mac => "443839000004"
-
-      # link for swp5 --> server04:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net49", auto_config: false , :mac => "44383900004e"
-
-      # link for swp6 --> leaf01:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net20", auto_config: false , :mac => "443839000020"
-
-      # link for swp7 --> leaf02:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , :mac => "44383900003d"
-
-      # link for swp8 --> leaf03:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net28", auto_config: false , :mac => "44383900002d"
-
-      # link for swp9 --> leaf04:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net34", auto_config: false , :mac => "443839000037"
-
-      # link for swp10 --> spine01:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false , :mac => "443839000032"
-
-      # link for swp11 --> spine02:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net59", auto_config: false , :mac => "44383900005f"
-
-      # link for swp12 --> exit01:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net9", auto_config: false , :mac => "44383900000f"
-
-      # link for swp13 --> exit02:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net48", auto_config: false , :mac => "44383900004d"
-
-      # link for swp14 --> edge01:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net40", auto_config: false , :mac => "443839000040"
-
-      # link for swp15 --> internet:eth0
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net35", auto_config: false , :mac => "443839000038"
 
 
     device.vm.provider "virtualbox" do |vbox|
@@ -215,54 +179,6 @@ udev_rule
      device.vm.provision :shell , :inline => <<-udev_rule
 echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4c --> swp3"
 echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4c", NAME="swp3", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:04 --> swp4"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:04", NAME="swp4", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4e --> swp5"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4e", NAME="swp5", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:20 --> swp6"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:20", NAME="swp6", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:3d --> swp7"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:3d", NAME="swp7", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:2d --> swp8"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:2d", NAME="swp8", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:37 --> swp9"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:37", NAME="swp9", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:32 --> swp10"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:32", NAME="swp10", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:5f --> swp11"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:5f", NAME="swp11", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:0f --> swp12"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:0f", NAME="swp12", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:4d --> swp13"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:4d", NAME="swp13", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:40 --> swp14"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:40", NAME="swp14", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
-udev_rule
-     device.vm.provision :shell , :inline => <<-udev_rule
-echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:38 --> swp15"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:38", NAME="swp15", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
 udev_rule
 
       device.vm.provision :shell , :inline => <<-vagrant_interface_rule
