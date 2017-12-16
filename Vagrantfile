@@ -108,9 +108,7 @@ Vagrant.configure(2) do |config|
   # ###    aggregation01 - build vm    ###
   # ######################################
   config.vm.define "aggregation01" do |device|
-
     device.vm.hostname = "aggregation01"
-
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.4.3"
     device.vm.provider "virtualbox" do |v|
@@ -120,33 +118,25 @@ Vagrant.configure(2) do |config|
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
-
     # NETWORK INTERFACES
       # link for swp1 --> spine01
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net54", auto_config: false , :mac => "a00000000061"
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine01", auto_config: false , :mac => "a00000000061"
       # link for swp2 --> spine02
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net42", auto_config: false , :mac => "443839000043"
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine02", auto_config: false , :mac => "443839000043"
       # link for swp3 --> tbd
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net47", auto_config: false , :mac => "44383900004c"
-
     device.vm.provider "virtualbox" do |vbox|
       vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
       vbox.customize ["modifyvm", :id, "--nictype1", "virtio"]
     end
-
     # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device"  messages --> https://github.com/mitchellh/vagrant/issues/1673
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
-
     # Run the Config specified in the Node Attributes
     device.vm.provision "ansible" do |ansible|
         ansible.playbook = "provisioning/cumulus_provision.yml"
     end
-
-    # Reboot the deveice to apply the interface Re-map
-    device.vm.provision :shell , inline: "sleep 10; shutdown now -r"
-
   end
 
 
