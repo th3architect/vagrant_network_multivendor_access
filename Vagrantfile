@@ -119,24 +119,12 @@ Vagrant.configure(2) do |config|
   config.vm.define 'spine01' do |spine01|
     spine01.vm.box = arista
     spine01.vm.network "forwarded_port", guest: 80, host: 8111
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation01_spine01',
-                       ip: '169.254.1.11', auto_config: false
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation02_spine01',
-                       ip: '169.254.1.11', auto_config: false
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'spine01_leaf01',
-                       ip: '169.254.1.11', auto_config: false
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'spine01_leaf02',
-                       ip: '169.254.1.11', auto_config: false
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'spine01_leaf03',
-                       ip: '169.254.1.11', auto_config: false
-    spine01.vm.network 'private_network',
-                       virtualbox__intnet: 'spine01_leaf04',
-                       ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation01_spine01', ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation02_spine01', ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf01', ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf02', ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf03', ip: '169.254.1.11', auto_config: false
+    spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf04', ip: '169.254.1.11', auto_config: false
 
   # ######################################
   # ###       spine01 - provision      ###
@@ -361,6 +349,7 @@ Vagrant.configure(2) do |config|
           "cumulus:children" => ["aggregation"],
           "all:children" => ["arista", "cumulus", "juniper"]
       }
+      ansible.compatibility_mode = "2.0"
       ansible.playbook = "provisioning/cumulus_provision.yml"
   end
 

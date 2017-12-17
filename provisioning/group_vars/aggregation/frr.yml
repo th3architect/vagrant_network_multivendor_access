@@ -1,0 +1,4 @@
+frr:
+  - name: zebra
+  - name: bgpd
+    autonomous_system: 65000

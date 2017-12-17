@@ -1,0 +1,30 @@
+- name: "# ### DEPLOY FRR CONFIGURATIONS ### #"
+  hosts: cumulus
+  become: True
+  tasks:
+
+    - name: "# PUSH DAEMONS TO REMOTE HOST #"
+      copy:
+        src: "/tmp/{{ inventory_hostname }}_daemons.conf"
+        dest: /etc/frr/daemons
+        owner: frr
+        group: frr
+        mode: 0644
+
+    - name: "# PUSH CONFIGURATION TO REMOTE HOST #"
+      copy:
+        src: "/tmp/{{ inventory_hostname }}_frr.conf"
+        dest: /etc/frr/frr.conf
+        owner: frr
+        group: frr
+        mode: 0644
+
+    - name: "# STOPPING FRR SERVICE ###"
+      systemd:
+        name: frr
+        state: restarted
+
+    - name: "# ENABLE FRR FROM BOOT LIST #"
+      service:
+        name: frr
+        enabled: yes

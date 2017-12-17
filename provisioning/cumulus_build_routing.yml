@@ -1,0 +1,10 @@
+- name: "# ### CUMULUS: BUILD ROUTING CONFIGURATIONS ### #"
+  hosts: cumulus
+  tasks:
+
+    - name: "# BUILD BGP CONFIGURATION #"
+      nclu:
+        commands:
+          - add bgp autonomous-system 65000
+        commit: true
+        description: "Ansible - add BGP config"

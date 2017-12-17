@@ -1,0 +1,14 @@
+frr version 3.1+cl3u3
+frr defaults datacenter
+username cumulus nopassword
+service integrated-vtysh-config
+log syslog informational
+line vty
+
+end
+{% for protocol in frr %}
+{% if protocol.name == "bgpd" %}
+router bgp {{ protocol.autonomous_system}}
+end
+{% endif %}
+{% endfor %}
