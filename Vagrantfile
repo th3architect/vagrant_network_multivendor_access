@@ -26,8 +26,8 @@
 #   +--------------+        +---------------+         +---------------+        +--------------+
 
 arista = 'arista_vEOS_4_20'
-junos_pfe = 'vqfx_pfe_15_1X53'
-junos_re = 'vqfx_re_15_1X53'
+junos_pfe = 'juniper/vqfx10k-pfe'
+junos_re = 'juniper/vqfx10k-re'
 cumulus = 'CumulusCommunity/cumulus-vx'
 
 Vagrant.configure(2) do |config|
