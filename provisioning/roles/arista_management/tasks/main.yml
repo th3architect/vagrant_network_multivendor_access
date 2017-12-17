@@ -1,0 +1,6 @@
+---
+- name: build arista_management
+  template: >
+    src=management.j2
+    dest={{ build_directory }}/099_management
+

@@ -1,0 +1,6 @@
+---
+- name: build arista_aaa
+  template: >
+    src=aaa.j2
+    dest={{ build_directory }}/002_aaa
+

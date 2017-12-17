@@ -1,0 +1,34 @@
+daemon:
+  - name: TerminAttr
+    string: "exec /usr/bin/TerminAttr -ingestgrpcurl=10.30.255.100:9910 -taillogs -ingestauth=key, -ingestvrf MGMT"
+    state: no shutdown
+
+email:
+  from_user: "ansible_lab@email.com"
+  vrf: "MGMT"
+  server: "mail.test.com"
+
+load_interval: "30"
+
+platform: "vEOS"
+queue_monitor: "length"
+
+name_server:
+  vrf: "MGMT"
+  server: "10.30.1.1"
+
+domain_name: "calaesha.com"
+
+ntp:
+  source: "Management1"
+  server: "10.30.1.1"
+  vrf: "MGMT"
+
+aaa_tmp:
+  auth: "aaa authorization exec default local"
+  root: "no aaa root"
+  user:
+    - name: cvpadmin
+      privilege: 15
+      secret: "sha512 $6$i1wYXKTOekzKY648$kTUM2S/KMGh.vgRVYEQZdoDcWJsF4zk.uFIDxdBB.rJjL34Br3hKDJ.NMJSwFYu7nzLlzDCEWIRhCn4DnQHU71"
+

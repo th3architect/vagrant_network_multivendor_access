@@ -1,0 +1,77 @@
+interfaces_vlans:
+  - name: Vlan4094
+    description: MLAG-PEER
+    mode: vlan_l3_ipv4
+    mtu: 9214
+    ipv4_address: 192.168.40.94/31
+  - name: Vlan11
+    description: FLOOR_11_DATA
+    mode: vlan_l3_ipv4
+    mtu: 9214
+    ipv4_address: 10.11.0.2/24
+    virtual_router: 10.11.0.1
+interfaces_physical:
+  - name: Management1
+    vrf: MGMT
+    ipv4_address: "{{ ansible_host }}/24"
+    mode: management
+  - name: Ethernet1
+    speed: 10000full
+    mode: l3_ipv4
+    description: "COREa"
+    ipv4_address: 10.255.1.0/31
+  - name: Ethernet2
+    speed: 10000full
+    mode: l3_ipv4
+    description: "COREb"
+    ipv4_address: 10.255.2.0/31
+  - name: Ethernet3
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR11"
+    ipv4_address: 10.255.11.0/31
+  - name: Ethernet4
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR12"
+    ipv4_address: 10.255.12.0/31
+  - name: Ethernet5
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR13"
+    ipv4_address: 10.255.13.0/31
+  - name: Ethernet6
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR14"
+    ipv4_address: 10.255.14.0/31
+  - name: Ethernet7
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR11"
+    ipv4_address: 10.255.11.2/31
+  - name: Ethernet8
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR12"
+    ipv4_address: 10.255.12.2/31
+  - name: Ethernet9
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR13"
+    ipv4_address: 10.255.13.2/31
+  - name: Ethernet10
+    speed: 10000full
+    mode: l3_ipv4
+    description: "FLOOR14"
+    ipv4_address: 10.255.14.2/31
+  - name: Ethernet11
+    speed: 10000full
+    mode: l3_ipv4
+    description: "COREa"
+    ipv4_address: 10.255.1.2/31
+  - name: Ethernet12
+    speed: 10000full
+    mode: l3_ipv4
+    description: "COREb"
+    ipv4_address: 10.255.2.2/31

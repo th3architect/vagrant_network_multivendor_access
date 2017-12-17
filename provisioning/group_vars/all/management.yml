@@ -1,0 +1,19 @@
+management:
+   api:
+      protocol:
+         - "http localhost"
+         - "unix-socket"
+      enabled: True
+      vrf:
+         - name: "MGMT"
+           enabled: True
+   cvx:
+      enabled: True
+      server: "10.30.255.100"
+      source_interface: "Management1"
+   ssh:
+      authentication: "password"
+      vrf:
+         - name: "MGMT"
+           enabled: True
+

@@ -1,0 +1,87 @@
+{% if bgp is defined %}
+ip routing
+!
+router bgp {{ bgp.autonomous_system }}
+{% if bgp.router_id is defined %}
+    router-id {{ bgp.router_id }}
+{% endif %}
+    bgp log-neighbor-changes
+{% if bgp.maximum_paths is defined %}
+    maximum-paths {{ bgp.maximum_paths }} ecmp {{ bgp.maximum_paths }}
+{% endif %}
+{% if bgp.distance is defined %}
+    distance bgp {{ bgp.distance.external }} {{ bgp.distance.internal }} {{ bgp.distance.local }}
+{% endif %}
+{# ### NON-PEER GROUP NEIGHBOR ### #}
+{% if bgp.neighbor is defined %}
+{% for neighbor in bgp.neighbor %}
+    neighbor {{ neighbor.ip_address }} remote-as {{ neighbor.autonomous_system }}
+{% if neighbor.description is defined %}
+    neighbor {{ neighbor.ip_address }} description {{ neighbor.description }}
+{% endif %}
+{% if neighbor.password is defined %}
+    neighbor {{ neighbor.ip_address }} password {{ neighbor.password }}
+{% endif %}
+{% if neighbor.next_hop_self is defined and neighbor.next_hop_self == True %}
+    neighbor {{ neighbor.ip_address }} next-hop-self
+{% endif %}
+{% endfor %}
+!
+{% endif %}
+{# ### PEER GROUP NEIGHBOR ### #}
+{% if bgp.peer_group is defined %}
+{% for group in bgp.peer_group %}
+    neighbor {{ group.name }} peer-group
+{% for neighbor in group.neighbor %}
+    neighbor {{ neighbor }} remote-as {{ group.autonomous_system }}
+    neighbor {{ neighbor }} peer-group {{ group.name }}
+{% endfor %}
+{% if group.description is defined %}
+    neighbor {{ group.name }} description {{ group.description }}
+{% endif %}
+{% if group.password is defined %}
+    neighbor {{ group.name }} password {{ group.password }}
+{% endif %}
+{% if group.next_hop_self is defined and group.next_hop_self == True %}
+    neighbor {{ group.name }} next-hop-self
+{% endif %}
+{% endfor %}
+!
+{% endif %}
+address-family ipv4
+{# ### NON-PEER GROUP NEIGHBOR ### #}
+{% if bgp.neighbor is defined %}
+{% for neighbor in bgp.neighbor %}
+{% if neighbor.activate == True %}
+    neighbor {{ neighbor.ip_address }} activate
+{% endif %}
+{% if neighbor.default_originate == True %}
+    neighbor {{ neighbor.ip_address }} default-originate
+{% endif %}
+{% if neighbor.policy_in is defined %}
+    neighbor {{ neighbor.ip_address }} route-map {{ neighbor.policy_in }} in
+{% endif %}
+{% if neighbor.policy_out is defined %}
+    neighbor {{ neighbor.ip_address }} route-map {{ neighbor.policy_out }} out
+{% endif %}
+{% endfor %}
+{% endif %}
+{# ### PEER GROUP NEIGHBOR ### #}
+{% if bgp.peer_group is defined %}
+{% for group in bgp.peer_group %}
+{% if group.activate == True %}
+    neighbor {{ group.name }} activate
+{% endif %}
+{% if group.default_originate == True %}
+    neighbor {{ group.name }} default-originate
+{% endif %}
+{% if group.policy_in is defined %}
+    neighbor {{ group.name }} route-map {{ group.policy_in }} in
+{% endif %}
+{% if group.policy_out is defined %}
+    neighbor {{ group.name }} route-map {{ group.policy_out }} out
+{% endif %}
+{% endfor %}
+{% endif %}
+!
+{% endif %}

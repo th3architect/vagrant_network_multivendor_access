@@ -1,0 +1,23 @@
+---
+  - name: '### APPLY CONFIGURATION ###'
+    hosts: all
+    connection: local
+    gather_facts: no
+    vars_prompt:
+      - name: prompt_username
+        prompt: "Please enter your username"
+      - name: prompt_password
+        prompt: "Please enter your password"
+        private: yes
+    tasks:
+
+      - name: apply config
+        eos_config:
+          src: "{{ arista_config }}"
+          authorize: true
+          provider:
+            host: "{{ ansible_host }}"
+            username: "{{ prompt_username }}"
+            password: "{{ prompt_password }}"
+            transport: eapi
+            validate_certs: no

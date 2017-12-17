@@ -1,0 +1,32 @@
+bgp:
+  autonomous_system: 102.0
+  router_id: 192.168.79.1
+  maximum_paths: 32
+  distance:
+    external: 20
+    internal: 200
+    local: 200
+  peer_group:
+    - name: core
+      neighbor:
+        - 10.255.0.0
+        - 10.255.0.2
+      autonomous_system: 65000
+      activate: True
+      default_originate: False
+      policy_in: BGP_PERMIT_ONLY_DEFAULT_ROUTE
+      policy_out: BGP_DISTRIBUTION
+      password: ARISTA_LAB
+      description: DISTRIBUTION_TO_CORE
+    - name: distributionb
+      neighbor:
+        - 192.168.40.95
+      autonomous_system: 102.0
+      activate: True
+      default_originate: False
+      policy_in: BGP_PERMIT_ONLY_DEFAULT_ROUTE
+      policy_out: BGP_PERMIT_ONLY_DEFAULT_ROUTE
+      next_hop_self: True
+      password: ARISTA_LAB
+      description: INTER_MLAG_PEERING_FOR_UPLINK_FAILURES
+

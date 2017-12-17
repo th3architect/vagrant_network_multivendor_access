@@ -1,0 +1,9 @@
+---
+  - import_playbook: juniper_build_interfaces.yml
+  - import_playbook: juniper_build_netrules.yml
+  - import_playbook: juniper_build_routing.yml
+  - import_playbook: juniper_deploy_interfaces.yml
+  - import_playbook: juniper_deploy_netrules.yml
+  - import_playbook: juniper_build_frr.yml
+  - import_playbook: juniper_deploy_frr.yml
+  - import_playbook: junipers_system.yml

@@ -1,0 +1,15 @@
+aaa:
+  group:
+    - name: radius_aaa
+      servers:
+        - destination: 10.30.1.1
+          vrf: MGMT
+        - destination: 10.20.1.1
+          vrf: MGMT
+  authentication:
+    - aaa authentication login default group radius group radius_aaa local
+  accounting:
+    - aaa authorization exec default group radius_aaa local none
+  authorization:
+    - aaa accounting exec default start-stop group radius group radius_aaa
+

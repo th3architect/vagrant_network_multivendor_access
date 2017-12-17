@@ -350,7 +350,7 @@ Vagrant.configure(2) do |config|
           "all:children" => ["arista", "cumulus", "juniper"]
       }
       ansible.compatibility_mode = "2.0"
-      ansible.playbook = "provisioning/cumulus_provision.yml"
+      ansible.playbook = "provisioning/all.yml"
   end
 
 end

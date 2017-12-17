@@ -1,0 +1,12 @@
+ospf:
+  router_id: 192.168.255.1
+  process_id: "1"
+  networks:
+    - prefix: '10.255.11.0/24'
+      area: 0
+    - prefix: '10.255.12.0/24'
+      area: 0
+    - prefix: '10.255.13.0/24'
+      area: 0
+    - prefix: '10.255.14.0/24'
+      area: 0

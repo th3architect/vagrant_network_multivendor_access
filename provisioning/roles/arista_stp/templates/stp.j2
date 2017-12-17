@@ -1,0 +1,12 @@
+{% if stp is defined %}
+spanning-tree mode {{ stp.mode }}
+{% if stp.priority is defined %}
+{{ stp.priority }}
+{% endif %}
+{% if stp.exclude is defined %}
+{% for vlan in stp.exclude %}
+no spanning-tree vlan {{ vlan }}
+{% endfor %}
+{% endif %}
+!
+{% endif %}

@@ -1,0 +1,41 @@
+monitoring:
+  logging:
+    buffered: 20480
+    remote:
+      vrf: MGMT
+      server:
+        - 10.30.255.2
+    traps:
+      level: 6
+  snmp:
+    vrf:
+      - name: MGMT
+        source_interface: Management1
+    views:
+      - name: all
+        mibs:
+          - iso
+          - system
+    manager:
+      hosts:
+        - server: 10.30.255.2
+          vrf: MGMT
+          version: 3
+          auth: observium
+      traps:
+        - bgp
+        - entity
+        - lldp
+        - snmp
+    groups:
+      - name: arista_lab
+        view: all
+        permissions: read
+        version: v3
+    users:
+      - name: observium
+        group: arista_lab
+        version: v3
+        auth_method: sha
+        auth_password: "@r!$T@l@b!"
+

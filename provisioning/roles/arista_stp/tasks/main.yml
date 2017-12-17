@@ -1,0 +1,6 @@
+---
+- name: build arista_stp
+  template: >
+    src=stp.j2
+    dest={{ build_directory }}/003_stp
+

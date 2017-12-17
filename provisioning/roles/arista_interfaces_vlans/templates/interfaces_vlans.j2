@@ -1,0 +1,18 @@
+{% if interfaces_vlans is defined %}
+{% for iface in interfaces_vlans %}
+interface {{ iface.name }}
+{% if iface.description is defined %}
+    description {{ iface.description }}
+{% endif %}
+{% if iface.mtu is defined %}
+    mtu {{ iface.mtu }}
+{% endif %}
+{% if iface.mode == 'vlan_l3_ipv4' %}
+    ip address {{ iface.ipv4_address }}
+{% endif %}
+{% if iface.virtual_router is defined %}
+    ip virtual-router address {{ iface.virtual_router }}
+{% endif %}
+!
+{% endfor %}
+{% endif %}

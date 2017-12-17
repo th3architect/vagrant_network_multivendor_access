@@ -1,0 +1,23 @@
+interface_portchannels:
+  - id: 11
+    description: "FLOOR_11_DATA"
+    trunk:
+      native_vlan: 84
+      vlan: "83-84"
+      portfast_type: "edge"
+  - id: 2
+    description: "BASIC_BOND_1"
+    trunk:
+      native_vlan: 1
+      vlan: 82
+      portfast_type: "edge"
+  - id: 3
+    description: "ACCESS_BOND"
+    access:
+        vlan: 82
+  - id: 100
+    description: "MLAG-PEER"
+    trunk:
+        trunk_group: "MLAG-PEER"
+    mlag: True
+

@@ -1,0 +1,23 @@
+{% if rack is defined %}
+ip virtual-router mac-address 00:1c:73:00:00:{{ rack }}
+{% endif %}
+!
+{% if static is defined %}
+{% for route in static %}
+{% if route.vrf is defined %}
+ip route vrf MGMT {{ route.destination }} {{ route.next_hop }}
+{% else %}
+ip route {{ route.destination }} {{ route.next_hop }}
+{% endif %}
+{% endfor %}
+{% endif %}
+!
+{% if ip_routing is defined %}
+{% if ip_routing.enabled == True %}
+ip routing
+{% endif %}
+{% for vrf in ip_routing.vrf %}
+ip routing vrf {{ vrf }}
+{% endfor %}
+!
+{% endif %}

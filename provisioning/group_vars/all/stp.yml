@@ -1,0 +1,5 @@
+stp:
+  mode: "mstp"
+  exclude:
+    - 4094
+

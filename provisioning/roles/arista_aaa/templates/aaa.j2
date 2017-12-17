@@ -1,0 +1,32 @@
+{% if aaa is defined %}
+{% if aaa.group is defined %}
+{% for each_group in aaa.group %}
+aaa group server radius {{ each_group.name }}
+{% for each_server in each_group.servers %}
+    server {{ each_server.destination }} vrf {{ each_server.vrf }}
+{% endfor %}
+{% endfor %}
+{% endif %}
+{% for each_line in aaa.authentication %}
+{{ each_line }}
+{% endfor %}
+{% for each_line in aaa.accounting %}
+{{ each_line }}
+{% endfor %}
+{% for each_line in aaa.authorization %}
+{{ each_line }}
+{% endfor %}
+{% if aaa.users is defined %}
+{% for user in aaa.users %}
+username {{ user.name}} priv {{ user.priv }} secret {{ user.secret }}
+{% endfor %}
+{% endif %}
+{% if aaa.radius_key is defined %}
+radius-server key {{ aaa.radius_key }}
+{% endif %}
+{% if aaa.radius_server is defined %}
+{% for server in aaa.radius_server %}
+radius-server host {{ server.host }} vrf {{ server.vrf }} key {{ server.key }}
+{% endfor %}
+{% endif %}
+{% endif %}

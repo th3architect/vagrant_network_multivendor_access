@@ -1,0 +1,3 @@
+banner:
+  motd: "banner motd\n******************************WARNING************************************\nThis system is for authorized users only. This, and any other sessions,\ncan and will be monitored to determine whether or not it is being used\nby an authorized user.\n\nBy logging into this system, you are consenting to such monitoring, and\nare advised that the system administrators retain the right to use any\nrecorded session as evidence of criminal activity, if such activity is\nmonitored.\n******************************WARNING************************************\nEOF"
+
