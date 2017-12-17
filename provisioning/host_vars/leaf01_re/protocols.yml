@@ -1,0 +1,121 @@
+junos_protocols:
+  lldp:
+    options:
+      - port-id-subtype interface-name
+      - neighbour-port-info-display port-description
+      - port-description-type interface-description
+    interface:
+      - all
+  spanning_tree:
+    - protocol: mstp
+      name: mstp_domain
+      revision: 10
+      bridge_priority: 4k
+      age: 20
+      forward_delay: 30
+      hello: 2
+      options:
+        - bpdu-block-on-edge
+      interfaces:
+        - iface: ge-0/0/0
+          disable: True
+          mode: point-to-point
+          no_root_port: True
+          edge: False
+          access_trunk: False
+        - iface: ge-0/0/1
+          disable: True
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: ge-0/0/2
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: ge-0/0/3
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: ge-0/0/4
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: ge-0/0/5
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: False
+          access_trunk: False
+        - iface: ge-0/0/6
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: False
+          access_trunk: False
+        - iface: ge-0/0/7
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: False
+          access_trunk: False
+      msti:
+        - instance: 1
+          bridge_priority: 4k
+          vlans: "[ 1-4094 ]"
+          interfaces:
+            - iface: ge-0/0/0
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/1
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/2
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/3
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/4
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/5
+              cost: 10
+              priority: 160
+            - iface: ge-0/0/6
+              cost: 10
+              priority: 160
+    # - protocol: rstp
+    #   bridge_priority: 4k
+    #   interface:
+    #     - name: ge-0/0/0
+    #       access_trunk: False
+    #       cost: 10
+    #       disable: False
+    #       edge: True
+    #       mode: point-to-point
+    #       no_root_port: True
+    #       priority: 160
+    #   options:
+    #     - bpdu-block-on-edge
+  # ospf:
+  #   area:
+  #     - area: 0.0.0.0
+  #       interface:
+  #         - iface: ge-0/0/1.0
+  #           type: p2p
+  #   export: REDISTRIBUTE-DIRECT
+  # bgp:
+  #   group:
+  #     - name: external_peers
+  #       peer_as: '65000.100'
+  #       type: external
+  #       neighbor:
+  #         - ip_address: 10.50.0.1
+  #       export: REDISTRIBUTE-DIRECT

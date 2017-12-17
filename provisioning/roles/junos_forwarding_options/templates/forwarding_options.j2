@@ -1,0 +1,30 @@
+{# FORWARDING OPTIONS #}
+{% if junos_forwarding_options is defined %}
+forwarding-options {
+{% if junos_forwarding_options.stormControlProfiles is defined %}
+{% for profile in junos_forwarding_options.stormControlProfiles %}
+    storm-control-profiles {{ profile.name }} {
+{% for each in profile.options %}
+        {{ each }};
+{% endfor %}
+    }
+{% endfor %}
+{% endif %}
+{% if junos_forwarding_options.helpers is defined %}
+  helpers {
+      bootp {
+          description "{{ junos_forwarding_options.helpers.description }}";
+{% for helper in junos_forwarding_options.helpers.servers %}
+          server {{helper}};
+{% endfor %}
+          maximum-hop-count 4;
+          interface {
+{% for interface in junos_forwarding_options.helpers.interfaces %}
+              {{ interface }};
+{% endfor %}
+          }
+      }
+  }
+{% endif %}
+}
+{% endif %}

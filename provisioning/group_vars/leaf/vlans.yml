@@ -1,4 +1,4 @@
-vlans:
+junos_vlans:
   - name: "MLAG-PEER"
     id: "4094"
     trunk_group: "MLAG-PEER"
@@ -8,4 +8,3 @@ vlans:
     id: "83"
   - name: "MGMT"
     id: "84"
-

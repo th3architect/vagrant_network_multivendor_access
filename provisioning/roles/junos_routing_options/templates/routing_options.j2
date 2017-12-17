@@ -1,0 +1,28 @@
+{# ROUTING OPTIONS #}
+{% if junos_routing_options is defined %}
+routing-options {
+{% if junos_routing_options.nonstop_routing == True %}
+    nonstop-routing;
+{% endif %}
+{% if junos_routing_options.router_id is defined %}
+    router-id {{ junos_routing_options.router_id }};
+{% endif %}
+{% if junos_routing_options.autonomous_system is defined %}
+    autonomous-system {{ junos_routing_options.autonomous_system }};
+{% endif %}
+{% if junos_routing_options.static is defined %}
+    static {
+{% for route in junos_routing_options.static %}
+        route {{ route }};
+{% endfor %}
+    }
+{% endif %}
+{% if junos_routing_options.forwardingTable is defined %}
+    forwarding-table {
+{% for policy in junos_routing_options.forwardingTable %}
+        export {{ policy }};
+{% endfor %}
+    }
+{% endif %}
+{% endif %}
+}

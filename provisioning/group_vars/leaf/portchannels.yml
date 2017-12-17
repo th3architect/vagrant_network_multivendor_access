@@ -1,4 +1,4 @@
-interface_portchannels:
+junos_interface_portchannels:
   - id: 1
     description: "TRUNK_BOND"
     trunk:
@@ -9,4 +9,3 @@ interface_portchannels:
     description: "ACCESS_BOND"
     access:
         vlan: 101
-

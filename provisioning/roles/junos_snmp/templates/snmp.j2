@@ -1,0 +1,57 @@
+{# SNMP #}
+{% if junos_snmp is defined %}
+snmp {
+{% if junos_snmp.name is defined %}
+    name {{ snmp.name }};
+{% endif %}
+{% if junos_snmp.location is defined %}
+    location {{ snmp.location }};
+{% endif %}
+{% if junos_snmp.contact is defined %}
+    contact "{{ snmp.contact }}";
+{% endif %}
+{% for community in junos_snmp.community %}
+    community "{{ community.string }}" {
+{% if community.authorization is defined %}
+        authorization {{ community.authorization }};
+{% endif %}
+{% if community.clients is defined %}
+        clients {
+{% for client in community.clients %}
+            {{ client }};
+{% endfor %}
+        }
+{% endif %}
+    }
+{% if junos_snmp.trapOptions is defined %}
+    trap-options {
+{% for option in junos_snmp.trapOptions %}
+        {{ option }};
+{% endfor %}
+    }
+{% endif %}
+{% if junos_snmp.trapGroup is defined %}
+{% for group in junos_snmp.trapGroup %}
+    trap-group {{ group.name }} {
+        version {{ group.version }};
+        destination-port {{ group.port }};
+{% if group.categories is defined %}
+        categories {
+{% for category in group.categories %}
+            {{ category }};
+{% endfor %}
+        }
+{% endif %}
+{% if group.targets is defined %}
+        targets {
+{% for target in group.targets %}
+            {{ target }};
+{% endfor %}
+        }
+{% endif %}
+    }
+{% endfor %}
+{% endif %}
+{% endfor %}
+}
+{% endif %}

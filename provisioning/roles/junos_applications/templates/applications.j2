@@ -1,0 +1,11 @@
+{# APPLICATIONS #}
+{% if junos_applications is defined %}
+applications {
+{% for each in junos_applications %}
+    application {{ each.name }} {
+        protocol {{ each.protocol }};
+        destination-port {{ each.destination_port }};
+    }
+{% endfor %}
+}
+{% endif %}

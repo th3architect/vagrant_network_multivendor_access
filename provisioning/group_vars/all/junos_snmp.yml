@@ -1,0 +1,25 @@
+junos_snmp:
+  name: "{{ inventory_hostname }}"
+  location: '"Houston, Texas"'
+  contact: Calvin Remsburg
+  community:
+    - string: 'public'
+      authorization: read-write
+      clients:
+        - 10.255.0.0/16
+        - 10.255.1.0/16
+  trapOptions:
+    - source-address "{{ ansible_host }}"
+  trapGroup:
+    - name: trap-queen
+      version: v2
+      port: 162
+      categories:
+        - chassis
+        - routing
+        - authentication
+        - link
+        - startup
+        - services
+      targets:
+        - 10.255.1.1

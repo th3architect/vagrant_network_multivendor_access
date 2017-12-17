@@ -1,4 +1,4 @@
-prefix_lists:
+junos_prefix_lists:
   - name: DEFAULT_ROUTE
     lines:
       - id: 10
@@ -23,4 +23,3 @@ prefix_lists:
       - id: 25
         action: permit
         prefix: 10.11.255.0/24
-

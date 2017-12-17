@@ -1,0 +1,13 @@
+{# CHASSIS #}
+{% if junos_chassis is defined %}
+chassis {
+    redundancy {
+        {{ junos_chassis.redundancy.type }};
+    }
+    aggregated-devices {
+        {{ junos_chassis.redundancy.aggregatedMethod }} {
+            device-count {{ junos_chassis.redundancy.aggregatedCount }};
+        }
+    }
+}
+{% endif %}

@@ -1,4 +1,4 @@
-ospf:
+junos_ospf:
   router_id: 192.168.255.{{ floor }}
   process_id: "{{ floor }}"
   networks:

@@ -1,4 +1,4 @@
-route_maps:
+junos_route_maps:
   - name: BGP_DENY_ONLY_DEFAULT_ROUTE
     lines:
       - sequence: 10
@@ -37,4 +37,3 @@ route_maps:
         action: permit
         match:
           - ip address prefix-list DISTRIBUTION
-

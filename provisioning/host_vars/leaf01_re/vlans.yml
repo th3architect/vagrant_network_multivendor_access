@@ -1,0 +1,21 @@
+junos_vlans:
+  - name: vlan_0010
+    description: vlan_0010
+    vlan_id: 10
+    layer_3_interface: irb.10
+  - name: vlan_0020
+    description: vlan_0020
+    vlan_id: 20
+    layer_3_interface: irb.20
+  - name: vlan_0030
+    description: vlan_0030
+    vlan_id: 30
+    layer_3_interface: irb.30
+  # - name: vlan_0040
+  #   description: vlan_0040
+  #   vlan_id: 40
+  #   layer_3_interface: irb.40
+  # - name: vlan_0050
+  #   description: vlan_0050
+  #   vlan_id: 50
+  #   layer_3_interface: irb.50

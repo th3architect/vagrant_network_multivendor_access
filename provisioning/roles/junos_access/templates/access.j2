@@ -1,0 +1,41 @@
+{# ACCESS #}
+{% if junos_access is defined %}
+access {
+{% if junos_access.inactive == True %}
+    inactive: address-assignment {
+{% else %}
+    address-assignment {
+{% endif %}
+        pool {{ junos_access.pool.name }} {
+            family inet {
+                network {{ junos_access.pool.network }};
+                range {{ junos_access.pool.range.name }} {
+                    low {{ junos_access.pool.range.low }};
+                    high {{ junos_access.pool.range.high }};
+                }
+                dhcp-attributes {
+                    name-server {
+{% for nameserver in junos_access.pool.nameserver %}
+                        {{ nameserver }};
+{% endfor %}
+                    }
+                    router {
+                        {{ access.pool.router }};
+                    }
+{% if junos_access.pool.domain_name is defined %}
+                    domain-name {{ junos_access.pool.domain_name }};
+{% endif %}
+                }
+{% if junos_access.pool.hosts is defined %}
+{% for host in junos_access.pool.hosts %}
+                host {{ host.name }} {
+                    hardware-address {{ host.hw }};
+                    ip-address {{ host.ip }};
+                }
+{% endfor %}
+{% endif %}
+            }
+        }
+    }
+}
+{% endif %}
