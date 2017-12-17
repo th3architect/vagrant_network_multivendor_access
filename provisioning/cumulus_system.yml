@@ -1,5 +1,5 @@
 - name: Standing up the Cumulus system
-  hosts: aggregation01
+  hosts: cumulus
   become: True
   tasks:
 

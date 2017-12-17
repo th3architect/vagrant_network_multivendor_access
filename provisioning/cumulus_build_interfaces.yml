@@ -1,5 +1,5 @@
 - name: "# ### BUILD INTERFACE CONFIGURATIONS ### #"
-  hosts: all
+  hosts: cumulus
   gather_facts: False
   connection: local
   tasks:

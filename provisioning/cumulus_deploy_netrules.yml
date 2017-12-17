@@ -1,5 +1,5 @@
 - name: "# ### DEPLOY NETRULES CONFIGURATION ### #"
-  hosts: aggregation01
+  hosts: cumulus
   become: True
   tasks:
 

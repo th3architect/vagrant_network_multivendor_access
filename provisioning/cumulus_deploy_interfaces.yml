@@ -1,5 +1,5 @@
 - name: "# ### DEPLOY INTERFACE CONFIGURATIONS ### #"
-  hosts: aggregation01
+  hosts: cumulus
   become: True
   tasks:
 

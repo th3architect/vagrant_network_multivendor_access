@@ -30,60 +30,6 @@ junos_pfe = 'vqfx_pfe_15_1X53'
 junos_re = 'vqfx_re_15_1X53'
 cumulus = 'CumulusCommunity/cumulus-vx'
 
-$script = <<-SCRIPT
-if grep -q -i 'cumulus' /etc/lsb-release &> /dev/null; then
-    echo "### RUNNING CUMULUS EXTRA CONFIG ###"
-    source /etc/lsb-release
-    if [[ $DISTRIB_RELEASE =~ ^2.* ]]; then
-        echo "  INFO: Detected a 2.5.x Based Release"
-
-        echo "  adding fake cl-acltool..."
-        echo -e "#!/bin/bash\nexit 0" > /usr/bin/cl-acltool
-        chmod 755 /usr/bin/cl-acltool
-
-        echo "  adding fake cl-license..."
-        echo -e "#!/bin/bash\nexit 0" > /usr/bin/cl-license
-        chmod 755 /usr/bin/cl-license
-
-        echo "  Disabling default remap on Cumulus VX..."
-        mv -v /etc/init.d/rename_eth_swp /etc/init.d/rename_eth_swp.backup
-
-        echo "### Rebooting to Apply Remap..."
-
-    elif [[ $DISTRIB_RELEASE =~ ^3.* ]]; then
-        echo "  INFO: Detected a 3.x Based Release"
-        echo "### Disabling default remap on Cumulus VX..."
-        mv -v /etc/hw_init.d/S10rename_eth_swp.sh /etc/S10rename_eth_swp.sh.backup &> /dev/null
-        echo "### Disabling ZTP service..."
-        systemctl stop ztp.service
-        ztp -d 2>&1
-        echo "### Resetting ZTP to work next boot..."
-        ztp -R 2>&1
-        echo "  INFO: Detected Cumulus Linux v$DISTRIB_RELEASE Release"
-        if [[ $DISTRIB_RELEASE =~ ^3.[1-9].* ]]; then
-            echo "### Fixing ONIE DHCP to avoid Vagrant Interface ###"
-            echo "     Note: Installing from ONIE will undo these changes."
-            mkdir /tmp/foo
-            mount LABEL=ONIE-BOOT /tmp/foo
-            sed -i 's/eth0/eth1/g' /tmp/foo/grub/grub.cfg
-            sed -i 's/eth0/eth1/g' /tmp/foo/onie/grub/grub-extra.cfg
-            umount /tmp/foo
-        fi
-        if [[ $DISTRIB_RELEASE =~ ^3.[2-9].* ]]; then
-            if [[ $(grep "vagrant" /etc/netd.conf | wc -l ) == 0 ]]; then
-                echo "### Giving Vagrant User Ability to Run NCLU Commands ###"
-                sed -i 's/users_with_edit = root, cumulus/users_with_edit = root, cumulus, vagrant/g' /etc/netd.conf
-                sed -i 's/users_with_show = root, cumulus/users_with_show = root, cumulus, vagrant/g' /etc/netd.conf
-            fi
-        fi
-
-    fi
-fi
-echo "### DONE ###"
-echo "### Rebooting Device to Apply Remap..."
-nohup bash -c 'sleep 10; shutdown now -r "Rebooting to Remap Interfaces"' &
-SCRIPT
-
 Vagrant.configure(2) do |config|
 
   # ######################################
@@ -109,7 +55,7 @@ Vagrant.configure(2) do |config|
   # ######################################
   config.vm.define "aggregation01" do |device|
     device.vm.hostname = "aggregation01"
-    device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box = cumulus
     device.vm.box_version = "3.4.3"
     device.vm.provider "virtualbox" do |v|
       v.name = "#{wbid}_aggregation01"
@@ -120,11 +66,11 @@ Vagrant.configure(2) do |config|
     device.vm.synced_folder ".", "/vagrant", disabled: true
     # NETWORK INTERFACES
       # link for swp1 --> spine01
-      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine01", auto_config: false , :mac => "a00000000061"
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine01", auto_config: false , :mac => "a00000000161"
       # link for swp2 --> spine02
-      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine02", auto_config: false , :mac => "443839000043"
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_spine02", auto_config: false , :mac => "443839000143"
       # link for swp3 --> tbd
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net47", auto_config: false , :mac => "44383900004c"
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_aggregation02", auto_config: false , :mac => "44383900014c"
     device.vm.provider "virtualbox" do |vbox|
       vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
@@ -133,25 +79,38 @@ Vagrant.configure(2) do |config|
     end
     # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device"  messages --> https://github.com/mitchellh/vagrant/issues/1673
     device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
-    # Run the Config specified in the Node Attributes
-    device.vm.provision "ansible" do |ansible|
-        ansible.playbook = "provisioning/cumulus_provision.yml"
-    end
   end
 
 
- # ######################################
- # ###    aggregation02 - build vm    ###
- # ######################################
- config.vm.define 'aggregation02' do |aggregation02|
-   aggregation02.vm.box = cumulus
-   aggregation02.vm.network "forwarded_port", guest: 80, host: 8101
-   aggregation02.vm.network 'private_network',
-                      virtualbox__intnet: 'aggregation02_spine01',
-                      ip: '169.254.1.11', auto_config: false
-   aggregation02.vm.network 'private_network',
-                      virtualbox__intnet: 'aggregation02_spine02',
-                      ip: '169.254.1.11', auto_config: false
+  # ######################################
+  # ###    aggregation02 - build vm    ###
+  # ######################################
+  config.vm.define "aggregation02" do |device|
+    device.vm.hostname = "aggregation02"
+    device.vm.box = cumulus
+    device.vm.box_version = "3.4.3"
+    device.vm.provider "virtualbox" do |v|
+      v.name = "#{wbid}_aggregation02"
+      v.customize ["modifyvm", :id, '--audiocontroller', 'AC97', '--audio', 'Null']
+      v.memory = 768
+    end
+    #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
+    device.vm.synced_folder ".", "/vagrant", disabled: true
+    # NETWORK INTERFACES
+      # link for swp1 --> spine01
+      device.vm.network "private_network", virtualbox__intnet: "aggregation02_spine01", auto_config: false , :mac => "443839000201"
+      # link for swp2 --> spine02
+      device.vm.network "private_network", virtualbox__intnet: "aggregation02_spine02", auto_config: false , :mac => "443839000202"
+      # link for swp3 --> tbd
+      device.vm.network "private_network", virtualbox__intnet: "aggregation01_aggregation02", auto_config: false , :mac => "443839000203"
+    device.vm.provider "virtualbox" do |vbox|
+      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
+      vbox.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    end
+    # Fixes "stdin: is not a tty" and "mesg: ttyname failed : Inappropriate ioctl for device"  messages --> https://github.com/mitchellh/vagrant/issues/1673
+    device.vm.provision :shell , inline: "(sudo grep -q 'mesg n' /root/.profile 2>/dev/null && sudo sed -i '/mesg n/d' /root/.profile  2>/dev/null) || true;", privileged: false
   end
 
   # ######################################
@@ -388,24 +347,21 @@ Vagrant.configure(2) do |config|
       leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan3"
   end
 
-  ##############################
-  ## Box provisioning        ###
-  ## exclude Windows host    ###
-  ##############################
-  # if !Vagrant::Util::Platform.windows?
-  #     config.vm.provision "ansible" do |ansible|
-  #         ansible.groups = {
-  #             "aggregation" => ["aggregation0[1:2]"],
-  #             "spine" => ["spine0[1:2]"],
-  #             "leaf_re" => ["leaf0[1:4]_re"],
-  #             "leaf_pfe" => ["leaf0[1:4]_pfe"],
-  #             "arista:children" => ["spine"],
-  #             "juniper:children" => ["leaf_re", "leaf_pfe"],
-  #             "cumulus:children" => ["aggregation"],
-  #             "all:children" => ["arista", "cumulus", "juniper"]
-  #         }
-  #         ansible.playbook = "provisioning/playbook.yml"
-  # end
-  # end
+  # ######################################
+  # ###      topology - provision      ###
+  # ######################################
+  config.vm.provision "ansible" do |ansible|
+      ansible.groups = {
+          "aggregation" => ["aggregation0[1:2]"],
+          "spine" => ["spine0[1:2]"],
+          "leaf_re" => ["leaf0[1:4]_re"],
+          "leaf_pfe" => ["leaf0[1:4]_pfe"],
+          "arista:children" => ["spine"],
+          "juniper:children" => ["leaf_re", "leaf_pfe"],
+          "cumulus:children" => ["aggregation"],
+          "all:children" => ["arista", "cumulus", "juniper"]
+      }
+      ansible.playbook = "provisioning/cumulus_provision.yml"
+  end
 
 end
