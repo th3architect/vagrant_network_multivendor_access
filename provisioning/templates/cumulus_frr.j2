@@ -4,11 +4,24 @@ username cumulus nopassword
 service integrated-vtysh-config
 log syslog informational
 line vty
-
-end
-{% for protocol in frr %}
-{% if protocol.name == "bgpd" %}
-router bgp {{ protocol.autonomous_system}}
-end
+!
+{% if bgp is defined %}
+router bgp {{ bgp.autonomous_system }}
+ bgp router-id {{ bgp.router_id }}
+{% for peer_group in bgp.peer_group %}
+{% for neighbor in peer_group.neighbor %}
+ neighbor {{ neighbor }} remote-as {{ peer_group.autonomous_system }}
+ neighbor {{ neighbor }} password {{ peer_group.password }}
+{% endfor %}
+ !
+ address-family ipv4 unicast
+{% for neighbor in peer_group.neighbor %}
+  neighbor {{ neighbor }} soft-reconfiguration inbound
+{% if peer_group.default_originate == True %}
+  neighbor {{ neighbor }} default-originate
 {% endif %}
 {% endfor %}
+ exit-address-family
+{% endfor %}
+{% endif %}
+end

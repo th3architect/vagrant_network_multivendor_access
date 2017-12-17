@@ -21,13 +21,13 @@ interfaces_physical:
   - name: Ethernet1
     speed: 10000full
     mode: l3_ipv4
-    description: "aggregation01_spine01"
-    ipv4_address: 10.101.1.1/31
+    description: "aggregation01_spine02"
+    ipv4_address: 10.102.1.1/31
   - name: Ethernet2
     speed: 10000full
     mode: l3_ipv4
-    description: "aggregation02_spine01"
-    ipv4_address: 10.201.1.1/31
+    description: "aggregation02_spine02"
+    ipv4_address: 10.202.1.1/31
   - name: Ethernet3
     speed: 10000full
     mode: l3_ipv4

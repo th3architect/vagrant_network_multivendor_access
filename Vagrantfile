@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Aggregation MLAG Topology
+# Spine-Leaf Architecture in a Multi-vendor Campus Access layer
 #
 #
 #                           +---------------+         +---------------+
@@ -142,20 +142,6 @@ Vagrant.configure(2) do |config|
     spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf03', ip: '169.254.1.11', auto_config: false
     spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf04', ip: '169.254.1.11', auto_config: false
 
-  # ######################################
-  # ###       spine02 - provision      ###
-  # ######################################
-    spine02.vm.provision 'shell', inline: <<-SHELL
-      sleep 30
-      FastCli -p 15 -c "configure
-      hostname spine02
-      username ansible privilege 15 secret ansible1
-      management api http-commands
-        protocol http
-        no shut
-      interface Management1
-        ip address 192.168.56.112/24 secondary"
-    SHELL
   end
 
   # ###########################################
