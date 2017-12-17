@@ -1,0 +1,5 @@
+temporaryDirectory: /tmp/ansible/
+build_directory: "{{ temporaryDirectory }}/{{ inventory_hostname }}/tmp"
+configuration_directory: config
+configuration_file: "{{ inventory_hostname }}.conf"
+configuration: "{{ configuration_directory }}/{{ configuration_file }}"

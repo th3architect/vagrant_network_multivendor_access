@@ -1,0 +1,56 @@
+system:
+  domain_name: calaesha.com
+  domain_search: calaesha.com
+  time_zone: America/Chicago
+  arp_aging_timer: 5
+  auth_order: 'password'
+  root_encrypted_password: '$5$AXpsXiSr$J9S.i.up6XjFsVGAIgWtp5xJmMsWHtUF.6K5cMEAi19'
+  name_server:
+    - 10.30.1.1
+    - 10.30.1.2
+    - 8.8.8.8
+#  radius_server:
+#    - ip_address: 10.30.1.1
+#      secret: '_INSERT-ENCRYPTED-RADIUS-PASS-HERE_'
+#  accounting:
+#    events: '[ change-log interactive-commands ]'
+#    destination:
+#      - type: radius
+#        server: 10.30.1.1
+#        secret: '_INSERT-ENCRYPTED-RADIUS-PASS-HERE_'
+  login:
+    message: '==================================================================\n==================================================================\n===             UNAUTHORIZED IP ADDRESS DETECTED               ===\n===               LOGGING AND HONEYPOT ENABLED                 ===\n==================================================================\n=================================================================='
+    class:
+      - name: SUPER_USER
+        idleTimeout: 0
+        permissions: all
+    user:
+      - name: ansible
+        uid: 2101
+        encryptPass: '$5$W9klZ.yt$L19UjdXNi3dRJbTUtCM99qSf2BIOcQzplAnFY6YNWkA'
+        permissions: SUPER_USER
+      - name: packetferret
+        uid: 2102
+        encryptPass: '$5$NgeUv7D2$oYMTDL1fMAfwrmQ5Avh7.I34la2rdGdgjEdpjJNjt77'
+        permissions: SUPER_USER
+        key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7FhO5xC8jUMZSqRIV4aAAnzs8xquP7SWicEz1G054Uj0aLqwNRk8Pk+RieGKp8y3OLBQywhj1uPE1c1lseUgWSjbq8EZMlx2SNABOQY7hUGArdgImP2pNQUu6hF7zSs+EjXCjqel3+G2q4MO0uELV1NKqnRfs6DU5OwcUYLDGl+wULMsbg617hw/EV9Xl0q8W3TXmJWY0YH+KIhzWj3eDrtruCTxJfbA2KeDvp5GR3WrNNTkiCVT6NNxuRCjm2lhJHW7q5iTiwxFTW9Ukp6NIFLoNQSwUivB26hRPrpqYtWTojzUG8p/2HvWKqphQhpPC34HXbn+i9vyXuJYY8/4qjIZXLe5NY0ZE7of+3gvc9UAA1qJQqNXD42ZIHL89J+q9pzilfDwA9wM9BbGQMs1x7mlr23E6+j8YEVmVZwTEsXv4jBAufc/lLt6RqeS3Erphfix7hfRC9JwLNuxlWR0PEqbU4o6l8p09AjoaMDic+9MGkqVEl+PkxGVOFuDyIQv/JEIoRiMz6F2Rv0TUr9s7GEn2NIFn1fnHHjqnrDqJMEuSbUgGkhrGJxYRmsDD+ZyBKKf0jbWOIOfqlaBLnbCgdAgDbUJb9PyLX+kNcupBud78z7KV9jUvnE4krdCrwBty7/GwjUdkFrKXtRZScbbK1UP2U0G9Oa1Nc/ml40Ufjw== linux-pc-01'
+  passwordRequirements: minimum-length 8
+  services:
+    ftp: True
+    ssh:
+      - max-sessions-per-connection 4
+    netconf: True
+    rest:
+      http:
+        port: 8080
+      options:
+        - enable-explorer
+    # dhcp:
+    #   group:
+    #     name: TRUSTED
+    #     iface: ge-0/0/2.0
+  ntp:
+    bootserver: 10.30.1.1
+    server:
+      - ipv4_address: 10.30.1.1
+      - ipv4_address: 10.30.1.2

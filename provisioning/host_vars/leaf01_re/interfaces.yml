@@ -1,0 +1,116 @@
+# DATA MODEL BUILT OFF OF JUNIPER
+interfaces:
+  physicalSingle:
+# START OF PHYSICAL INTERFACES #
+    - name: ge-0/0/0
+      description: LEGACY_NETWORK
+      subinterface:
+      - unit: 0
+        family:
+          mode: ethernet-switching
+          vlans: vlan_0050
+          type: access
+    - name: ge-0/0/1
+      description: OOB_NETWORK
+      subinterface:
+        - unit: 0
+          family:
+            mode: ethernet-switching
+            vlans: vlan_0010
+            type: access
+    - name: ge-0/0/2
+      description: USERS_NETWORK
+      subinterface:
+        - unit: 0
+          family:
+            mode: ethernet-switching
+            vlans: vlan_0020
+            type: access
+    - name: ge-0/0/3
+      description: DMZ_NETWORK
+      subinterface:
+        - unit: 0
+          family:
+            mode: ethernet-switching
+            vlans: vlan_0030
+            type: access
+    - name: ge-0/0/4
+      description: TEST_NETWORK
+      subinterface:
+      - unit: 0
+        family:
+          mode: ethernet-switching
+          vlans: vlan_0040
+          type: access
+    - name: ge-0/0/5
+      description: TRUNK_TO_RACK
+      subinterface:
+      - unit: 0
+        family:
+          mode: ethernet-switching
+          vlans: vlan_0010 vlan_0020 vlan_0030 vlan_0040 vlan_0050
+          type: trunk
+    - name: ge-0/0/6
+      description: LEGACY_NETWORK
+      subinterface:
+        - unit: 0
+          family:
+            mode: ethernet-switching
+            vlans: vlan_0050
+            type: access
+    - name: ge-0/0/7
+      description: LIVING_ROOM
+      subinterface:
+        - unit: 0
+          family:
+            mode: ethernet-switching
+            vlans: vlan_0020
+            type: access
+    - name: me0
+      description: management
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 10.40.0.2/16
+# END OF PHYSICAL INTERFACES #
+# START OF VIRTUAL INTERFACES #
+    - name: lo0
+      description: loopback0
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 172.16.20.2/32
+    - name: irb
+      subinterface:
+        - unit: 1
+          description: default
+          family:
+            mode: inet
+            inet: 10.1.0.2/16
+        - unit: 10
+          description: OOB_NETWORK
+          family:
+            mode: inet
+            inet: 10.10.0.2/16
+        - unit: 20
+          description: USERS_NETWORK
+          family:
+            mode: inet
+            inet: 10.20.0.2/16
+        - unit: 30
+          description: DMZ_NETWORK
+          family:
+            mode: inet
+            inet: 10.30.0.2/16
+        # - unit: 40
+        #   description: TEST_NETWORK
+        #   family:
+        #     mode: inet
+        #     inet: 10.40.0.2/16
+        # - unit: 50
+        #   description: TEST_NETWORK
+        #   family:
+        #     mode: inet
+        #     inet: 10.50.0.2/16
