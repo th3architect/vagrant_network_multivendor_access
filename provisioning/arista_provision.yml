@@ -1,6 +1,6 @@
 ---
   - name: '### BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
-    hosts: arista
+    hosts: spine
     connection: local
     gather_facts: false
     roles:

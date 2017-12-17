@@ -5,6 +5,10 @@
     gather_facts: no
     tasks:
       - name: remove any previous directory
-        file: path={{ build_directory }} state=absent
+        file:
+          path: "{{ build_directory }}"
+          state: absent
       - name: create new temporary directory
-        file: path={{ build_directory }} state=directory
+        file:
+          path: "{{ build_directory }}" 
+          state: directory

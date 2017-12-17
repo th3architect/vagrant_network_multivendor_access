@@ -1,5 +1,24 @@
-temp_directory: "/tmp/ansible/"
-build_directory: "{{ temp_directory }}/{{ inventory_hostname }}/tmp"
-arista_config_directory: "config"
-arista_config_file: "{{ inventory_hostname }}.conf"
-arista_config: "{{ arista_config_directory }}/{{ arista_config_file }}"
+###################################################################################
+### A PLACE TO HOLD THE DIRECTORIES IN WHICH THE CONFIGURATION WILL BE COMPILED ###
+###################################################################################
+temporary_directory: "/tmp/ansible/"
+
+#############################################################################
+### THIS IS WHERE EACH DEVICE CREATES IS OWN PATH FOR CONFIGURATION FILES ###
+#############################################################################
+build_directory: "{{ temporary_directory}}/{{ inventory_hostname }}/tmp"
+
+######################################################################################
+### PROJECT LEVEL DIRECTORY THAT STORES THE ASSEMBLED CONFIGURATION THAT IS PUSHED ###
+######################################################################################
+configuration_directory: "configuration"
+
+############################################################################################
+### FULLY ASSEMBLED CONFIGURATION FILE, COMPILED FROM BITS AND PIECES IN TMP DIRECTORIES ###
+############################################################################################
+configuration_file: "{{ inventory_hostname }}.conf"
+
+###############################################################################################
+### COMPLETE PATH OF FULLY ASSEMBLED CONFIGURATION FILE, USED BY THE FINAL PLAYBOOK TO PUSH ###
+###############################################################################################
+configuration_absolute: "{{ configuration_directory }}/{{ configuration_file }}"

@@ -2,4 +2,5 @@
   - import_playbook: build_directories.yml
   - import_playbook: cumulus_provision.yml
   - import_playbook: arista_provision.yml
+  - import_playbook: arista_apply_configuration.yml
   # - import_playbook: juniper_provision.yml

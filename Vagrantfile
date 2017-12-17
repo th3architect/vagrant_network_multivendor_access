@@ -119,6 +119,7 @@ Vagrant.configure(2) do |config|
   config.vm.define 'spine01' do |spine01|
     spine01.vm.box = arista
     spine01.vm.network "forwarded_port", guest: 80, host: 8111
+    spine01.vm.network "forwarded_port", guest: 22, host: 2201
     spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation01_spine01', ip: '169.254.1.11', auto_config: false
     spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation02_spine01', ip: '169.254.1.11', auto_config: false
     spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf01', ip: '169.254.1.11', auto_config: false
@@ -126,20 +127,6 @@ Vagrant.configure(2) do |config|
     spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf03', ip: '169.254.1.11', auto_config: false
     spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf04', ip: '169.254.1.11', auto_config: false
 
-  # ######################################
-  # ###       spine01 - provision      ###
-  # ######################################
-    spine01.vm.provision 'shell', inline: <<-SHELL
-      sleep 30
-      FastCli -p 15 -c "configure
-      hostname spine01
-      username ansible privilege 15 secret ansible1
-      management api http-commands
-        protocol http
-        no shut
-      interface Management1
-        ip address 192.168.56.111/24 secondary"
-    SHELL
   end
 
   # ######################################
@@ -148,24 +135,12 @@ Vagrant.configure(2) do |config|
   config.vm.define 'spine02' do |spine02|
     spine02.vm.box = arista
     spine02.vm.network "forwarded_port", guest: 80, host: 8112
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation01_spine02',
-                       ip: '169.254.1.11', auto_config: false
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'aggregation02_spine02',
-                       ip: '169.254.1.11', auto_config: false
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'spine02_leaf01',
-                       ip: '169.254.1.11', auto_config: false
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'spine02_leaf02',
-                       ip: '169.254.1.11', auto_config: false
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'spine02_leaf03',
-                       ip: '169.254.1.11', auto_config: false
-    spine02.vm.network 'private_network',
-                       virtualbox__intnet: 'spine02_leaf04',
-                       ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'aggregation01_spine02', ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'aggregation02_spine02', ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf01', ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf02', ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf03', ip: '169.254.1.11', auto_config: false
+    spine02.vm.network 'private_network', virtualbox__intnet: 'spine02_leaf04', ip: '169.254.1.11', auto_config: false
 
   # ######################################
   # ###       spine02 - provision      ###

@@ -12,4 +12,3 @@ aaa:
     - aaa authorization exec default group radius_aaa local none
   authorization:
     - aaa accounting exec default start-stop group radius group radius_aaa
-
