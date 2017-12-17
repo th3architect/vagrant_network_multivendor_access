@@ -1,4 +1,4 @@
-ip_routing: 
+ip_routing:
   enabled: True
   vrf:
     - MGMT
@@ -6,4 +6,4 @@ ip_routing:
 static:
   - destination: "0.0.0.0/0"
     vrf: "MGMT"
-    next_hop: "10.30.0.1"
+    next_hop: "10.0.2.2"

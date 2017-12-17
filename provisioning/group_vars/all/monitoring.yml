@@ -4,7 +4,7 @@ monitoring:
     remote:
       vrf: MGMT
       server:
-        - 10.30.255.2
+        - 10.255.1.2
     traps:
       level: 6
   snmp:
@@ -18,7 +18,7 @@ monitoring:
           - system
     manager:
       hosts:
-        - server: 10.30.255.2
+        - server: 10.255.1.2
           vrf: MGMT
           version: 3
           auth: observium
@@ -38,4 +38,3 @@ monitoring:
         version: v3
         auth_method: sha
         auth_password: "@r!$T@l@b!"
-
