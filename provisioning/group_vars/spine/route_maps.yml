@@ -37,4 +37,3 @@ route_maps:
         action: permit
         match:
           - ip address prefix-list DISTRIBUTION
-

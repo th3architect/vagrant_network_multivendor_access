@@ -1,11 +1,22 @@
 vlans:
   - name: "MLAG-PEER"
-    id: "4094"
+    id: 4094
     trunk_group: "MLAG-PEER"
-  - name: "FLOOR_11_DATA"
-    id: "11"
-  - name: "HOSTS"
-    id: "83"
-  - name: "MGMT"
-    id: "84"
-
+  - name: LEAF01
+    id: 11
+  - name: LEAF02
+    id: 12
+  - name: LEAF03
+    id: 13
+  - name: LEAF04
+    id: 14
+  - name: LEAF05
+    id: 15
+  - name: LEAF06
+    id: 16
+  - name: LEAF07
+    id: 17
+  - name: LEAF08
+    id: 18
+  - name: LEAF09
+    id: 19
