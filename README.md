@@ -2,7 +2,7 @@
 Vagrantfile for setting up an Arista, Juniper, and Cumulus Linux campus network
 
 ```
- Aggregation MLAG Topology
+ Spine-Leaf Architecture at the Campus Access level with a multi-vendor strategy
 
 
                                   +---------------+         +---------------+
