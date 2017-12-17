@@ -1,5 +1,0 @@
-# security:
-#   certificates:
-#     local:
-#       - cert_name: RESTAPI
-#         payload: '-----BEGIN PRIVATE KEY-----\\n-----END CERTIFICATE-----\n'

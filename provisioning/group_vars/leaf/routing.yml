@@ -1,9 +1,0 @@
-junos_ip_routing:
-  enabled: True
-  vrf:
-    - MGMT
-
-junos_static:
-  - destination: "0.0.0.0/0"
-    vrf: "MGMT"
-    next_hop: "10.30.0.1"

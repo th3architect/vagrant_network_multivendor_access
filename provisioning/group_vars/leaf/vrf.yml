@@ -1,3 +1,0 @@
-junos_vrfs:
-  - name: MGMT
-    route_distinguisher: "1:1"

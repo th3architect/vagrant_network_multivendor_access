@@ -1,5 +1,0 @@
----
-- name: building vlans configuration
-  template: >
-    src=vlans.j2
-    dest={{ build_directory }}/11vlans.conf.part
