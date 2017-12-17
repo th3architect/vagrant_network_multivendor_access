@@ -342,10 +342,11 @@ Vagrant.configure(2) do |config|
       ansible.groups = {
           "aggregation" => ["aggregation0[1:2]"],
           "spine" => ["spine0[1:2]"],
+          "leaf" => ["leaf0[1:2]"],
           "leaf_re" => ["leaf0[1:4]_re"],
           "leaf_pfe" => ["leaf0[1:4]_pfe"],
           "arista:children" => ["spine"],
-          "juniper:children" => ["leaf_re", "leaf_pfe"],
+          "juniper:children" => ["leaf", "leaf_re", "leaf_pfe"],
           "cumulus:children" => ["aggregation"],
           "all:children" => ["arista", "cumulus", "juniper"]
       }
