@@ -85,6 +85,8 @@ protocols:
         interface:
           - iface: xe-0/0/1.0
             type: p2p
+          - iface: xe-0/0/2.0
+            type: p2p
     export: REDISTRIBUTE-DIRECT
   # bgp:
   #   group:

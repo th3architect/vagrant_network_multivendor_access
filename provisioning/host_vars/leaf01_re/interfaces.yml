@@ -85,24 +85,24 @@ interfaces:
           description: USERS_NETWORK
           family:
             mode: inet
-            inet: 10.10.0.2/16
+            inet: 10.0.101.1/24
         - unit: 20
           description: VOICE_NETWORK
           family:
             mode: inet
-            inet: 10.20.0.2/16
+            inet: 10.0.102.1/24
         - unit: 30
           description: DMZ_NETWORK
           family:
             mode: inet
-            inet: 10.30.0.2/16
+            inet: 10.0.103.1/24
         - unit: 40
           description: TEST_NETWORK
           family:
             mode: inet
-            inet: 10.40.0.2/16
+            inet: 10.0.104.1/24
         - unit: 50
-          description: TEST_NETWORK
+          description: LEGACY_NETWORK
           family:
             mode: inet
-            inet: 10.50.0.2/16
+            inet: 10.0.105.1/24

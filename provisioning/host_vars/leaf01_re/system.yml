@@ -9,10 +9,10 @@ syslog:
       facility: any
       severity: any
       source_address: 10.255.0.2
-    - ipv4_address: 10.30.2.2
+    - ipv4_address: 10.255.2.2
       facility: any
       severity: error
-      source_address: 10.30.0.2
+      source_address: 10.255.0.2
   file:
     - file_name: messages
       facility: any
