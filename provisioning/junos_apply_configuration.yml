@@ -1,18 +1,14 @@
 ---
-- name: "### JUNOS - APPLY CONFIGURATION ###"
-  hosts: leaf
-  connection: local
-  gather_facts: no
-  tasks:
-    - name: "# JUNOS - APPLY CONFIGURATION #"
-      junos_config:
-        src: "{{ configuration_absolute }}"
-        src_format: text
-        comment: "applied by ansible"
-        provider:
-          username: ansible
-          password: ansible1
-          # ssh_keyfile: vagrant_key
-          host: "{{ inventory_hostname }}"
-        update: replace
-      register: result
+  - name: "### JUNOS - APPLY CONFIGURATION ###"
+    hosts: leaf
+    gather_facts: False
+    connection: local
+    tasks:
+      - name: "# JUNOS - APPLY CONFIGURATION #"
+        junos_command:
+          provider:
+            host: "{{ ansible_ssh_host }}"
+            port: 8830
+            username: root
+            password: Juniper
+          commands: show version

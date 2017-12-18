@@ -1,0 +1,1071 @@
+2017-12-18 10:13:22,368 p=25318 u=packetferret |   25318 1513613602.36770: starting run
+2017-12-18 10:13:22,467 p=25318 u=packetferret |   25318 1513613602.46725: Added group all to inventory
+2017-12-18 10:13:22,467 p=25318 u=packetferret |   25318 1513613602.46752: Added group ungrouped to inventory
+2017-12-18 10:13:22,467 p=25318 u=packetferret |   25318 1513613602.46768: Group all now contains ungrouped
+2017-12-18 10:13:22,468 p=25318 u=packetferret |   25318 1513613602.46842: Loading CacheModule 'memory' from /usr/lib/python2.7/site-packages/ansible/plugins/cache/memory.py
+2017-12-18 10:13:22,469 p=25318 u=packetferret |   25318 1513613602.46964: Loading InventoryModule 'host_list' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/host_list.py
+2017-12-18 10:13:22,469 p=25318 u=packetferret |   25318 1513613602.46990: Loading InventoryModule 'script' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/script.py
+2017-12-18 10:13:22,470 p=25318 u=packetferret |   25318 1513613602.47017: Loading InventoryModule 'yaml' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/yaml.py
+2017-12-18 10:13:22,470 p=25318 u=packetferret |   25318 1513613602.47051: Loading InventoryModule 'ini' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/ini.py
+2017-12-18 10:13:22,470 p=25318 u=packetferret |   25318 1513613602.47067: Examining possible inventory source: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+2017-12-18 10:13:22,470 p=25318 u=packetferret |   25318 1513613602.47080: Attempting to use plugin host_list (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/host_list.py)
+2017-12-18 10:13:22,471 p=25318 u=packetferret |   25318 1513613602.47096: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory did not meet host_list requirements
+2017-12-18 10:13:22,471 p=25318 u=packetferret |   25318 1513613602.47108: Attempting to use plugin script (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/script.py)
+2017-12-18 10:13:22,471 p=25318 u=packetferret |   25318 1513613602.47122: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory did not meet script requirements
+2017-12-18 10:13:22,471 p=25318 u=packetferret |   25318 1513613602.47133: Attempting to use plugin yaml (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/yaml.py)
+2017-12-18 10:13:22,472 p=25318 u=packetferret |   25318 1513613602.47216: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+2017-12-18 10:13:22,472 p=25318 u=packetferret |   25318 1513613602.47273: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory was not parsable by yaml
+2017-12-18 10:13:22,472 p=25318 u=packetferret |   25318 1513613602.47286: Attempting to use plugin ini (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/ini.py)
+2017-12-18 10:13:22,474 p=25318 u=packetferret |   25318 1513613602.47485: set inventory_file for aggregation02
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47501: set inventory_dir for aggregation02
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47513: Added host aggregation02 to inventory
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47527: Added host aggregation02 to group ungrouped
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47537: set ansible_port for aggregation02
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47547: set ansible_ssh_private_key_file for aggregation02
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47557: set ansible_host for aggregation02
+2017-12-18 10:13:22,475 p=25318 u=packetferret |   25318 1513613602.47566: set ansible_user for aggregation02
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47612: set inventory_file for aggregation01
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47628: set inventory_dir for aggregation01
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47639: Added host aggregation01 to inventory
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47650: Added host aggregation01 to group ungrouped
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47661: set ansible_port for aggregation01
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47670: set ansible_ssh_private_key_file for aggregation01
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47681: set ansible_host for aggregation01
+2017-12-18 10:13:22,476 p=25318 u=packetferret |   25318 1513613602.47690: set ansible_user for aggregation01
+2017-12-18 10:13:22,477 p=25318 u=packetferret |   25318 1513613602.47739: set inventory_file for spine02
+2017-12-18 10:13:22,477 p=25318 u=packetferret |   25318 1513613602.47756: set inventory_dir for spine02
+2017-12-18 10:13:22,477 p=25318 u=packetferret |   25318 1513613602.47769: Added host spine02 to inventory
+2017-12-18 10:13:22,477 p=25318 u=packetferret |   25318 1513613602.47784: Added host spine02 to group ungrouped
+2017-12-18 10:13:22,478 p=25318 u=packetferret |   25318 1513613602.47798: set ansible_port for spine02
+2017-12-18 10:13:22,478 p=25318 u=packetferret |   25318 1513613602.47811: set ansible_ssh_private_key_file for spine02
+2017-12-18 10:13:22,478 p=25318 u=packetferret |   25318 1513613602.47824: set ansible_host for spine02
+2017-12-18 10:13:22,478 p=25318 u=packetferret |   25318 1513613602.47837: set ansible_user for spine02
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47898: set inventory_file for leaf01_pfe
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47919: set inventory_dir for leaf01_pfe
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47932: Added host leaf01_pfe to inventory
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47947: Added host leaf01_pfe to group ungrouped
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47959: set ansible_port for leaf01_pfe
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47972: set ansible_ssh_private_key_file for leaf01_pfe
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47981: set ansible_host for leaf01_pfe
+2017-12-18 10:13:22,479 p=25318 u=packetferret |   25318 1513613602.47991: set ansible_user for leaf01_pfe
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48030: set inventory_file for leaf01_re
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48046: set inventory_dir for leaf01_re
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48056: Added host leaf01_re to inventory
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48067: Added host leaf01_re to group ungrouped
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48077: set ansible_port for leaf01_re
+2017-12-18 10:13:22,480 p=25318 u=packetferret |   25318 1513613602.48087: set ansible_ssh_private_key_file for leaf01_re
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48097: set ansible_host for leaf01_re
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48108: set ansible_user for leaf01_re
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48150: set inventory_file for spine01
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48165: set inventory_dir for spine01
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48175: Added host spine01 to inventory
+2017-12-18 10:13:22,481 p=25318 u=packetferret |   25318 1513613602.48186: Added host spine01 to group ungrouped
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48197: set ansible_port for spine01
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48207: set ansible_ssh_private_key_file for spine01
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48217: set ansible_host for spine01
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48226: set ansible_user for spine01
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48236: Added group aggregation to inventory
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48256: Added host aggregation01 to group aggregation
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48267: Added host aggregation02 to group aggregation
+2017-12-18 10:13:22,482 p=25318 u=packetferret |   25318 1513613602.48278: Added group spine to inventory
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48297: Added host spine01 to group spine
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48308: Added host spine02 to group spine
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48318: Added group leaf to inventory
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48337: Added host leaf01_re to group leaf
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48348: set inventory_file for leaf02_re
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48361: set inventory_dir for leaf02_re
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48371: Added host leaf02_re to inventory
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48381: Added host leaf02_re to group leaf
+2017-12-18 10:13:22,483 p=25318 u=packetferret |   25318 1513613602.48391: set inventory_file for leaf03_re
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48405: set inventory_dir for leaf03_re
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48414: Added host leaf03_re to inventory
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48424: Added host leaf03_re to group leaf
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48434: set inventory_file for leaf04_re
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48447: set inventory_dir for leaf04_re
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48455: Added host leaf04_re to inventory
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48463: Added host leaf04_re to group leaf
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48474: Added group arista to inventory
+2017-12-18 10:13:22,484 p=25318 u=packetferret |   25318 1513613602.48489: Group arista now contains spine
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48503: Added group juniper to inventory
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48517: Group juniper now contains leaf
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48526: Added group cumulus to inventory
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48538: Group cumulus now contains aggregation
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48551: Group all now contains arista
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48562: Group all now contains cumulus
+2017-12-18 10:13:22,485 p=25318 u=packetferret |   25318 1513613602.48580: Group all now contains juniper
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48594: Reconcile groups and hosts in inventory.
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48611: Group all now contains leaf02_re
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48624: Group all now contains leaf04_re
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48634: Group all now contains spine02
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48644: Group all now contains leaf01_pfe
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48655: Group all now contains spine01
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48665: Group all now contains aggregation02
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48677: Group all now contains aggregation01
+2017-12-18 10:13:22,486 p=25318 u=packetferret |   25318 1513613602.48687: Group all now contains leaf03_re
+2017-12-18 10:13:22,487 p=25318 u=packetferret |   25318 1513613602.48698: Group all now contains leaf01_re
+2017-12-18 10:13:22,487 p=25318 u=packetferret |   25318 1513613602.48718: Loading CacheModule 'memory' from /usr/lib/python2.7/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,498 p=25318 u=packetferret |   25318 1513613602.49832: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.yml
+2017-12-18 10:13:22,585 p=25318 u=packetferret |   25318 1513613602.58513: Loading CallbackModule 'default' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/default.py
+2017-12-18 10:13:22,589 p=25318 u=packetferret |   25318 1513613602.58987: assigned :doc
+2017-12-18 10:13:22,590 p=25318 u=packetferret |   25318 1513613602.59091: Loading CallbackModule 'actionable' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/actionable.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,591 p=25318 u=packetferret |   25318 1513613602.59167: assigned :doc
+2017-12-18 10:13:22,592 p=25318 u=packetferret |   25318 1513613602.59208: Loading CallbackModule 'context_demo' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/context_demo.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,593 p=25318 u=packetferret |   25318 1513613602.59304: assigned :doc
+2017-12-18 10:13:22,593 p=25318 u=packetferret |   25318 1513613602.59348: Loading CallbackModule 'debug' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/debug.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,594 p=25318 u=packetferret |   25318 1513613602.59441: assigned :doc
+2017-12-18 10:13:22,594 p=25318 u=packetferret |   25318 1513613602.59467: Loading CallbackModule 'default' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/default.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,599 p=25318 u=packetferret |   25318 1513613602.59900: assigned :doc
+2017-12-18 10:13:22,600 p=25318 u=packetferret |   25318 1513613602.59994: Loading CallbackModule 'dense' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/dense.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,603 p=25318 u=packetferret |   25318 1513613602.60331: assigned :doc
+2017-12-18 10:13:22,634 p=25318 u=packetferret |   25318 1513613602.63408: Loading CallbackModule 'foreman' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/foreman.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,636 p=25318 u=packetferret |   25318 1513613602.63676: assigned :doc
+2017-12-18 10:13:22,637 p=25318 u=packetferret |   25318 1513613602.63711: Loaded config def from plugin (callback/foreman)
+2017-12-18 10:13:22,637 p=25318 u=packetferret |   25318 1513613602.63753: Loading CallbackModule 'full_skip' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/full_skip.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,638 p=25318 u=packetferret |   25318 1513613602.63854: assigned :doc
+2017-12-18 10:13:22,639 p=25318 u=packetferret |   25318 1513613602.63950: Loading CallbackModule 'hipchat' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/hipchat.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,641 p=25318 u=packetferret |   25318 1513613602.64122: assigned :doc
+2017-12-18 10:13:22,641 p=25318 u=packetferret |   25318 1513613602.64142: Loaded config def from plugin (callback/hipchat)
+2017-12-18 10:13:22,641 p=25318 u=packetferret |   25318 1513613602.64176: Loading CallbackModule 'jabber' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/jabber.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,643 p=25318 u=packetferret |   25318 1513613602.64365: assigned :doc
+2017-12-18 10:13:22,643 p=25318 u=packetferret |   25318 1513613602.64387: Loaded config def from plugin (callback/jabber)
+2017-12-18 10:13:22,644 p=25318 u=packetferret |   25318 1513613602.64415: Loading CallbackModule 'json' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/json.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,644 p=25318 u=packetferret |   25318 1513613602.64481: assigned :doc
+2017-12-18 10:13:22,645 p=25318 u=packetferret |   25318 1513613602.64528: Loading CallbackModule 'junit' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/junit.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,647 p=25318 u=packetferret |   25318 1513613602.64760: assigned :doc
+2017-12-18 10:13:22,647 p=25318 u=packetferret |   25318 1513613602.64787: Loaded config def from plugin (callback/junit)
+2017-12-18 10:13:22,648 p=25318 u=packetferret |   25318 1513613602.64815: Loading CallbackModule 'log_plays' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/log_plays.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,648 p=25318 u=packetferret |   25318 1513613602.64889: assigned :doc
+2017-12-18 10:13:22,649 p=25318 u=packetferret |   25318 1513613602.64959: Loading CallbackModule 'logentries' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/logentries.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,655 p=25318 u=packetferret |   25318 1513613602.65562: assigned :doc
+2017-12-18 10:13:22,655 p=25318 u=packetferret |   25318 1513613602.65588: assigned :plainexamples
+2017-12-18 10:13:22,656 p=25318 u=packetferret |   25318 1513613602.65630: Loaded config def from plugin (callback/logentries)
+2017-12-18 10:13:22,656 p=25318 u=packetferret |   25318 1513613602.65683: Loading CallbackModule 'logstash' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/logstash.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,658 p=25318 u=packetferret |   25318 1513613602.65860: assigned :doc
+2017-12-18 10:13:22,658 p=25318 u=packetferret |   25318 1513613602.65890: Loaded config def from plugin (callback/logstash)
+2017-12-18 10:13:22,659 p=25318 u=packetferret |   25318 1513613602.65967: Loading CallbackModule 'mail' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/mail.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,661 p=25318 u=packetferret |   25318 1513613602.66106: assigned :doc
+2017-12-18 10:13:22,661 p=25318 u=packetferret |   25318 1513613602.66127: Loaded config def from plugin (callback/mail)
+2017-12-18 10:13:22,661 p=25318 u=packetferret |   25318 1513613602.66155: Loading CallbackModule 'minimal' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/minimal.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,662 p=25318 u=packetferret |   25318 1513613602.66263: assigned :doc
+2017-12-18 10:13:22,663 p=25318 u=packetferret |   25318 1513613602.66296: Loading CallbackModule 'oneline' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/oneline.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,663 p=25318 u=packetferret |   25318 1513613602.66382: assigned :doc
+2017-12-18 10:13:22,664 p=25318 u=packetferret |   25318 1513613602.66415: Loading CallbackModule 'osx_say' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/osx_say.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,664 p=25318 u=packetferret |   25318 1513613602.66488: assigned :doc
+2017-12-18 10:13:22,665 p=25318 u=packetferret |   25318 1513613602.66521: Loading CallbackModule 'profile_roles' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/profile_roles.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,666 p=25318 u=packetferret |   25318 1513613602.66618: assigned :doc
+2017-12-18 10:13:22,666 p=25318 u=packetferret |   25318 1513613602.66653: Loading CallbackModule 'profile_tasks' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/profile_tasks.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,668 p=25318 u=packetferret |   25318 1513613602.66824: assigned :doc
+2017-12-18 10:13:22,668 p=25318 u=packetferret |   25318 1513613602.66843: assigned :plainexamples
+2017-12-18 10:13:22,668 p=25318 u=packetferret |   25318 1513613602.66864: Loaded config def from plugin (callback/profile_tasks)
+2017-12-18 10:13:22,669 p=25318 u=packetferret |   25318 1513613602.66897: Loading CallbackModule 'selective' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/selective.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,671 p=25318 u=packetferret |   25318 1513613602.67133: assigned :doc
+2017-12-18 10:13:22,671 p=25318 u=packetferret |   25318 1513613602.67146: assigned :plainexamples
+2017-12-18 10:13:22,671 p=25318 u=packetferret |   25318 1513613602.67171: Loaded config def from plugin (callback/selective)
+2017-12-18 10:13:22,672 p=25318 u=packetferret |   25318 1513613602.67198: Loading CallbackModule 'skippy' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/skippy.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,672 p=25318 u=packetferret |   25318 1513613602.67242: assigned :doc
+2017-12-18 10:13:22,672 p=25318 u=packetferret |   25318 1513613602.67281: Loading CallbackModule 'slack' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/slack.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,674 p=25318 u=packetferret |   25318 1513613602.67462: assigned :doc
+2017-12-18 10:13:22,674 p=25318 u=packetferret |   25318 1513613602.67491: Loaded config def from plugin (callback/slack)
+2017-12-18 10:13:22,675 p=25318 u=packetferret |   25318 1513613602.67533: Loading CallbackModule 'stderr' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/stderr.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,676 p=25318 u=packetferret |   25318 1513613602.67650: assigned :doc
+2017-12-18 10:13:22,677 p=25318 u=packetferret |   25318 1513613602.67739: Loading CallbackModule 'syslog_json' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/syslog_json.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,679 p=25318 u=packetferret |   25318 1513613602.67909: assigned :doc
+2017-12-18 10:13:22,679 p=25318 u=packetferret |   25318 1513613602.67932: Loaded config def from plugin (callback/syslog_json)
+2017-12-18 10:13:22,679 p=25318 u=packetferret |   25318 1513613602.67960: Loading CallbackModule 'timer' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/timer.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,680 p=25318 u=packetferret |   25318 1513613602.68013: assigned :doc
+2017-12-18 10:13:22,680 p=25318 u=packetferret |   25318 1513613602.68043: Loading CallbackModule 'tree' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/tree.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:22,681 p=25318 u=packetferret |   25318 1513613602.68109: assigned :doc
+2017-12-18 10:13:22,681 p=25318 u=packetferret |   25318 1513613602.68132: in VariableManager get_vars()
+2017-12-18 10:13:22,692 p=25318 u=packetferret |   25318 1513613602.69268: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py
+2017-12-18 10:13:22,693 p=25318 u=packetferret |   25318 1513613602.69345: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py
+2017-12-18 10:13:22,695 p=25318 u=packetferret |   25318 1513613602.69550: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py
+2017-12-18 10:13:22,695 p=25318 u=packetferret |   25318 1513613602.69591: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py
+2017-12-18 10:13:22,696 p=25318 u=packetferret |   25318 1513613602.69659: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py
+2017-12-18 10:13:22,696 p=25318 u=packetferret |   25318 1513613602.69689: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py
+2017-12-18 10:13:22,698 p=25318 u=packetferret |   25318 1513613602.69798: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py
+2017-12-18 10:13:22,698 p=25318 u=packetferret |   25318 1513613602.69831: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py
+2017-12-18 10:13:22,698 p=25318 u=packetferret |   25318 1513613602.69859: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py
+2017-12-18 10:13:22,702 p=25318 u=packetferret |   25318 1513613602.70235: done with get_vars()
+2017-12-18 10:13:22,702 p=25318 u=packetferret |   25318 1513613602.70289: in VariableManager get_vars()
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70327: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70342: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70356: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70368: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70379: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,703 p=25318 u=packetferret |   25318 1513613602.70389: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,704 p=25318 u=packetferret |   25318 1513613602.70417: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,704 p=25318 u=packetferret |   25318 1513613602.70430: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,704 p=25318 u=packetferret |   25318 1513613602.70443: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,705 p=25318 u=packetferret |   25318 1513613602.70521: done with get_vars()
+2017-12-18 10:13:22,705 p=25318 u=packetferret |  PLAY [### JUNOS - CREATE USER ###] ************************************************************************************************************************************************************
+2017-12-18 10:13:22,723 p=25318 u=packetferret |   25318 1513613602.72346: Loading StrategyModule 'linear' from /usr/lib/python2.7/site-packages/ansible/plugins/strategy/linear.py
+2017-12-18 10:13:22,723 p=25318 u=packetferret |   25318 1513613602.72386: getting the remaining hosts for this loop
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72402: done getting the remaining hosts for this loop
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72416: building list of next tasks for hosts
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72430: getting the next task for host leaf01_re
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72444: done getting next task for host leaf01_re
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72455:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72467:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72478: getting the next task for host leaf02_re
+2017-12-18 10:13:22,724 p=25318 u=packetferret |   25318 1513613602.72490: done getting next task for host leaf02_re
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72501:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72511:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72522: getting the next task for host leaf03_re
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72533: done getting next task for host leaf03_re
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72546:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72558:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72572: getting the next task for host leaf04_re
+2017-12-18 10:13:22,725 p=25318 u=packetferret |   25318 1513613602.72585: done getting next task for host leaf04_re
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72598:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72609:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72621: done building task lists
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72632: counting tasks in each state of execution
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72644: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 4
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72656: advancing hosts in ITERATING_TASKS
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72667: starting to advance hosts
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72678: getting the next task for host leaf01_re
+2017-12-18 10:13:22,726 p=25318 u=packetferret |   25318 1513613602.72690: done getting next task for host leaf01_re
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72703:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72714:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72726: getting the next task for host leaf02_re
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72739: done getting next task for host leaf02_re
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72751:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72762:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72774: getting the next task for host leaf03_re
+2017-12-18 10:13:22,727 p=25318 u=packetferret |   25318 1513613602.72788: done getting next task for host leaf03_re
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72801:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72813:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72826: getting the next task for host leaf04_re
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72839: done getting next task for host leaf04_re
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72852:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72864:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,728 p=25318 u=packetferret |   25318 1513613602.72876: done advancing hosts to next task
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72898: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72912: results queue empty
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72923: checking for any_errors_fatal
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72934: done checking for any_errors_fatal
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72943: checking for max_fail_percentage
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72954: done checking for max_fail_percentage
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72963: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72972: done checking to see if all hosts have failed
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72981: getting the remaining hosts for this loop
+2017-12-18 10:13:22,729 p=25318 u=packetferret |   25318 1513613602.72993: done getting the remaining hosts for this loop
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73007: building list of next tasks for hosts
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73016: getting the next task for host leaf01_re
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73029: done getting next task for host leaf01_re
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73040:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73050:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73060: getting the next task for host leaf02_re
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73071: done getting next task for host leaf02_re
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73081:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,730 p=25318 u=packetferret |   25318 1513613602.73090:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73101: getting the next task for host leaf03_re
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73112: done getting next task for host leaf03_re
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73122:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73130:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73140: getting the next task for host leaf04_re
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73152: done getting next task for host leaf04_re
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73162:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73171:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73181: done building task lists
+2017-12-18 10:13:22,731 p=25318 u=packetferret |   25318 1513613602.73189: counting tasks in each state of execution
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73199: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 4
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73209: advancing hosts in ITERATING_TASKS
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73218: starting to advance hosts
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73226: getting the next task for host leaf01_re
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73237: done getting next task for host leaf01_re
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73248:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73260:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73269: getting the next task for host leaf02_re
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73279: done getting next task for host leaf02_re
+2017-12-18 10:13:22,732 p=25318 u=packetferret |   25318 1513613602.73288:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73298:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73307: getting the next task for host leaf03_re
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73318: done getting next task for host leaf03_re
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73327:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73336:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73347: getting the next task for host leaf04_re
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73359: done getting next task for host leaf04_re
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73370:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73378:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,733 p=25318 u=packetferret |   25318 1513613602.73387: done advancing hosts to next task
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73401: getting variables
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73411: in VariableManager get_vars()
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73455: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73468: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73477: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,734 p=25318 u=packetferret |   25318 1513613602.73487: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,735 p=25318 u=packetferret |   25318 1513613602.73499: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,735 p=25318 u=packetferret |   25318 1513613602.73510: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,735 p=25318 u=packetferret |   25318 1513613602.73539: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,735 p=25318 u=packetferret |   25318 1513613602.73553: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,735 p=25318 u=packetferret |   25318 1513613602.73563: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,736 p=25318 u=packetferret |   25318 1513613602.73635: Calling all_inventory to load vars for leaf01_re
+2017-12-18 10:13:22,736 p=25318 u=packetferret |   25318 1513613602.73649: Calling groups_inventory to load vars for leaf01_re
+2017-12-18 10:13:22,736 p=25318 u=packetferret |   25318 1513613602.73664: Calling all_plugins_inventory to load vars for leaf01_re
+2017-12-18 10:13:22,737 p=25318 u=packetferret |   25318 1513613602.73731: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py
+2017-12-18 10:13:22,737 p=25318 u=packetferret |   25318 1513613602.73758: Calling all_plugins_play to load vars for leaf01_re
+2017-12-18 10:13:22,737 p=25318 u=packetferret |   25318 1513613602.73779: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,738 p=25318 u=packetferret |   25318 1513613602.73804: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:13:22,738 p=25318 u=packetferret |   25318 1513613602.73833: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/aaa.yml
+2017-12-18 10:13:22,739 p=25318 u=packetferret |   25318 1513613602.73896: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/banner.yml
+2017-12-18 10:13:22,739 p=25318 u=packetferret |   25318 1513613602.73947: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/directories.yml
+2017-12-18 10:13:22,740 p=25318 u=packetferret |   25318 1513613602.74011: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/management.yml
+2017-12-18 10:13:22,741 p=25318 u=packetferret |   25318 1513613602.74112: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/monitoring.yml
+2017-12-18 10:13:22,742 p=25318 u=packetferret |   25318 1513613602.74245: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/snmp.yml
+2017-12-18 10:13:22,743 p=25318 u=packetferret |   25318 1513613602.74336: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/stp.yml
+2017-12-18 10:13:22,743 p=25318 u=packetferret |   25318 1513613602.74386: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system.yml
+2017-12-18 10:13:22,745 p=25318 u=packetferret |   25318 1513613602.74495: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system1.yml
+2017-12-18 10:13:22,746 p=25318 u=packetferret |   25318 1513613602.74616: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/vagrant_key.yml
+2017-12-18 10:13:22,746 p=25318 u=packetferret |   25318 1513613602.74645: Calling groups_plugins_inventory to load vars for leaf01_re
+2017-12-18 10:13:22,746 p=25318 u=packetferret |   25318 1513613602.74668: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,747 p=25318 u=packetferret |   25318 1513613602.74720: Calling groups_plugins_play to load vars for leaf01_re
+2017-12-18 10:13:22,747 p=25318 u=packetferret |   25318 1513613602.74750: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,747 p=25318 u=packetferret |   25318 1513613602.74779: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:13:22,748 p=25318 u=packetferret |   25318 1513613602.74809: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:13:22,748 p=25318 u=packetferret |   25318 1513613602.74834: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/leaf/system.yml
+2017-12-18 10:13:22,749 p=25318 u=packetferret |   25318 1513613602.74903: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,749 p=25318 u=packetferret |   25318 1513613602.74952: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,749 p=25318 u=packetferret |   25318 1513613602.74982: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars
+2017-12-18 10:13:22,750 p=25318 u=packetferret |   25318 1513613602.75016: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/interfaces.yml
+2017-12-18 10:13:22,753 p=25318 u=packetferret |   25318 1513613602.75342: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/protocols.yml
+2017-12-18 10:13:22,755 p=25318 u=packetferret |   25318 1513613602.75553: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/routing_options.yml
+2017-12-18 10:13:22,756 p=25318 u=packetferret |   25318 1513613602.75613: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/security.yml
+2017-12-18 10:13:22,756 p=25318 u=packetferret |   25318 1513613602.75684: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/system.yml
+2017-12-18 10:13:22,758 p=25318 u=packetferret |   25318 1513613602.75803: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/vlans.yml
+2017-12-18 10:13:22,759 p=25318 u=packetferret |   25318 1513613602.75922: done with get_vars()
+2017-12-18 10:13:22,759 p=25318 u=packetferret |   25318 1513613602.75947: done getting variables
+2017-12-18 10:13:22,759 p=25318 u=packetferret |   25318 1513613602.75965: sending task start callback, copying the task so we can template it temporarily
+2017-12-18 10:13:22,759 p=25318 u=packetferret |   25318 1513613602.75979: done copying, going to template now
+2017-12-18 10:13:22,760 p=25318 u=packetferret |   25318 1513613602.75994: done templating
+2017-12-18 10:13:22,760 p=25318 u=packetferret |   25318 1513613602.76008: here goes the callback...
+2017-12-18 10:13:22,760 p=25318 u=packetferret |  TASK [# JUNOS - CREATE USER #] ****************************************************************************************************************************************************************
+2017-12-18 10:13:22,760 p=25318 u=packetferret |   25318 1513613602.76038: sending task start callback
+2017-12-18 10:13:22,760 p=25318 u=packetferret |   25318 1513613602.76052: entering _queue_task() for leaf01_re/junos_user
+2017-12-18 10:13:22,760 p=25318 u=packetferret |   25318 1513613602.76066: Creating lock for junos_user
+2017-12-18 10:13:22,762 p=25318 u=packetferret |   25318 1513613602.76227: worker is 1 (out of 4 available)
+2017-12-18 10:13:22,762 p=25318 u=packetferret |   25318 1513613602.76276: exiting _queue_task() for leaf01_re/junos_user
+2017-12-18 10:13:22,763 p=25318 u=packetferret |   25318 1513613602.76313: getting variables
+2017-12-18 10:13:22,763 p=25318 u=packetferret |   25318 1513613602.76334: in VariableManager get_vars()
+2017-12-18 10:13:22,764 p=25318 u=packetferret |   25318 1513613602.76431: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,764 p=25318 u=packetferret |   25318 1513613602.76447: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,764 p=25318 u=packetferret |   25318 1513613602.76461: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,764 p=25318 u=packetferret |   25318 1513613602.76474: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,764 p=25318 u=packetferret |   25318 1513613602.76487: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25318 1513613602.76501: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25334 1513613602.76514: running TaskExecutor() for leaf01_re/TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25318 1513613602.76537: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25318 1513613602.76549: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25318 1513613602.76560: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,765 p=25318 u=packetferret |   25334 1513613602.76572: in run() - task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,766 p=25318 u=packetferret |   25334 1513613602.76632: calling self._execute()
+2017-12-18 10:13:22,767 p=25318 u=packetferret |   25318 1513613602.76709: Calling all_inventory to load vars for leaf02_re
+2017-12-18 10:13:22,767 p=25318 u=packetferret |   25318 1513613602.76747: Calling groups_inventory to load vars for leaf02_re
+2017-12-18 10:13:22,767 p=25318 u=packetferret |   25318 1513613602.76771: Calling all_plugins_inventory to load vars for leaf02_re
+2017-12-18 10:13:22,768 p=25318 u=packetferret |   25318 1513613602.76815: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,768 p=25318 u=packetferret |   25318 1513613602.76860: Calling all_plugins_play to load vars for leaf02_re
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25318 1513613602.76893: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76913: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25318 1513613602.76928: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/aaa.yml
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76933: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76947: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25318 1513613602.76948: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/banner.yml
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76963: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25318 1513613602.76969: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/directories.yml
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76978: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25318 1513613602.76985: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/management.yml
+2017-12-18 10:13:22,769 p=25318 u=packetferret |   25334 1513613602.76994: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77002: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/monitoring.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77015: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/snmp.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77029: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/stp.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25334 1513613602.77030: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77042: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25334 1513613602.77045: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77054: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system1.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25334 1513613602.77060: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77067: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/vagrant_key.yml
+2017-12-18 10:13:22,770 p=25318 u=packetferret |   25318 1513613602.77079: Calling groups_plugins_inventory to load vars for leaf02_re
+2017-12-18 10:13:22,771 p=25318 u=packetferret |   25318 1513613602.77103: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,771 p=25318 u=packetferret |   25318 1513613602.77140: Calling groups_plugins_play to load vars for leaf02_re
+2017-12-18 10:13:22,771 p=25318 u=packetferret |   25318 1513613602.77160: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,771 p=25318 u=packetferret |   25318 1513613602.77188: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/leaf/system.yml
+2017-12-18 10:13:22,772 p=25318 u=packetferret |   25318 1513613602.77217: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,772 p=25318 u=packetferret |   25318 1513613602.77252: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,772 p=25318 u=packetferret |   25318 1513613602.77272: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars
+2017-12-18 10:13:22,773 p=25318 u=packetferret |   25318 1513613602.77308: done with get_vars()
+2017-12-18 10:13:22,773 p=25318 u=packetferret |   25318 1513613602.77333: done getting variables
+2017-12-18 10:13:22,773 p=25318 u=packetferret |   25318 1513613602.77349: entering _queue_task() for leaf02_re/junos_user
+2017-12-18 10:13:22,775 p=25318 u=packetferret |   25318 1513613602.77500: worker is 2 (out of 4 available)
+2017-12-18 10:13:22,775 p=25318 u=packetferret |   25318 1513613602.77565: exiting _queue_task() for leaf02_re/junos_user
+2017-12-18 10:13:22,776 p=25318 u=packetferret |   25318 1513613602.77602: getting variables
+2017-12-18 10:13:22,776 p=25318 u=packetferret |   25318 1513613602.77623: in VariableManager get_vars()
+2017-12-18 10:13:22,777 p=25318 u=packetferret |   25318 1513613602.77709: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,777 p=25318 u=packetferret |   25318 1513613602.77732: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,777 p=25318 u=packetferret |   25318 1513613602.77751: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,777 p=25318 u=packetferret |   25318 1513613602.77768: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,777 p=25318 u=packetferret |   25318 1513613602.77784: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,778 p=25318 u=packetferret |   25318 1513613602.77801: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,778 p=25318 u=packetferret |   25334 1513613602.77830: Loading Connection 'local' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/local.py
+2017-12-18 10:13:22,778 p=25318 u=packetferret |   25318 1513613602.77849: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,778 p=25318 u=packetferret |   25318 1513613602.77866: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,778 p=25318 u=packetferret |   25318 1513613602.77881: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,779 p=25318 u=packetferret |   25334 1513613602.77925: Loading ShellModule 'csh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/csh.py
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25334 1513613602.77994: Loading ShellModule 'fish' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/fish.py
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25318 1513613602.78013: Calling all_inventory to load vars for leaf03_re
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25334 1513613602.78019: Loading ShellModule 'powershell' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/powershell.py
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25318 1513613602.78038: Calling groups_inventory to load vars for leaf03_re
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25334 1513613602.78039: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25318 1513613602.78057: Calling all_plugins_inventory to load vars for leaf03_re
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25334 1513613602.78079: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25318 1513613602.78087: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,780 p=25318 u=packetferret |   25335 1513613602.77991: running TaskExecutor() for leaf02_re/TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,781 p=25318 u=packetferret |   25318 1513613602.78129: Calling all_plugins_play to load vars for leaf03_re
+2017-12-18 10:13:22,781 p=25318 u=packetferret |   25335 1513613602.78150: in run() - task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,781 p=25318 u=packetferret |   25318 1513613602.78156: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,781 p=25318 u=packetferret |   25318 1513613602.78192: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/aaa.yml
+2017-12-18 10:13:22,782 p=25318 u=packetferret |   25318 1513613602.78216: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/banner.yml
+2017-12-18 10:13:22,782 p=25318 u=packetferret |   25335 1513613602.78219: calling self._execute()
+2017-12-18 10:13:22,782 p=25318 u=packetferret |   25318 1513613602.78239: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/directories.yml
+2017-12-18 10:13:22,782 p=25318 u=packetferret |   25318 1513613602.78261: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/management.yml
+2017-12-18 10:13:22,782 p=25318 u=packetferret |   25318 1513613602.78280: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/monitoring.yml
+2017-12-18 10:13:22,783 p=25318 u=packetferret |   25318 1513613602.78299: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/snmp.yml
+2017-12-18 10:13:22,783 p=25318 u=packetferret |   25318 1513613602.78318: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/stp.yml
+2017-12-18 10:13:22,783 p=25318 u=packetferret |   25318 1513613602.78336: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system.yml
+2017-12-18 10:13:22,783 p=25318 u=packetferret |   25318 1513613602.78358: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system1.yml
+2017-12-18 10:13:22,783 p=25318 u=packetferret |   25318 1513613602.78379: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/vagrant_key.yml
+2017-12-18 10:13:22,784 p=25318 u=packetferret |   25318 1513613602.78400: Calling groups_plugins_inventory to load vars for leaf03_re
+2017-12-18 10:13:22,784 p=25318 u=packetferret |   25334 1513613602.78396: assigned :doc
+2017-12-18 10:13:22,784 p=25318 u=packetferret |   25318 1513613602.78431: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,784 p=25318 u=packetferret |   25318 1513613602.78476: Calling groups_plugins_play to load vars for leaf03_re
+2017-12-18 10:13:22,785 p=25318 u=packetferret |   25318 1513613602.78506: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,785 p=25318 u=packetferret |   25318 1513613602.78542: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/leaf/system.yml
+2017-12-18 10:13:22,785 p=25318 u=packetferret |   25318 1513613602.78584: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,785 p=25318 u=packetferret |   25335 1513613602.78581: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,786 p=25318 u=packetferret |   25335 1513613602.78614: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,786 p=25318 u=packetferret |   25318 1513613602.78634: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,786 p=25318 u=packetferret |   25335 1513613602.78639: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,786 p=25318 u=packetferret |   25318 1513613602.78666: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars
+2017-12-18 10:13:22,786 p=25318 u=packetferret |   25335 1513613602.78668: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25335 1513613602.78692: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25318 1513613602.78707: done with get_vars()
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25335 1513613602.78715: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25318 1513613602.78734: done getting variables
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25318 1513613602.78751: entering _queue_task() for leaf03_re/junos_user
+2017-12-18 10:13:22,787 p=25318 u=packetferret |   25335 1513613602.78772: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,788 p=25318 u=packetferret |   25335 1513613602.78796: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,788 p=25318 u=packetferret |   25335 1513613602.78819: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,789 p=25318 u=packetferret |   25334 1513613602.78905: Loading ActionModule 'junos' from /usr/lib/python2.7/site-packages/ansible/plugins/action/junos.py
+2017-12-18 10:13:22,789 p=25318 u=packetferret |   25334 1513613602.78932: starting attempt loop
+2017-12-18 10:13:22,789 p=25318 u=packetferret |   25334 1513613602.78946: running the handler
+2017-12-18 10:13:22,789 p=25318 u=packetferret |   25318 1513613602.78905: worker is 3 (out of 4 available)
+2017-12-18 10:13:22,789 p=25318 u=packetferret |   25318 1513613602.78981: exiting _queue_task() for leaf03_re/junos_user
+2017-12-18 10:13:22,790 p=25318 u=packetferret |   25318 1513613602.79025: getting variables
+2017-12-18 10:13:22,790 p=25318 u=packetferret |   25318 1513613602.79047: in VariableManager get_vars()
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25334 1513613602.79113: Loading Connection 'persistent' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/persistent.py
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25334 1513613602.79146: Loading ShellModule 'csh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/csh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25318 1513613602.79155: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25334 1513613602.79166: Loading ShellModule 'fish' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/fish.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25334 1513613602.79184: Loading ShellModule 'powershell' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,791 p=25318 u=packetferret |   25318 1513613602.79181: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25334 1513613602.79200: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25318 1513613602.79204: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25334 1513613602.79217: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25318 1513613602.79225: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25318 1513613602.79245: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25335 1513613602.79242: done running TaskExecutor() for leaf02_re/TASK: # JUNOS - CREATE USER # [1c872c60-fa78-9b9e-f540-000000000010]
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25318 1513613602.79264: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,792 p=25318 u=packetferret |   25335 1513613602.79277: sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,793 p=25318 u=packetferret |   25318 1513613602.79318: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,793 p=25318 u=packetferret |   25318 1513613602.79341: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,793 p=25318 u=packetferret |   25318 1513613602.79361: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,793 p=25318 u=packetferret |   25334 1513613602.79361: assigned :doc
+2017-12-18 10:13:22,793 p=25318 u=packetferret |   25335 1513613602.79329: done sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,794 p=25318 u=packetferret |   25335 1513613602.79393: WORKER PROCESS EXITING
+2017-12-18 10:13:22,795 p=25318 u=packetferret |   25336 1513613602.79503: running TaskExecutor() for leaf03_re/TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,795 p=25318 u=packetferret |   25336 1513613602.79577: in run() - task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,796 p=25318 u=packetferret |   25336 1513613602.79627: calling self._execute()
+2017-12-18 10:13:22,796 p=25318 u=packetferret |   25318 1513613602.79543: Calling all_inventory to load vars for leaf04_re
+2017-12-18 10:13:22,796 p=25318 u=packetferret |   25318 1513613602.79665: Calling groups_inventory to load vars for leaf04_re
+2017-12-18 10:13:22,796 p=25318 u=packetferret |   25318 1513613602.79688: Calling all_plugins_inventory to load vars for leaf04_re
+2017-12-18 10:13:22,797 p=25318 u=packetferret |   25318 1513613602.79726: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,797 p=25318 u=packetferret |   25318 1513613602.79765: Calling all_plugins_play to load vars for leaf04_re
+2017-12-18 10:13:22,797 p=25318 u=packetferret |   25318 1513613602.79792: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,798 p=25318 u=packetferret |   25318 1513613602.79831: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/aaa.yml
+2017-12-18 10:13:22,798 p=25318 u=packetferret |   25318 1513613602.79856: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/banner.yml
+2017-12-18 10:13:22,798 p=25318 u=packetferret |   25318 1513613602.79878: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/directories.yml
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25318 1513613602.79901: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/management.yml
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25336 1513613602.79898: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25336 1513613602.79922: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25318 1513613602.79923: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/monitoring.yml
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25336 1513613602.79941: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25318 1513613602.79946: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/snmp.yml
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25336 1513613602.79960: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25318 1513613602.79969: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/stp.yml
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25336 1513613602.79978: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,799 p=25318 u=packetferret |   25318 1513613602.79992: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system.yml
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25336 1513613602.79997: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25318 1513613602.80015: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system1.yml
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25318 1513613602.80038: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/vagrant_key.yml
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25336 1513613602.80042: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25318 1513613602.80060: Calling groups_plugins_inventory to load vars for leaf04_re
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25336 1513613602.80062: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,800 p=25318 u=packetferret |   25336 1513613602.80081: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,801 p=25318 u=packetferret |   25318 1513613602.80099: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,801 p=25318 u=packetferret |   25318 1513613602.80154: Calling groups_plugins_play to load vars for leaf04_re
+2017-12-18 10:13:22,801 p=25318 u=packetferret |   25318 1513613602.80189: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,802 p=25318 u=packetferret |   25318 1513613602.80236: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/leaf/system.yml
+2017-12-18 10:13:22,802 p=25318 u=packetferret |   25318 1513613602.80277: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,803 p=25318 u=packetferret |   25318 1513613602.80331: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,803 p=25318 u=packetferret |   25318 1513613602.80364: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars
+2017-12-18 10:13:22,804 p=25318 u=packetferret |   25318 1513613602.80408: done with get_vars()
+2017-12-18 10:13:22,804 p=25318 u=packetferret |   25318 1513613602.80441: done getting variables
+2017-12-18 10:13:22,804 p=25318 u=packetferret |   25318 1513613602.80462: entering _queue_task() for leaf04_re/junos_user
+2017-12-18 10:13:22,804 p=25318 u=packetferret |   25336 1513613602.80466: done running TaskExecutor() for leaf03_re/TASK: # JUNOS - CREATE USER # [1c872c60-fa78-9b9e-f540-000000000010]
+2017-12-18 10:13:22,805 p=25318 u=packetferret |   25336 1513613602.80498: sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,805 p=25318 u=packetferret |   25336 1513613602.80561: done sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,806 p=25318 u=packetferret |   25336 1513613602.80649: WORKER PROCESS EXITING
+2017-12-18 10:13:22,808 p=25318 u=packetferret |   25318 1513613602.80671: worker is 4 (out of 4 available)
+2017-12-18 10:13:22,808 p=25318 u=packetferret |   25318 1513613602.80854: exiting _queue_task() for leaf04_re/junos_user
+2017-12-18 10:13:22,809 p=25318 u=packetferret |   25318 1513613602.80958: marking leaf02_re as failed
+2017-12-18 10:13:22,809 p=25318 u=packetferret |   25318 1513613602.80991: marking host leaf02_re failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,810 p=25318 u=packetferret |   25318 1513613602.81014: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_COMPLETE, fail_state=FAILED_TASKS, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,810 p=25318 u=packetferret |   25318 1513613602.81036: getting the next task for host leaf02_re
+2017-12-18 10:13:22,810 p=25318 u=packetferret |   25318 1513613602.81050: host leaf02_re is done iterating, returning
+2017-12-18 10:13:22,811 p=25318 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - CREATE USER #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:13:22,811 p=25318 u=packetferret |   25318 1513613602.81121: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:13:22,811 p=25318 u=packetferret |   25318 1513613602.81135: waiting for pending results...
+2017-12-18 10:13:22,811 p=25318 u=packetferret |   25318 1513613602.81171: marking leaf03_re as failed
+2017-12-18 10:13:22,811 p=25318 u=packetferret |   25318 1513613602.81187: marking host leaf03_re failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,812 p=25318 u=packetferret |   25318 1513613602.81201: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_COMPLETE, fail_state=FAILED_TASKS, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,812 p=25318 u=packetferret |   25318 1513613602.81213: getting the next task for host leaf03_re
+2017-12-18 10:13:22,812 p=25318 u=packetferret |   25318 1513613602.81226: host leaf03_re is done iterating, returning
+2017-12-18 10:13:22,812 p=25318 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - CREATE USER #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:13:22,815 p=25318 u=packetferret |   25341 1513613602.81481: running TaskExecutor() for leaf04_re/TASK: # JUNOS - CREATE USER #
+2017-12-18 10:13:22,815 p=25318 u=packetferret |   25341 1513613602.81562: in run() - task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,816 p=25318 u=packetferret |   25341 1513613602.81636: calling self._execute()
+2017-12-18 10:13:22,819 p=25318 u=packetferret |   25341 1513613602.81904: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,819 p=25318 u=packetferret |   25341 1513613602.81928: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,819 p=25318 u=packetferret |   25341 1513613602.81947: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,819 p=25318 u=packetferret |   25341 1513613602.81967: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,819 p=25318 u=packetferret |   25341 1513613602.81986: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,820 p=25318 u=packetferret |   25341 1513613602.82006: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,820 p=25318 u=packetferret |   25341 1513613602.82057: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,820 p=25318 u=packetferret |   25341 1513613602.82076: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,821 p=25318 u=packetferret |   25341 1513613602.82092: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:13:22,824 p=25318 u=packetferret |   25341 1513613602.82464: done running TaskExecutor() for leaf04_re/TASK: # JUNOS - CREATE USER # [1c872c60-fa78-9b9e-f540-000000000010]
+2017-12-18 10:13:22,825 p=25318 u=packetferret |   25341 1513613602.82496: sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,825 p=25318 u=packetferret |   25341 1513613602.82540: done sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:22,826 p=25318 u=packetferret |   25341 1513613602.82609: WORKER PROCESS EXITING
+2017-12-18 10:13:22,829 p=25318 u=packetferret |   25318 1513613602.82938: marking leaf04_re as failed
+2017-12-18 10:13:22,829 p=25318 u=packetferret |   25318 1513613602.82960: marking host leaf04_re failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,829 p=25318 u=packetferret |   25318 1513613602.82974: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_COMPLETE, fail_state=FAILED_TASKS, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:22,829 p=25318 u=packetferret |   25318 1513613602.82986: getting the next task for host leaf04_re
+2017-12-18 10:13:22,830 p=25318 u=packetferret |   25318 1513613602.82998: host leaf04_re is done iterating, returning
+2017-12-18 10:13:22,830 p=25318 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - CREATE USER #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:13:23,323 p=25338 u=packetferret |   25338 1513613603.32361: Loading Connection 'ssh' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+2017-12-18 10:13:23,348 p=25338 u=packetferret |   25338 1513613603.34871: assigned :doc
+2017-12-18 10:13:23,349 p=25338 u=packetferret |   25338 1513613603.34936: Loaded config def from plugin (connection/ssh)
+2017-12-18 10:13:23,352 p=25338 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:13:23,352 p=25338 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:13:23,352 p=25338 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:13:23,353 p=25338 u=packetferret |  using connection plugin netconf
+2017-12-18 10:13:23,354 p=25338 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:13:23,355 p=25338 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:13:33,376 p=25318 u=packetferret |   25334 1513613613.37597: handler run complete
+2017-12-18 10:13:33,376 p=25318 u=packetferret |   25334 1513613613.37627: attempt loop complete, returning result
+2017-12-18 10:13:33,377 p=25318 u=packetferret |   25334 1513613613.37778: _execute() done
+2017-12-18 10:13:33,377 p=25318 u=packetferret |   25334 1513613613.37789: dumping result to json
+2017-12-18 10:13:33,378 p=25318 u=packetferret |   25334 1513613613.37800: done dumping result, returning
+2017-12-18 10:13:33,378 p=25318 u=packetferret |   25334 1513613613.37812: done running TaskExecutor() for leaf01_re/TASK: # JUNOS - CREATE USER # [1c872c60-fa78-9b9e-f540-000000000010]
+2017-12-18 10:13:33,378 p=25318 u=packetferret |   25334 1513613613.37827: sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:33,378 p=25318 u=packetferret |   25334 1513613613.37853: done sending task result for task 1c872c60-fa78-9b9e-f540-000000000010
+2017-12-18 10:13:33,378 p=25318 u=packetferret |   25334 1513613613.37863: WORKER PROCESS EXITING
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38004: marking leaf01_re as failed
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38023: marking host leaf01_re failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38035: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_COMPLETE, fail_state=FAILED_TASKS, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38045: getting the next task for host leaf01_re
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38054: host leaf01_re is done iterating, returning
+2017-12-18 10:13:33,380 p=25318 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:13:33,380 p=25318 u=packetferret |   25318 1513613613.38086: no more pending results, returning what we have
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38098: results queue empty
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38106: checking for any_errors_fatal
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38118: done checking for any_errors_fatal
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38126: checking for max_fail_percentage
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38132: done checking for max_fail_percentage
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38138: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38143: done checking to see if all hosts have failed
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38149: getting the remaining hosts for this loop
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38157: done getting the remaining hosts for this loop
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38164: building list of next tasks for hosts
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38171: getting the next task for host leaf01_re
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38177: host leaf01_re is done iterating, returning
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38183: getting the next task for host leaf02_re
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38190: host leaf02_re is done iterating, returning
+2017-12-18 10:13:33,381 p=25318 u=packetferret |   25318 1513613613.38196: getting the next task for host leaf03_re
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38204: host leaf03_re is done iterating, returning
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38210: getting the next task for host leaf04_re
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38216: host leaf04_re is done iterating, returning
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38222: done building task lists
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38228: counting tasks in each state of execution
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38233: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 0
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38240: all hosts are done, so returning None's for all hosts
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38248: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38254: results queue empty
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38260: checking for any_errors_fatal
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38266: done checking for any_errors_fatal
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38272: checking for max_fail_percentage
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38278: done checking for max_fail_percentage
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38283: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38289: done checking to see if all hosts have failed
+2017-12-18 10:13:33,382 p=25318 u=packetferret |   25318 1513613613.38297: getting the next task for host leaf01_re
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38303: host leaf01_re is done iterating, returning
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38310: getting the next task for host leaf02_re
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38316: host leaf02_re is done iterating, returning
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38322: getting the next task for host leaf03_re
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38329: host leaf03_re is done iterating, returning
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38334: getting the next task for host leaf04_re
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38340: host leaf04_re is done iterating, returning
+2017-12-18 10:13:33,383 p=25318 u=packetferret |   25318 1513613613.38348: running handlers
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.retry
+
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:13:33,384 p=25318 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:13:33,384 p=25318 u=packetferret |   25318 1513613613.38449: RUNNING CLEANUP
+2017-12-18 10:14:16,486 p=25433 u=packetferret |   25433 1513613656.48612: starting run
+2017-12-18 10:14:16,555 p=25433 u=packetferret |   25433 1513613656.55559: Added group all to inventory
+2017-12-18 10:14:16,555 p=25433 u=packetferret |   25433 1513613656.55581: Added group ungrouped to inventory
+2017-12-18 10:14:16,555 p=25433 u=packetferret |   25433 1513613656.55593: Group all now contains ungrouped
+2017-12-18 10:14:16,556 p=25433 u=packetferret |   25433 1513613656.55653: Loading CacheModule 'memory' from /usr/lib/python2.7/site-packages/ansible/plugins/cache/memory.py
+2017-12-18 10:14:16,557 p=25433 u=packetferret |   25433 1513613656.55745: Loading InventoryModule 'host_list' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/host_list.py
+2017-12-18 10:14:16,557 p=25433 u=packetferret |   25433 1513613656.55767: Loading InventoryModule 'script' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/script.py
+2017-12-18 10:14:16,557 p=25433 u=packetferret |   25433 1513613656.55791: Loading InventoryModule 'yaml' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/yaml.py
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55819: Loading InventoryModule 'ini' from /usr/lib/python2.7/site-packages/ansible/plugins/inventory/ini.py
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55834: Examining possible inventory source: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55846: Attempting to use plugin host_list (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/host_list.py)
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55857: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory did not meet host_list requirements
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55867: Attempting to use plugin script (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/script.py)
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55880: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory did not meet script requirements
+2017-12-18 10:14:16,558 p=25433 u=packetferret |   25433 1513613656.55890: Attempting to use plugin yaml (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/yaml.py)
+2017-12-18 10:14:16,559 p=25433 u=packetferret |   25433 1513613656.55958: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+2017-12-18 10:14:16,560 p=25433 u=packetferret |   25433 1513613656.56017: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory was not parsable by yaml
+2017-12-18 10:14:16,560 p=25433 u=packetferret |   25433 1513613656.56030: Attempting to use plugin ini (/usr/lib/python2.7/site-packages/ansible/plugins/inventory/ini.py)
+2017-12-18 10:14:16,561 p=25433 u=packetferret |   25433 1513613656.56186: set inventory_file for aggregation02
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56202: set inventory_dir for aggregation02
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56213: Added host aggregation02 to inventory
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56225: Added host aggregation02 to group ungrouped
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56235: set ansible_port for aggregation02
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56245: set ansible_ssh_private_key_file for aggregation02
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56255: set ansible_host for aggregation02
+2017-12-18 10:14:16,562 p=25433 u=packetferret |   25433 1513613656.56265: set ansible_user for aggregation02
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56303: set inventory_file for aggregation01
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56317: set inventory_dir for aggregation01
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56327: Added host aggregation01 to inventory
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56338: Added host aggregation01 to group ungrouped
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56350: set ansible_port for aggregation01
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56362: set ansible_ssh_private_key_file for aggregation01
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56374: set ansible_host for aggregation01
+2017-12-18 10:14:16,563 p=25433 u=packetferret |   25433 1513613656.56385: set ansible_user for aggregation01
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56446: set inventory_file for spine02
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56460: set inventory_dir for spine02
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56469: Added host spine02 to inventory
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56479: Added host spine02 to group ungrouped
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56487: set ansible_port for spine02
+2017-12-18 10:14:16,564 p=25433 u=packetferret |   25433 1513613656.56496: set ansible_ssh_private_key_file for spine02
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56504: set ansible_host for spine02
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56512: set ansible_user for spine02
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56542: set inventory_file for leaf01_pfe
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56554: set inventory_dir for leaf01_pfe
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56563: Added host leaf01_pfe to inventory
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56572: Added host leaf01_pfe to group ungrouped
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56580: set ansible_port for leaf01_pfe
+2017-12-18 10:14:16,565 p=25433 u=packetferret |   25433 1513613656.56588: set ansible_ssh_private_key_file for leaf01_pfe
+2017-12-18 10:14:16,566 p=25433 u=packetferret |   25433 1513613656.56599: set ansible_host for leaf01_pfe
+2017-12-18 10:14:16,566 p=25433 u=packetferret |   25433 1513613656.56610: set ansible_user for leaf01_pfe
+2017-12-18 10:14:16,566 p=25433 u=packetferret |   25433 1513613656.56659: set inventory_file for leaf01_re
+2017-12-18 10:14:16,566 p=25433 u=packetferret |   25433 1513613656.56676: set inventory_dir for leaf01_re
+2017-12-18 10:14:16,566 p=25433 u=packetferret |   25433 1513613656.56687: Added host leaf01_re to inventory
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56700: Added host leaf01_re to group ungrouped
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56710: set ansible_port for leaf01_re
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56721: set ansible_ssh_private_key_file for leaf01_re
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56731: set ansible_host for leaf01_re
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56740: set ansible_user for leaf01_re
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56778: set inventory_file for spine01
+2017-12-18 10:14:16,567 p=25433 u=packetferret |   25433 1513613656.56790: set inventory_dir for spine01
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56799: Added host spine01 to inventory
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56809: Added host spine01 to group ungrouped
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56817: set ansible_port for spine01
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56825: set ansible_ssh_private_key_file for spine01
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56833: set ansible_host for spine01
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56841: set ansible_user for spine01
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56850: Added group aggregation to inventory
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56868: Added host aggregation01 to group aggregation
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56876: Added host aggregation02 to group aggregation
+2017-12-18 10:14:16,568 p=25433 u=packetferret |   25433 1513613656.56885: Added group spine to inventory
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56901: Added host spine01 to group spine
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56910: Added host spine02 to group spine
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56918: Added group leaf to inventory
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56934: Added host leaf01_re to group leaf
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56943: set inventory_file for leaf02_re
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56953: set inventory_dir for leaf02_re
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56961: Added host leaf02_re to inventory
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56969: Added host leaf02_re to group leaf
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56978: set inventory_file for leaf03_re
+2017-12-18 10:14:16,569 p=25433 u=packetferret |   25433 1513613656.56988: set inventory_dir for leaf03_re
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.56997: Added host leaf03_re to inventory
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57006: Added host leaf03_re to group leaf
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57014: set inventory_file for leaf04_re
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57024: set inventory_dir for leaf04_re
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57035: Added host leaf04_re to inventory
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57044: Added host leaf04_re to group leaf
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57051: Added group arista to inventory
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57062: Group arista now contains spine
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57070: Added group juniper to inventory
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57079: Group juniper now contains leaf
+2017-12-18 10:14:16,570 p=25433 u=packetferret |   25433 1513613656.57087: Added group cumulus to inventory
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57097: Group cumulus now contains aggregation
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57107: Group all now contains arista
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57117: Group all now contains cumulus
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57128: Group all now contains juniper
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57137: Reconcile groups and hosts in inventory.
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57148: Group all now contains leaf02_re
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57158: Group all now contains leaf04_re
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57169: Group all now contains spine02
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57180: Group all now contains leaf01_pfe
+2017-12-18 10:14:16,571 p=25433 u=packetferret |   25433 1513613656.57191: Group all now contains spine01
+2017-12-18 10:14:16,572 p=25433 u=packetferret |   25433 1513613656.57202: Group all now contains aggregation02
+2017-12-18 10:14:16,572 p=25433 u=packetferret |   25433 1513613656.57211: Group all now contains aggregation01
+2017-12-18 10:14:16,572 p=25433 u=packetferret |   25433 1513613656.57220: Group all now contains leaf03_re
+2017-12-18 10:14:16,572 p=25433 u=packetferret |   25433 1513613656.57228: Group all now contains leaf01_re
+2017-12-18 10:14:16,572 p=25433 u=packetferret |   25433 1513613656.57242: Loading CacheModule 'memory' from /usr/lib/python2.7/site-packages/ansible/plugins/cache/memory.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,579 p=25433 u=packetferret |   25433 1513613656.57929: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.yml
+2017-12-18 10:14:16,648 p=25433 u=packetferret |   25433 1513613656.64798: Loading CallbackModule 'default' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/default.py
+2017-12-18 10:14:16,650 p=25433 u=packetferret |   25433 1513613656.65077: assigned :doc
+2017-12-18 10:14:16,651 p=25433 u=packetferret |   25433 1513613656.65172: Loading CallbackModule 'actionable' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/actionable.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,652 p=25433 u=packetferret |   25433 1513613656.65228: assigned :doc
+2017-12-18 10:14:16,652 p=25433 u=packetferret |   25433 1513613656.65252: Loading CallbackModule 'context_demo' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/context_demo.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,653 p=25433 u=packetferret |   25433 1513613656.65299: assigned :doc
+2017-12-18 10:14:16,653 p=25433 u=packetferret |   25433 1513613656.65321: Loading CallbackModule 'debug' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/debug.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,653 p=25433 u=packetferret |   25433 1513613656.65369: assigned :doc
+2017-12-18 10:14:16,653 p=25433 u=packetferret |   25433 1513613656.65385: Loading CallbackModule 'default' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/default.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,656 p=25433 u=packetferret |   25433 1513613656.65683: assigned :doc
+2017-12-18 10:14:16,657 p=25433 u=packetferret |   25433 1513613656.65733: Loading CallbackModule 'dense' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/dense.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,660 p=25433 u=packetferret |   25433 1513613656.66004: assigned :doc
+2017-12-18 10:14:16,684 p=25433 u=packetferret |   25433 1513613656.68377: Loading CallbackModule 'foreman' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/foreman.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,685 p=25433 u=packetferret |   25433 1513613656.68592: assigned :doc
+2017-12-18 10:14:16,686 p=25433 u=packetferret |   25433 1513613656.68612: Loaded config def from plugin (callback/foreman)
+2017-12-18 10:14:16,686 p=25433 u=packetferret |   25433 1513613656.68634: Loading CallbackModule 'full_skip' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/full_skip.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,686 p=25433 u=packetferret |   25433 1513613656.68691: assigned :doc
+2017-12-18 10:14:16,687 p=25433 u=packetferret |   25433 1513613656.68779: Loading CallbackModule 'hipchat' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/hipchat.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,689 p=25433 u=packetferret |   25433 1513613656.68922: assigned :doc
+2017-12-18 10:14:16,689 p=25433 u=packetferret |   25433 1513613656.68940: Loaded config def from plugin (callback/hipchat)
+2017-12-18 10:14:16,689 p=25433 u=packetferret |   25433 1513613656.68969: Loading CallbackModule 'jabber' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/jabber.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,691 p=25433 u=packetferret |   25433 1513613656.69127: assigned :doc
+2017-12-18 10:14:16,691 p=25433 u=packetferret |   25433 1513613656.69143: Loaded config def from plugin (callback/jabber)
+2017-12-18 10:14:16,691 p=25433 u=packetferret |   25433 1513613656.69164: Loading CallbackModule 'json' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/json.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,692 p=25433 u=packetferret |   25433 1513613656.69218: assigned :doc
+2017-12-18 10:14:16,692 p=25433 u=packetferret |   25433 1513613656.69256: Loading CallbackModule 'junit' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/junit.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,694 p=25433 u=packetferret |   25433 1513613656.69447: assigned :doc
+2017-12-18 10:14:16,694 p=25433 u=packetferret |   25433 1513613656.69469: Loaded config def from plugin (callback/junit)
+2017-12-18 10:14:16,694 p=25433 u=packetferret |   25433 1513613656.69492: Loading CallbackModule 'log_plays' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/log_plays.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,695 p=25433 u=packetferret |   25433 1513613656.69554: assigned :doc
+2017-12-18 10:14:16,696 p=25433 u=packetferret |   25433 1513613656.69601: Loading CallbackModule 'logentries' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/logentries.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,698 p=25433 u=packetferret |   25433 1513613656.69858: assigned :doc
+2017-12-18 10:14:16,698 p=25433 u=packetferret |   25433 1513613656.69874: assigned :plainexamples
+2017-12-18 10:14:16,699 p=25433 u=packetferret |   25433 1513613656.69895: Loaded config def from plugin (callback/logentries)
+2017-12-18 10:14:16,699 p=25433 u=packetferret |   25433 1513613656.69928: Loading CallbackModule 'logstash' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/logstash.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,700 p=25433 u=packetferret |   25433 1513613656.70064: assigned :doc
+2017-12-18 10:14:16,700 p=25433 u=packetferret |   25433 1513613656.70082: Loaded config def from plugin (callback/logstash)
+2017-12-18 10:14:16,701 p=25433 u=packetferret |   25433 1513613656.70142: Loading CallbackModule 'mail' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/mail.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,702 p=25433 u=packetferret |   25433 1513613656.70260: assigned :doc
+2017-12-18 10:14:16,702 p=25433 u=packetferret |   25433 1513613656.70281: Loaded config def from plugin (callback/mail)
+2017-12-18 10:14:16,703 p=25433 u=packetferret |   25433 1513613656.70314: Loading CallbackModule 'minimal' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/minimal.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,704 p=25433 u=packetferret |   25433 1513613656.70426: assigned :doc
+2017-12-18 10:14:16,704 p=25433 u=packetferret |   25433 1513613656.70459: Loading CallbackModule 'oneline' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/oneline.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,705 p=25433 u=packetferret |   25433 1513613656.70565: assigned :doc
+2017-12-18 10:14:16,706 p=25433 u=packetferret |   25433 1513613656.70602: Loading CallbackModule 'osx_say' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/osx_say.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,706 p=25433 u=packetferret |   25433 1513613656.70691: assigned :doc
+2017-12-18 10:14:16,707 p=25433 u=packetferret |   25433 1513613656.70728: Loading CallbackModule 'profile_roles' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/profile_roles.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,708 p=25433 u=packetferret |   25433 1513613656.70845: assigned :doc
+2017-12-18 10:14:16,708 p=25433 u=packetferret |   25433 1513613656.70886: Loading CallbackModule 'profile_tasks' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/profile_tasks.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,710 p=25433 u=packetferret |   25433 1513613656.71065: assigned :doc
+2017-12-18 10:14:16,710 p=25433 u=packetferret |   25433 1513613656.71078: assigned :plainexamples
+2017-12-18 10:14:16,711 p=25433 u=packetferret |   25433 1513613656.71104: Loaded config def from plugin (callback/profile_tasks)
+2017-12-18 10:14:16,711 p=25433 u=packetferret |   25433 1513613656.71148: Loading CallbackModule 'selective' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/selective.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,714 p=25433 u=packetferret |   25433 1513613656.71448: assigned :doc
+2017-12-18 10:14:16,714 p=25433 u=packetferret |   25433 1513613656.71469: assigned :plainexamples
+2017-12-18 10:14:16,715 p=25433 u=packetferret |   25433 1513613656.71502: Loaded config def from plugin (callback/selective)
+2017-12-18 10:14:16,715 p=25433 u=packetferret |   25433 1513613656.71540: Loading CallbackModule 'skippy' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/skippy.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,716 p=25433 u=packetferret |   25433 1513613656.71604: assigned :doc
+2017-12-18 10:14:16,716 p=25433 u=packetferret |   25433 1513613656.71654: Loading CallbackModule 'slack' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/slack.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,719 p=25433 u=packetferret |   25433 1513613656.71937: assigned :doc
+2017-12-18 10:14:16,719 p=25433 u=packetferret |   25433 1513613656.71966: Loaded config def from plugin (callback/slack)
+2017-12-18 10:14:16,719 p=25433 u=packetferret |   25433 1513613656.71992: Loading CallbackModule 'stderr' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/stderr.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,720 p=25433 u=packetferret |   25433 1513613656.72062: assigned :doc
+2017-12-18 10:14:16,721 p=25433 u=packetferret |   25433 1513613656.72137: Loading CallbackModule 'syslog_json' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/syslog_json.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,722 p=25433 u=packetferret |   25433 1513613656.72254: assigned :doc
+2017-12-18 10:14:16,722 p=25433 u=packetferret |   25433 1513613656.72269: Loaded config def from plugin (callback/syslog_json)
+2017-12-18 10:14:16,722 p=25433 u=packetferret |   25433 1513613656.72289: Loading CallbackModule 'timer' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/timer.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,723 p=25433 u=packetferret |   25433 1513613656.72334: assigned :doc
+2017-12-18 10:14:16,723 p=25433 u=packetferret |   25433 1513613656.72357: Loading CallbackModule 'tree' from /usr/lib/python2.7/site-packages/ansible/plugins/callback/tree.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:16,724 p=25433 u=packetferret |   25433 1513613656.72414: assigned :doc
+2017-12-18 10:14:16,724 p=25433 u=packetferret |   25433 1513613656.72433: in VariableManager get_vars()
+2017-12-18 10:14:16,733 p=25433 u=packetferret |   25433 1513613656.73310: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py
+2017-12-18 10:14:16,733 p=25433 u=packetferret |   25433 1513613656.73358: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py
+2017-12-18 10:14:16,735 p=25433 u=packetferret |   25433 1513613656.73506: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py
+2017-12-18 10:14:16,735 p=25433 u=packetferret |   25433 1513613656.73529: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py
+2017-12-18 10:14:16,735 p=25433 u=packetferret |   25433 1513613656.73573: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py
+2017-12-18 10:14:16,735 p=25433 u=packetferret |   25433 1513613656.73593: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py
+2017-12-18 10:14:16,736 p=25433 u=packetferret |   25433 1513613656.73657: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py
+2017-12-18 10:14:16,736 p=25433 u=packetferret |   25433 1513613656.73676: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py
+2017-12-18 10:14:16,737 p=25433 u=packetferret |   25433 1513613656.73697: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py
+2017-12-18 10:14:16,739 p=25433 u=packetferret |   25433 1513613656.73908: done with get_vars()
+2017-12-18 10:14:16,739 p=25433 u=packetferret |   25433 1513613656.73944: in VariableManager get_vars()
+2017-12-18 10:14:16,739 p=25433 u=packetferret |   25433 1513613656.73974: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,739 p=25433 u=packetferret |   25433 1513613656.73987: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74001: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74013: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74024: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74035: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74058: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74068: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,740 p=25433 u=packetferret |   25433 1513613656.74077: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,741 p=25433 u=packetferret |   25433 1513613656.74133: done with get_vars()
+2017-12-18 10:14:16,741 p=25433 u=packetferret |  PLAY [### JUNOS - CREATE USER ###] ************************************************************************************************************************************************************
+2017-12-18 10:14:16,757 p=25433 u=packetferret |   25433 1513613656.75754: Loading StrategyModule 'linear' from /usr/lib/python2.7/site-packages/ansible/plugins/strategy/linear.py
+2017-12-18 10:14:16,758 p=25433 u=packetferret |   25433 1513613656.75834: getting the remaining hosts for this loop
+2017-12-18 10:14:16,758 p=25433 u=packetferret |   25433 1513613656.75851: done getting the remaining hosts for this loop
+2017-12-18 10:14:16,758 p=25433 u=packetferret |   25433 1513613656.75866: building list of next tasks for hosts
+2017-12-18 10:14:16,758 p=25433 u=packetferret |   25433 1513613656.75876: getting the next task for host leaf01_re
+2017-12-18 10:14:16,758 p=25433 u=packetferret |   25433 1513613656.75889: done getting next task for host leaf01_re
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75902:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75912:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75924: done building task lists
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75936: counting tasks in each state of execution
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75947: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 1
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75960: advancing hosts in ITERATING_TASKS
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75970: starting to advance hosts
+2017-12-18 10:14:16,759 p=25433 u=packetferret |   25433 1513613656.75982: getting the next task for host leaf01_re
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.75999: done getting next task for host leaf01_re
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76015:  ^ task is: TASK: meta (flush_handlers)
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76028:  ^ state is: HOST STATE: block=1, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76039: done advancing hosts to next task
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76055: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76066: results queue empty
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76077: checking for any_errors_fatal
+2017-12-18 10:14:16,760 p=25433 u=packetferret |   25433 1513613656.76087: done checking for any_errors_fatal
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76096: checking for max_fail_percentage
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76107: done checking for max_fail_percentage
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76115: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76123: done checking to see if all hosts have failed
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76131: getting the remaining hosts for this loop
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76143: done getting the remaining hosts for this loop
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76155: building list of next tasks for hosts
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76167: getting the next task for host leaf01_re
+2017-12-18 10:14:16,761 p=25433 u=packetferret |   25433 1513613656.76181: done getting next task for host leaf01_re
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76195:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76210:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76224: done building task lists
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76236: counting tasks in each state of execution
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76249: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 1
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76262: advancing hosts in ITERATING_TASKS
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76273: starting to advance hosts
+2017-12-18 10:14:16,762 p=25433 u=packetferret |   25433 1513613656.76284: getting the next task for host leaf01_re
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76299: done getting next task for host leaf01_re
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76313:  ^ task is: TASK: # JUNOS - CREATE USER #
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76325:  ^ state is: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76337: done advancing hosts to next task
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76351: getting variables
+2017-12-18 10:14:16,763 p=25433 u=packetferret |   25433 1513613656.76362: in VariableManager get_vars()
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76411: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76424: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76437: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76450: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76463: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,764 p=25433 u=packetferret |   25433 1513613656.76475: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,765 p=25433 u=packetferret |   25433 1513613656.76506: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,765 p=25433 u=packetferret |   25433 1513613656.76520: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,765 p=25433 u=packetferret |   25433 1513613656.76533: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,766 p=25433 u=packetferret |   25433 1513613656.76601: Calling all_inventory to load vars for leaf01_re
+2017-12-18 10:14:16,766 p=25433 u=packetferret |   25433 1513613656.76616: Calling groups_inventory to load vars for leaf01_re
+2017-12-18 10:14:16,766 p=25433 u=packetferret |   25433 1513613656.76632: Calling all_plugins_inventory to load vars for leaf01_re
+2017-12-18 10:14:16,767 p=25433 u=packetferret |   25433 1513613656.76708: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py
+2017-12-18 10:14:16,767 p=25433 u=packetferret |   25433 1513613656.76735: Calling all_plugins_play to load vars for leaf01_re
+2017-12-18 10:14:16,767 p=25433 u=packetferret |   25433 1513613656.76756: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,767 p=25433 u=packetferret |   25433 1513613656.76778: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:14:16,768 p=25433 u=packetferret |   25433 1513613656.76809: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/aaa.yml
+2017-12-18 10:14:16,768 p=25433 u=packetferret |   25433 1513613656.76867: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/banner.yml
+2017-12-18 10:14:16,769 p=25433 u=packetferret |   25433 1513613656.76907: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/directories.yml
+2017-12-18 10:14:16,769 p=25433 u=packetferret |   25433 1513613656.76944: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/management.yml
+2017-12-18 10:14:16,770 p=25433 u=packetferret |   25433 1513613656.77003: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/monitoring.yml
+2017-12-18 10:14:16,771 p=25433 u=packetferret |   25433 1513613656.77104: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/snmp.yml
+2017-12-18 10:14:16,771 p=25433 u=packetferret |   25433 1513613656.77166: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/stp.yml
+2017-12-18 10:14:16,772 p=25433 u=packetferret |   25433 1513613656.77202: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system.yml
+2017-12-18 10:14:16,772 p=25433 u=packetferret |   25433 1513613656.77270: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/system1.yml
+2017-12-18 10:14:16,773 p=25433 u=packetferret |   25433 1513613656.77385: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/all/vagrant_key.yml
+2017-12-18 10:14:16,774 p=25433 u=packetferret |   25433 1513613656.77428: Calling groups_plugins_inventory to load vars for leaf01_re
+2017-12-18 10:14:16,774 p=25433 u=packetferret |   25433 1513613656.77462: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,775 p=25433 u=packetferret |   25433 1513613656.77512: Calling groups_plugins_play to load vars for leaf01_re
+2017-12-18 10:14:16,775 p=25433 u=packetferret |   25433 1513613656.77541: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,775 p=25433 u=packetferret |   25433 1513613656.77570: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:14:16,776 p=25433 u=packetferret |   25433 1513613656.77601: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars
+2017-12-18 10:14:16,776 p=25433 u=packetferret |   25433 1513613656.77626: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/group_vars/leaf/system.yml
+2017-12-18 10:14:16,777 p=25433 u=packetferret |   25433 1513613656.77694: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,777 p=25433 u=packetferret |   25433 1513613656.77744: Loading VarsModule 'host_group_vars' from /usr/lib/python2.7/site-packages/ansible/plugins/vars/host_group_vars.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,777 p=25433 u=packetferret |   25433 1513613656.77773: 	processing dir /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars
+2017-12-18 10:14:16,778 p=25433 u=packetferret |   25433 1513613656.77809: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/interfaces.yml
+2017-12-18 10:14:16,780 p=25433 u=packetferret |   25433 1513613656.78034: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/protocols.yml
+2017-12-18 10:14:16,783 p=25433 u=packetferret |   25433 1513613656.78327: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/routing_options.yml
+2017-12-18 10:14:16,783 p=25433 u=packetferret |   25433 1513613656.78381: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/security.yml
+2017-12-18 10:14:16,784 p=25433 u=packetferret |   25433 1513613656.78442: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/system.yml
+2017-12-18 10:14:16,785 p=25433 u=packetferret |   25433 1513613656.78510: Loading data from /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/host_vars/leaf01_re/vlans.yml
+2017-12-18 10:14:16,785 p=25433 u=packetferret |   25433 1513613656.78578: done with get_vars()
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78600: done getting variables
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78612: sending task start callback, copying the task so we can template it temporarily
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78623: done copying, going to template now
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78633: done templating
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78642: here goes the callback...
+2017-12-18 10:14:16,786 p=25433 u=packetferret |  TASK [# JUNOS - CREATE USER #] ****************************************************************************************************************************************************************
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78660: sending task start callback
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78669: entering _queue_task() for leaf01_re/junos_user
+2017-12-18 10:14:16,786 p=25433 u=packetferret |   25433 1513613656.78677: Creating lock for junos_user
+2017-12-18 10:14:16,788 p=25433 u=packetferret |   25433 1513613656.78799: worker is 1 (out of 1 available)
+2017-12-18 10:14:16,788 p=25433 u=packetferret |   25433 1513613656.78868: exiting _queue_task() for leaf01_re/junos_user
+2017-12-18 10:14:16,788 p=25433 u=packetferret |   25433 1513613656.78889: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:14:16,789 p=25433 u=packetferret |   25433 1513613656.78902: waiting for pending results...
+2017-12-18 10:14:16,792 p=25433 u=packetferret |   25443 1513613656.79215: running TaskExecutor() for leaf01_re/TASK: # JUNOS - CREATE USER #
+2017-12-18 10:14:16,792 p=25433 u=packetferret |   25443 1513613656.79290: in run() - task 1c872c60-fa78-e233-388f-000000000010
+2017-12-18 10:14:16,793 p=25433 u=packetferret |   25443 1513613656.79352: calling self._execute()
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79528: Loading FilterModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79549: Loading FilterModule 'ipaddr' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/ipaddr.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79560: Loading FilterModule 'json_query' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/json_query.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79570: Loading FilterModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79580: Loading FilterModule 'network' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/network.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,795 p=25433 u=packetferret |   25443 1513613656.79590: Loading FilterModule 'urlsplit' from /usr/lib/python2.7/site-packages/ansible/plugins/filter/urlsplit.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,796 p=25433 u=packetferret |   25443 1513613656.79623: Loading TestModule 'core' from /usr/lib/python2.7/site-packages/ansible/plugins/test/core.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,796 p=25433 u=packetferret |   25443 1513613656.79633: Loading TestModule 'files' from /usr/lib/python2.7/site-packages/ansible/plugins/test/files.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,796 p=25433 u=packetferret |   25443 1513613656.79643: Loading TestModule 'mathstuff' from /usr/lib/python2.7/site-packages/ansible/plugins/test/mathstuff.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,802 p=25433 u=packetferret |   25443 1513613656.80225: Loading Connection 'local' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/local.py
+2017-12-18 10:14:16,803 p=25433 u=packetferret |   25443 1513613656.80296: Loading ShellModule 'csh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/csh.py
+2017-12-18 10:14:16,803 p=25433 u=packetferret |   25443 1513613656.80331: Loading ShellModule 'fish' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/fish.py
+2017-12-18 10:14:16,803 p=25433 u=packetferret |   25443 1513613656.80343: Loading ShellModule 'powershell' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/powershell.py
+2017-12-18 10:14:16,803 p=25433 u=packetferret |   25443 1513613656.80354: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py
+2017-12-18 10:14:16,803 p=25433 u=packetferret |   25443 1513613656.80383: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,805 p=25433 u=packetferret |   25443 1513613656.80580: assigned :doc
+2017-12-18 10:14:16,808 p=25433 u=packetferret |   25443 1513613656.80842: Loading ActionModule 'junos' from /usr/lib/python2.7/site-packages/ansible/plugins/action/junos.py
+2017-12-18 10:14:16,808 p=25433 u=packetferret |   25443 1513613656.80863: starting attempt loop
+2017-12-18 10:14:16,808 p=25433 u=packetferret |   25443 1513613656.80873: running the handler
+2017-12-18 10:14:16,809 p=25433 u=packetferret |   25443 1513613656.80966: Loading Connection 'persistent' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/persistent.py
+2017-12-18 10:14:16,809 p=25433 u=packetferret |   25443 1513613656.80990: Loading ShellModule 'csh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/csh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,810 p=25433 u=packetferret |   25443 1513613656.81002: Loading ShellModule 'fish' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/fish.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,810 p=25433 u=packetferret |   25443 1513613656.81012: Loading ShellModule 'powershell' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/powershell.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,810 p=25433 u=packetferret |   25443 1513613656.81022: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,810 p=25433 u=packetferret |   25443 1513613656.81033: Loading ShellModule 'sh' from /usr/lib/python2.7/site-packages/ansible/plugins/shell/sh.py (found_in_cache=True, class_only=False)
+2017-12-18 10:14:16,811 p=25433 u=packetferret |   25443 1513613656.81123: assigned :doc
+2017-12-18 10:14:17,309 p=25444 u=packetferret |   25444 1513613657.30914: Loading Connection 'ssh' from /usr/lib/python2.7/site-packages/ansible/plugins/connection/ssh.py (found_in_cache=False, class_only=True)
+2017-12-18 10:14:17,329 p=25444 u=packetferret |   25444 1513613657.32985: assigned :doc
+2017-12-18 10:14:17,330 p=25444 u=packetferret |   25444 1513613657.33042: Loaded config def from plugin (connection/ssh)
+2017-12-18 10:14:17,333 p=25444 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:14:17,333 p=25444 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:14:17,333 p=25444 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:14:17,333 p=25444 u=packetferret |  using connection plugin netconf
+2017-12-18 10:14:17,335 p=25444 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:14:17,335 p=25444 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:14:27,357 p=25433 u=packetferret |   25443 1513613667.35778: handler run complete
+2017-12-18 10:14:27,358 p=25433 u=packetferret |   25443 1513613667.35810: attempt loop complete, returning result
+2017-12-18 10:14:27,360 p=25433 u=packetferret |   25443 1513613667.36024: _execute() done
+2017-12-18 10:14:27,360 p=25433 u=packetferret |   25443 1513613667.36035: dumping result to json
+2017-12-18 10:14:27,360 p=25433 u=packetferret |   25443 1513613667.36047: done dumping result, returning
+2017-12-18 10:14:27,360 p=25433 u=packetferret |   25443 1513613667.36061: done running TaskExecutor() for leaf01_re/TASK: # JUNOS - CREATE USER # [1c872c60-fa78-e233-388f-000000000010]
+2017-12-18 10:14:27,360 p=25433 u=packetferret |   25443 1513613667.36076: sending task result for task 1c872c60-fa78-e233-388f-000000000010
+2017-12-18 10:14:27,361 p=25433 u=packetferret |   25443 1513613667.36105: done sending task result for task 1c872c60-fa78-e233-388f-000000000010
+2017-12-18 10:14:27,361 p=25433 u=packetferret |   25443 1513613667.36132: WORKER PROCESS EXITING
+2017-12-18 10:14:27,362 p=25433 u=packetferret |   25433 1513613667.36207: marking leaf01_re as failed
+2017-12-18 10:14:27,362 p=25433 u=packetferret |   25433 1513613667.36226: marking host leaf01_re failed, current state: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_TASKS, fail_state=FAILED_NONE, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:27,362 p=25433 u=packetferret |   25433 1513613667.36241: ^ failed state is now: HOST STATE: block=2, task=1, rescue=0, always=0, run_state=ITERATING_COMPLETE, fail_state=FAILED_TASKS, pending_setup=False, tasks child state? (None), rescue child state? (None), always child state? (None), did rescue? False, did start at task? False
+2017-12-18 10:14:27,362 p=25433 u=packetferret |   25433 1513613667.36255: getting the next task for host leaf01_re
+2017-12-18 10:14:27,362 p=25433 u=packetferret |   25433 1513613667.36267: host leaf01_re is done iterating, returning
+2017-12-18 10:14:27,363 p=25433 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36314: no more pending results, returning what we have
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36328: results queue empty
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36340: checking for any_errors_fatal
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36353: done checking for any_errors_fatal
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36365: checking for max_fail_percentage
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36376: done checking for max_fail_percentage
+2017-12-18 10:14:27,363 p=25433 u=packetferret |   25433 1513613667.36388: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36401: done checking to see if all hosts have failed
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36412: getting the remaining hosts for this loop
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36425: done getting the remaining hosts for this loop
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36439: building list of next tasks for hosts
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36451: getting the next task for host leaf01_re
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36462: host leaf01_re is done iterating, returning
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36474: done building task lists
+2017-12-18 10:14:27,364 p=25433 u=packetferret |   25433 1513613667.36485: counting tasks in each state of execution
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36498: done counting tasks in each state of execution:
+	num_setups: 0
+	num_tasks: 0
+	num_rescue: 0
+	num_always: 0
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36510: all hosts are done, so returning None's for all hosts
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36522: done queuing things up, now waiting for results queue to drain
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36534: results queue empty
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36545: checking for any_errors_fatal
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36556: done checking for any_errors_fatal
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36568: checking for max_fail_percentage
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36579: done checking for max_fail_percentage
+2017-12-18 10:14:27,365 p=25433 u=packetferret |   25433 1513613667.36590: checking to see if all hosts have failed and the running result is not ok
+2017-12-18 10:14:27,366 p=25433 u=packetferret |   25433 1513613667.36602: done checking to see if all hosts have failed
+2017-12-18 10:14:27,366 p=25433 u=packetferret |   25433 1513613667.36615: getting the next task for host leaf01_re
+2017-12-18 10:14:27,366 p=25433 u=packetferret |   25433 1513613667.36628: host leaf01_re is done iterating, returning
+2017-12-18 10:14:27,366 p=25433 u=packetferret |   25433 1513613667.36640: running handlers
+2017-12-18 10:14:27,367 p=25433 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.retry
+
+2017-12-18 10:14:27,367 p=25433 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:14:27,367 p=25433 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:14:27,367 p=25433 u=packetferret |   25433 1513613667.36759: RUNNING CLEANUP

@@ -1,0 +1,17 @@
+---
+  - name: "### JUNOS - CREATE USER ###"
+    hosts: leaf01_re
+    gather_facts: False
+    connection: local
+    tasks:
+      - name: "# JUNOS - CREATE USER #"
+        junos_user:
+          provider:
+            host: "{{ ansible_ssh_host }}"
+            port: "{{ ansible_ssh_port }}"
+            username: root
+            password: Juniper
+          name: ansible
+          role: super-user
+          sshkey: "{{ vagrant_key }}"
+          state: present
