@@ -37,7 +37,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.11.2/31
+            inet: 10.255.2.0/31
     - name: Ethernet4
       description: spine02_leaf02
       speed: 10000full
@@ -45,7 +45,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.12.2/31
+            inet: 10.255.2.2/31
     - name: Ethernet5
       description: spine02_leaf03
       speed: 10000full
@@ -53,7 +53,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.13.2/31
+            inet: 10.255.2.4/31
     - name: Ethernet6
       description: spine02_leaf04
       speed: 10000full
@@ -61,7 +61,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.14.2/31
+            inet: 10.255.2.6/31
     # - name: Ethernet7
     #   description: spine01_leaf04
     #   speed: 10000full
