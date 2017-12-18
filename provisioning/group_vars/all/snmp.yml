@@ -1,0 +1,25 @@
+snmp:
+  name: "{{ inventory_hostname }}"
+  location: '"22 Brookefield Circle, Magnolia, Texas"'
+  contact: packetferret
+  community:
+    - string: 'homeSNMP'
+      authorization: read-write
+      clients:
+        - 10.10.0.0/16
+        - 10.30.0.0/16
+  trapOptions:
+    - source-address "{{ ansible_host }}"
+  trapGroup:
+    - name: TRAP-QUEEN
+      version: v2
+      port: 162
+      categories:
+        - chassis
+        - routing
+        - authentication
+        - link
+        - startup
+        - services
+      targets:
+        - 10.30.2.1

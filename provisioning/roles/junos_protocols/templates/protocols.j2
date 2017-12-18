@@ -1,0 +1,123 @@
+{# PROTOCOLS #}
+{% if protocols is defined %}
+protocols {
+{# LLDP #}
+{% if protocols.lldp is defined %}
+    lldp {
+{% if protocols.lldp.options is defined %}
+{% for option in protocols.lldp.options %}
+        {{ option }};
+{% endfor %}
+{% endif %}
+{% if protocols.lldp.interface is defined %}
+{% for interface in protocols.lldp.interface %}
+        interface {{ interface }};
+{% endfor %}
+{% endif %}
+    }
+{% endif %}
+{# OSPF #}
+{% if protocols.ospf is defined %}
+    ospf {
+{% if protocols.ospf.options is defined %}
+{% for option in protocols.ospf.options %}
+        {{ option }};
+{% endfor %}
+{% endif %}
+{% if protocols.ospf.export is defined %}
+        export {{ protocols.ospf.export }};
+{% endif %}
+{% for area in protocols.ospf.area %}
+        area {{ area.area }} {
+{% for interface in area.interface %}
+{% if interface.type is defined %}
+            interface {{ interface.iface }} {
+                interface-type {{ interface.type }};
+            }
+{% else %}
+            interface {{ interface.iface }};
+{% endif %}
+{% endfor %}
+        }
+{% endfor %}
+    }
+{% endif %}
+{# _BGP CONFIGURATION_ #}
+{% if protocols.bgp is defined %}
+    bgp {
+{% if protocols.bgp.group is defined %}
+{% for group in protocols.bgp.group %}
+        group {{ group.name }} {
+            type {{ group.type }};
+{% if group.export is defined %}
+            export {{ group.export }};
+{% endif %}
+{% for neighbor in group.neighbor %}
+            neighbor {{ neighbor.ip_address }} {
+                hold-time {{ neighbor.hold_time }};
+                export {{ neighbor.export }};
+                peer-as {{ neighbor.peer_as }};
+                local-as {{ neighbor.local_as }};
+            }
+{% endfor %}
+        }
+{% endfor %}
+{% endif %}
+    }
+{% endif %}
+{# _SPANNING-TREE-PROTOCOL_ #}
+{% if protocols.spanning_tree is defined %}
+{% for stp in protocols.spanning_tree %}
+    {{ stp.protocol }} {
+{# MSTP CONFIGUATION #}
+{% if stp.protocol == 'mstp' %}
+        configuration-name {{ stp.name }};
+        revision-level {{ stp.revision }};
+        bridge-priority {{ stp.bridge_priority }};
+        forward-delay {{ stp.forward_delay }};
+        max-age {{ stp.age }};
+        hello-time {{ stp.hello }};
+{% for option in stp.options %}
+        {{ option }};
+{% endfor %}
+{% for iface in stp.interfaces %}
+        interface {{ iface.iface }} {
+{% if iface.mode is defined %}
+            mode {{ iface.mode }};
+{% endif %}
+{% if iface.disable == True %}
+            disable;
+{% endif %}
+{% if iface.no_root_port == True %}
+            no-root-port;
+{% endif %}
+{% if iface.edge == True %}
+            edge;
+{% endif %}
+{% if iface.access_trunk == True %}
+            access-trunk;
+{% endif %}
+        }
+{% endfor %}
+{% for instance in stp.msti %}
+        msti {{ instance.instance }} {
+{% if instance.priority is defined %}
+            bridge-priority {{ instance.priority }};
+{% endif %}
+            vlan {{ instance.vlans }};
+{% for interface in instance.interfaces %}
+            interface {{ interface.iface }} {
+                priority {{ interface.priority }};
+                cost {{ interface.cost }};
+            }
+{% endfor %}
+        }
+{% endfor %}
+{% elif stp.protocol == 'rstp' %}
+{% elif stp.protocol == 'vstp' %}
+{% endif %}
+    }
+{% endfor %}
+{% endif %}
+}
+{% endif %}

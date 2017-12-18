@@ -1,12 +1,41 @@
+# DATA MODEL BUILT OFF OF JUNIPER
 interfaces:
-  - name: lo
-    address: "10.101.1.0/31"
-    loopback: True
-  - name: eth0
-    address: "dhcp"
-  - name: swp1
-    address: "10.101.1.0/31"
-  - name: swp2
-    address: "10.102.1.0/31"
-  - name: swp3
-    address: "192.168.255.0/31"
+  physical_single:
+# START OF VIRTUAL INTERFACES #
+    - name: lo
+      description: loopback0
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 10.101.1.0/32
+# START OF PHYSICAL INTERFACES #
+    - name: eth0
+      description: management
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: dhcp
+    - name: swp1
+      description: aggregation01_spine01
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 10.101.1.0/31
+    - name: swp2
+      description: aggregation01_spine02
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 10.102.1.0/31
+    - name: swp3
+      description: aggregation01_spine01
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 192.168.255.0/31
+# END OF PHYSICAL INTERFACES #

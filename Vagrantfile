@@ -26,8 +26,8 @@
 #   +--------------+        +---------------+         +---------------+        +--------------+
 
 arista = 'arista_vEOS_4_20'
-junos_pfe = 'vqfx_pfe_15_1X53'
-junos_re = 'vqfx_re_15_1X53'
+junos_pfe = 'juniper/vqfx10k-pfe'
+junos_re = 'juniper/vqfx10k-re'
 cumulus = 'CumulusCommunity/cumulus-vx'
 
 Vagrant.configure(2) do |config|
@@ -304,10 +304,8 @@ Vagrant.configure(2) do |config|
           "aggregation" => ["aggregation0[1:2]"],
           "spine" => ["spine0[1:2]"],
           "leaf" => ["leaf0[1:4]_re"],
-          "leaf_re" => ["leaf0[1:4]_re"],
-          "leaf_pfe" => ["leaf0[1:4]_pfe"],
           "arista:children" => ["spine"],
-          "juniper:children" => ["leaf", "leaf_re", "leaf_pfe"],
+          "juniper:children" => ["leaf"],
           "cumulus:children" => ["aggregation"],
           "all:children" => ["arista", "cumulus", "juniper"]
       }

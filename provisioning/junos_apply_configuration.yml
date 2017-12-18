@@ -1,0 +1,21 @@
+---
+- include: prework_playbook.yml
+- name: Apply generated configurations
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars:
+
+  tasks:
+    - name: Include vault_vars variables
+      include_vars:
+        file: vault_vars.yml
+
+    - name: pushing configuration to device, please wait...
+      junos_config:
+        src: "{{ configuration }}"
+        src_format: text
+        comment: "applied by ansible"
+        provider: "{{ netconf }}"
+        update: replace
+      register: result

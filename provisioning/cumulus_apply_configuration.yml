@@ -1,0 +1,13 @@
+---
+  - name: "# ### DEPLOY INTERFACE CONFIGURATIONS ### #"
+    hosts: cumulus
+    become: True
+    tasks:
+
+      - name: "# PUSH CONFIGURATION TO REMOTE HOST #"
+        copy:
+          src: "{{ build_directory }}/interfaces.conf"
+          dest: /etc/network/interfaces
+          owner: root
+          group: root
+          mode: 0644
