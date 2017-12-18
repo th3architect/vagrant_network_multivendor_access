@@ -15,7 +15,7 @@
     # - junos_policy_options
     # - junos_routingInstances
     # - junos_virtual_chassis
-    # - junos_vlans
+    - junos_vlans
     # - junos_applications
     # - junos_access
     - junos_build_config

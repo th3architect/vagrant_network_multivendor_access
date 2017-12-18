@@ -17,18 +17,6 @@ protocols:
       options:
         - bpdu-block-on-edge
       interfaces:
-        - iface: ge-0/0/0
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: False
-          access_trunk: False
-        - iface: ge-0/0/1
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: True
-          access_trunk: False
         - iface: ge-0/0/2
           disable: False
           mode: point-to-point
@@ -70,12 +58,6 @@ protocols:
           bridge_priority: 4k
           vlans: "[ 1-4094 ]"
           interfaces:
-            - iface: ge-0/0/0
-              cost: 10
-              priority: 160
-            - iface: ge-0/0/1
-              cost: 10
-              priority: 160
             - iface: ge-0/0/2
               cost: 10
               priority: 160
