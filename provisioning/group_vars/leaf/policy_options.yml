@@ -1,0 +1,30 @@
+policy_options:
+  policy:
+    - name: REDISTRIBUTE-DIRECT
+      term:
+        - number: 10
+          from:
+            - protocol direct
+          then: accept
+    - name: POLICY_EXPORT_LOCAL_INTERFACES
+      term:
+        - number: USERS_NETWORK
+          from:
+            - route-filter 10.0.101.1/24 exact
+          then: accept
+        - number: VOICE_NETWORK
+          from:
+            - route-filter 10.0.102.1/24 exact
+          then: accept
+        - number: DMZ_NETWORK
+          from:
+            - route-filter 10.0.103.1/24 exact
+          then: accept
+        - number: TEST_NETWORK
+          from:
+            - route-filter 10.0.104.1/24 exact
+          then: accept
+        - number: LEGACY_NETWORK
+          from:
+            - route-filter 10.0.105.1/24 exact
+          then: accept

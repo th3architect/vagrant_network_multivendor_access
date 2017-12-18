@@ -28,7 +28,7 @@ protocols {
         export {{ protocols.ospf.export }};
 {% endif %}
 {% for area in protocols.ospf.area %}
-        area {{ area.area }} {
+        area {{ area.id }} {
 {% for interface in area.interface %}
 {% if interface.type is defined %}
             interface {{ interface.iface }} {

@@ -310,7 +310,7 @@ Vagrant.configure(2) do |config|
           "cumulus:children" => ["aggregation"],
           "all:children" => ["arista", "cumulus", "juniper"]
       }
-      ansible.verbose = "vvvv"
+      # ansible.verbose = "vvvv"
       ansible.compatibility_mode = "2.0"
       ansible.playbook = "provisioning/all.yml"
   end

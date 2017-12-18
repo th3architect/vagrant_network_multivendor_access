@@ -2,7 +2,6 @@ protocols:
   lldp:
     options:
       - port-id-subtype interface-name
-      - neighbour-port-info-display port-description
       - port-description-type interface-description
     interface:
       - all
@@ -17,49 +16,31 @@ protocols:
       options:
         - bpdu-block-on-edge
       interfaces:
-        - iface: ge-0/0/0
+        - iface: xe-0/0/2
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: xe-0/0/3
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: xe-0/0/4
+          disable: False
+          mode: point-to-point
+          no_root_port: True
+          edge: True
+          access_trunk: False
+        - iface: xe-0/0/5
           disable: False
           mode: point-to-point
           no_root_port: True
           edge: False
           access_trunk: False
-        - iface: ge-0/0/1
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: True
-          access_trunk: False
-        - iface: ge-0/0/2
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: True
-          access_trunk: False
-        - iface: ge-0/0/3
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: True
-          access_trunk: False
-        - iface: ge-0/0/4
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: True
-          access_trunk: False
-        - iface: ge-0/0/5
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: False
-          access_trunk: False
-        - iface: ge-0/0/6
-          disable: False
-          mode: point-to-point
-          no_root_port: True
-          edge: False
-          access_trunk: False
-        - iface: ge-0/0/7
+        - iface: xe-0/0/6
           disable: False
           mode: point-to-point
           no_root_port: True
@@ -70,31 +51,25 @@ protocols:
           bridge_priority: 4k
           vlans: "[ 1-4094 ]"
           interfaces:
-            - iface: ge-0/0/0
+            - iface: xe-0/0/2
               cost: 10
               priority: 160
-            - iface: ge-0/0/1
+            - iface: xe-0/0/3
               cost: 10
               priority: 160
-            - iface: ge-0/0/2
+            - iface: xe-0/0/4
               cost: 10
               priority: 160
-            - iface: ge-0/0/3
+            - iface: xe-0/0/5
               cost: 10
               priority: 160
-            - iface: ge-0/0/4
-              cost: 10
-              priority: 160
-            - iface: ge-0/0/5
-              cost: 10
-              priority: 160
-            - iface: ge-0/0/6
+            - iface: xe-0/0/6
               cost: 10
               priority: 160
     # - protocol: rstp
     #   bridge_priority: 4k
     #   interface:
-    #     - name: ge-0/0/0
+    #     - name: xe-0/0/0
     #       access_trunk: False
     #       cost: 10
     #       disable: False
@@ -104,13 +79,15 @@ protocols:
     #       priority: 160
     #   options:
     #     - bpdu-block-on-edge
-  # ospf:
-  #   area:
-  #     - area: 0.0.0.0
-  #       interface:
-  #         - iface: ge-0/0/1.0
-  #           type: p2p
-  #   export: REDISTRIBUTE-DIRECT
+  ospf:
+    area:
+      - id: 0.0.0.0
+        interface:
+          - iface: xe-0/0/1.0
+            type: p2p
+          - iface: xe-0/0/2.0
+            type: p2p
+    export: REDISTRIBUTE-DIRECT
   # bgp:
   #   group:
   #     - name: external_peers
