@@ -1,0 +1,30 @@
+policy_options:
+  policy:
+    - name: REDISTRIBUTE-DIRECT
+      term:
+        - number: 10
+          from:
+            - protocol direct
+          then: accept
+    - name: POLICY_EXPORT_LOCAL_INTERFACES
+      term:
+        - number: ZONE_OOB
+          from:
+            - route-filter 10.10.0.0/16 exact
+          then: accept
+        - number: ZONE_USERS
+          from:
+            - route-filter 10.20.0.0/16 exact
+          then: accept
+        - number: ZONE_DMZ
+          from:
+            - route-filter 10.30.0.0/16 exact
+          then: accept
+        - number: ZONE_TEST
+          from:
+            - route-filter 10.40.0.0/16 exact
+          then: accept
+        - number: ZONE_LEGACY_TRUST
+          from:
+            - route-filter 10.0.0.0/16 exact
+          then: accept

@@ -11,8 +11,8 @@
     # - junos_snmp
     # - junos_forwarding_options
     # - junos_routing_options
-    # - junos_protocols
-    # - junos_policy_options
+    - junos_protocols
+    - junos_policy_options
     # - junos_routingInstances
     # - junos_virtual_chassis
     - junos_vlans
