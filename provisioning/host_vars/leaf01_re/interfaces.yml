@@ -1,6 +1,6 @@
 # DATA MODEL BUILT OFF OF JUNIPER
 interfaces:
-  physicalSingle:
+  physical_single:
 # START OF PHYSICAL INTERFACES #
     - name: ge-0/0/0
       description: LEGACY_NETWORK

@@ -1,9 +1,31 @@
 ---
-  - import_playbook: cumulus_build_interfaces.yml
-  - import_playbook: cumulus_build_netrules.yml
+  # - import_playbook: cumulus_build_interfaces.yml
+  # - import_playbook: cumulus_build_netrules.yml
   # - import_playbook: cumulus_build_routing.yml
-  - import_playbook: cumulus_deploy_interfaces.yml
-  - import_playbook: cumulus_deploy_netrules.yml
-  - import_playbook: cumulus_build_frr.yml
-  - import_playbook: cumulus_deploy_frr.yml
-  - import_playbook: cumulus_system.yml
+  # - import_playbook: cumulus_deploy_interfaces.yml
+  # - import_playbook: cumulus_deploy_netrules.yml
+  # - import_playbook: cumulus_build_frr.yml
+  # - import_playbook: cumulus_deploy_frr.yml
+  # - import_playbook: cumulus_system.yml
+  - name: '### BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+    hosts: aggregation
+    connection: local
+    gather_facts: false
+    roles:
+      # - arista_system
+      # - arista_aaa
+      # - arista_stp
+      # - arista_vlans
+      # - arista_vrfs
+      - cumulus_interfaces
+      # - arista_interfaces_physical
+      # - arista_interfaces_vlans
+      # - arista_routing
+      # - arista_bgp
+      # - arista_mlag
+      # - arista_banner
+      # - arista_prefix_lists
+      # - arista_route_maps
+      # - arista_ospf
+      # - arista_management
+      # - arista_monitoring

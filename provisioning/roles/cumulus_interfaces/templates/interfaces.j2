@@ -1,0 +1,22 @@
+{% for interface in interfaces.physical_single %}
+auto {{ interface.name }}
+{# LOOPBACK START #}
+{% if interface.name == "lo" %}
+iface {{ interface.name }} inet loopback
+{% for subinterface in interface.subinterface %}
+  address {{ subinterface.family.inet }}
+
+{% endfor %}
+{% else %}
+{% for subinterface in interface.subinterface %}
+{% if subinterface.family.inet == 'dhcp' %}
+iface {{ interface.name }} inet dhcp
+
+{% else %}
+iface {{ interface.name }}
+  address {{ subinterface.family.inet }}
+
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}

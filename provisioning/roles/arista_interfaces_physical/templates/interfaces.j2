@@ -1,55 +1,65 @@
-{% if interfaces_physical is defined %}
-{% for iface in interfaces_physical %}
-interface {{ iface.name }}
-{% if iface.description is defined %}
-   description {{ iface.description }}
+{% for interface in interfaces.physical_single %}
+{# SKIPPING OUT ON SVIs and loopback0 interfaces #}
+{% if interface.name != 'svi' and interface.name != 'lo0' %}
+interface {{ interface.name }}
+{% if interface.description is defined %}
+   description {{ interface.description }}
 {% endif %}
-{% if iface.speed is defined and platform != "vEOS" %}
-   speed forced {{ iface.speed }}
+{% if interface.speed is defined and platform != "vEOS" %}
+   speed forced {{ interface.speed }}
 {% endif %}
-{% if iface.mode == 'management' %}
-   vrf forwarding {{ iface.vrf }}
-   ip address {{ iface.ipv4_address }}
-{% elif iface.mode == 'l3_ipv4' %}
+{# BEGIN HARROWING WORK OF APPLYING JUNOS CONFIG LOGIC TO ARISTA #}
+{% for subinterface in interface.subinterface %}
+{% if subinterface.vrf is defined %}
+   vrf forwarding {{ subinterface.vrf }}
+   ip address {{ subinterface.family.inet }}
+{% elif subinterface.family.mode == 'inet' %}
    no switchport
-   ip address {{ iface.ipv4_address }}
-{% elif iface.mode == 'l3_ipv6' %}
-   no switchport
-   ip address {{ iface.ipv6_address }}
-{% elif iface.mode == 'l2_access' %}
+   ip address {{ subinterface.family.inet }}
+{% else %}
+{% if subinterface.family.type == 'access' %}
    switchport mode access
-   switchport access vlan {{ iface.vlan }}
-{% elif iface.mode == 'l2_trunk' %}
+   switchport access vlan {{ subinterface.family.vlans }}
+{% else %}
    switchport mode trunk
-   switchport trunk allowed vlan {{ iface.vlan }}
-{% elif iface.mode == 'channel_group' %}
-{% if iface.access is defined %}
-   switchport mode access
-   switchport access vlan {{ iface.access.vlan }}
+   switchport trunk allowed vlan {{ subinterface.family.vlans }}
 {% endif %}
-{% if iface.trunk is defined %}
-{% if iface.trunk.native_vlan is defined %}
-   switchport trunk native vlan {{ iface.trunk.native_vlan }}
-{% endif %}
-   switchport trunk allowed vlan {{ iface.trunk.vlan }}
-   switchport mode trunk
-{% endif %}
-   channel-group {{ iface.channel_group.id }} mode {{ iface.channel_group.mode }}
-{% if iface.mlag is not defined %}
-{% if iface.stp_portfast is defined %}
-   {{ iface.stp_portfast }}
+{% if subinterface.channel_group is defined %}
+   channel-group {{ interface.channel_group.id }} mode {{ interface.channel_group.mode }}
+{% if subinterface.mlag is not defined %}
+{% if subinterface.stp_portfast is defined %}
+   {{ subinterface.stp_portfast }}
 {% else %}
    spanning-tree portfast edge
 {% endif %}
-{% if iface.stp_bpduguard is defined and iface.stp_bpduguard != True %}
-   {{ iface.stp_bpduguard }}
+{% if subinterface.stp_bpduguard is defined and subinterface.stp_bpduguard != 'True' %}
+   {{ subinterface.stp_bpduguard }}
 {% else %}
    spanning-tree bpduguard enable
 {% endif %}
 {% endif %}
-{% else %}
-   switchport mode access
+{% endif %}
+{% endif %}
+{% endfor %}
+!
+{# BACK TO ADDRESS THE SVIs #}
+{% elif interface.name == 'svi' %}
+{% for svi in interface.subinterface %}
+interface vlan {{ svi.unit }}
+   description {{ svi.description }}
+   ip address {{ svi.family.inet }}
+{% if svi.virtual_router is defined %}
+   virtual-router {{ svi.virtual_router }}
 {% endif %}
 !
 {% endfor %}
+{% else %}
+{# FINALLY TO WRAP UP INTERFACES WITH LOOPBACKS #}
+interface {{ interface.name }}
+   description {{ interface.description }}
+{% for loopback in interface.subinterface %}
+   ip address {{ loopback.family.inet }}
+{% endfor %}
 {% endif %}
+{# ^ marks the end of the if interface name is not lo0 loop #}
+{% endfor %}

@@ -1,7 +1,7 @@
 {# INTERFACE #}
 interfaces {
-{% if interfaces.physicalSingle is defined %}
-{% for iface in interfaces.physicalSingle %}
+{% if interfaces.physical_single is defined %}
+{% for iface in interfaces.physical_single %}
     {{ iface.name }} {
 {% if iface.description is defined %}
         description {{ iface.description }};
