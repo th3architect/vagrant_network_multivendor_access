@@ -8,14 +8,14 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.1.1/31
+            inet: 10.255.1.3/31
     - name: xe-0/0/1
       description: spine02_leaf01
       subinterface:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.2.1/31
+            inet: 10.255.2.3/31
     - name: xe-0/0/2
       description: USERS_NETWORK
       subinterface:
@@ -62,7 +62,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 10.255.11.11/16
+            inet: 10.255.11.12/16
 # END OF PHYSICAL INTERFACES #
 # START OF VIRTUAL INTERFACES #
     - name: lo0
@@ -71,7 +71,7 @@ interfaces:
         - unit: 0
           family:
             mode: inet
-            inet: 172.16.20.11/32
+            inet: 172.16.20.12/32
     - name: irb
       subinterface:
         - unit: 1
@@ -83,24 +83,24 @@ interfaces:
           description: USERS_NETWORK
           family:
             mode: inet
-            inet: 10.0.101.1/24
+            inet: 10.0.106.1/24
         - unit: 20
           description: VOICE_NETWORK
           family:
             mode: inet
-            inet: 10.0.102.1/24
+            inet: 10.0.107.1/24
         - unit: 30
           description: DMZ_NETWORK
           family:
             mode: inet
-            inet: 10.0.103.1/24
+            inet: 10.0.108.1/24
         - unit: 40
           description: TEST_NETWORK
           family:
             mode: inet
-            inet: 10.0.104.1/24
+            inet: 10.0.109.1/24
         - unit: 50
           description: LEGACY_NETWORK
           family:
             mode: inet
-            inet: 10.0.105.1/24
+            inet: 10.0.110.1/24
