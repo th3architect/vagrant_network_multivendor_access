@@ -1,11 +1,11 @@
 ---
-  - name: '### APPLY CONFIGURATION ###'
+  - name: '### ARISTA - APPLY CONFIGURATION ###'
     hosts: spine
     connection: local
     gather_facts: False
     tasks:
 
-      - name: apply config
+      - name: "# ARISTA - APPLY CONFIGURATION #"
         eos_config:
           src: "{{ configuration_absolute }}"
           authorize: true
