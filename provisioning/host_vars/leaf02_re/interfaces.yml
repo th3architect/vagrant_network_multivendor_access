@@ -63,6 +63,20 @@ interfaces:
           family:
             mode: inet
             inet: 10.255.11.12/16
+    - name: em0
+      description: management
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: dhcp
+    - name: em1
+      description: management
+      subinterface:
+        - unit: 0
+          family:
+            mode: inet
+            inet: 169.254.0.2/24
 # END OF PHYSICAL INTERFACES #
 # START OF VIRTUAL INTERFACES #
     - name: lo0
