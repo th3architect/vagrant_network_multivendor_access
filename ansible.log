@@ -1069,3 +1069,1108 @@ AnsibleError: ncclient is not installed
 2017-12-18 10:14:27,367 p=25433 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
 2017-12-18 10:14:27,367 p=25433 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
 2017-12-18 10:14:27,367 p=25433 u=packetferret |   25433 1513613667.36759: RUNNING CLEANUP
+2017-12-18 10:20:04,535 p=26010 u=packetferret |  PLAY [### JUNOS - CREATE USER ###] ************************************************************************************************************************************************************
+2017-12-18 10:20:04,559 p=26010 u=packetferret |  TASK [# JUNOS - CREATE USER #] ****************************************************************************************************************************************************************
+2017-12-18 10:20:05,058 p=26019 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:20:05,058 p=26019 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:20:05,059 p=26019 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:20:05,059 p=26019 u=packetferret |  using connection plugin netconf
+2017-12-18 10:20:05,060 p=26019 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:20:05,060 p=26019 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:20:15,084 p=26010 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:20:15,085 p=26010 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.retry
+
+2017-12-18 10:20:15,085 p=26010 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:20:15,085 p=26010 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:20:50,536 p=26137 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] *********************************************************************************************************************************************************
+2017-12-18 10:20:50,563 p=26137 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] ********************************************************************************************************************************
+2017-12-18 10:20:50,584 p=26137 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:20:50,589 p=26137 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:20:50,594 p=26137 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:20:51,081 p=26150 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:20:51,081 p=26150 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 10:20:51,081 p=26150 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:20:51,081 p=26150 u=packetferret |  using connection plugin network_cli
+2017-12-18 10:20:51,109 paramiko.transport starting thread (client mode): 0x6792bb10L
+2017-12-18 10:20:51,109 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 10:20:51,122 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 10:20:51,122 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 10:20:51,123 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 10:20:51,123 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 10:20:51,123 paramiko.transport HostKey agreed: ecdsa-sha2-nistp256
+2017-12-18 10:20:51,123 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 10:20:51,123 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 10:20:51,123 paramiko.transport Compression agreed: none
+2017-12-18 10:20:51,171 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 10:20:51,171 paramiko.transport Switch to new keys ...
+2017-12-18 10:20:51,173 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 10:20:51,212 paramiko.transport userauth is OK
+2017-12-18 10:20:51,217 paramiko.transport Authentication (publickey) successful!
+2017-12-18 10:20:51,237 p=26150 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 10:20:51,237 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 10:20:51,238 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 10:20:51,238 paramiko.transport Secsh channel 0 opened.
+2017-12-18 10:20:51,240 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 10:20:51,242 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 10:20:51,243 p=26150 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 10:20:51,245 p=26150 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 10:20:52,274 p=26150 u=packetferret |  firing event: on_open_shell()
+2017-12-18 10:20:52,600 p=26150 u=packetferret |  ssh connection has completed successfully
+2017-12-18 10:20:52,600 p=26150 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.518958
+2017-12-18 10:20:52,600 p=26150 u=packetferret |  local socket is set to listening
+2017-12-18 10:20:53,081 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:20:53,081 p=26150 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:20:53,082 p=26150 u=packetferret |  updating play_context for connection
+2017-12-18 10:20:53,082 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:20:53,082 p=26150 u=packetferret |  socket operation is RUN
+2017-12-18 10:20:53,082 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:20:53,634 p=26168 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 10:20:53,634 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:20:53,634 p=26150 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:20:53,635 p=26150 u=packetferret |  updating play_context for connection
+2017-12-18 10:20:53,635 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:20:53,635 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:20:53,635 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:20:53,874 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:20:53,875 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:20:53,882 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:20:53,895 p=26137 u=packetferret |  ok: [leaf01_re]
+2017-12-18 10:20:53,897 p=26137 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.retry
+
+2017-12-18 10:20:53,897 p=26137 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:20:53,897 p=26137 u=packetferret |  leaf01_re                  : ok=1    changed=0    unreachable=0    failed=0   
+2017-12-18 10:20:53,897 p=26137 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:20:53,897 p=26137 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:20:53,898 p=26137 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:21:03,366 p=26273 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] *********************************************************************************************************************************************************
+2017-12-18 10:21:03,392 p=26273 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] ********************************************************************************************************************************
+2017-12-18 10:21:03,413 p=26273 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:21:03,416 p=26273 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:21:03,420 p=26273 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:21:03,906 p=26286 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  updating play_context for connection
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  socket operation is RUN
+2017-12-18 10:21:03,907 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,412 p=26294 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 10:21:04,413 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,413 p=26150 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:21:04,413 p=26150 u=packetferret |  updating play_context for connection
+2017-12-18 10:21:04,413 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,413 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,414 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,651 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,652 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,660 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,661 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,661 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,726 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,726 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,726 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,791 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,791 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,791 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,856 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,856 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,856 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:04,937 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:04,937 p=26150 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:21:04,937 p=26150 u=packetferret |  socket operation is EXEC
+2017-12-18 10:21:05,316 p=26150 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:21:05,331 p=26273 u=packetferret |  changed: [leaf01_re]
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.retry
+
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  leaf01_re                  : ok=1    changed=1    unreachable=0    failed=0   
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:21:05,333 p=26273 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  shutdown persistent connection requested
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  closing local listener
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  closing the connection
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  closing ssh connection to device
+2017-12-18 10:21:35,316 p=26150 u=packetferret |  firing event: on_close_shell()
+2017-12-18 10:21:35,316 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 10:21:35,317 p=26150 u=packetferret |  cli session is now closed
+2017-12-18 10:21:35,355 paramiko.transport EOF in transport thread
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  removing the local control socket
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  shutdown complete
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  shutdown persistent connection requested
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  persistent connection is not active
+2017-12-18 10:21:35,381 p=26150 u=packetferret |  shutdown local socket, connection was active for 0:00:44.299907 secs
+2017-12-18 10:22:18,034 p=26870 u=packetferret |  PLAY [### JUNOS - CREATE USER ###] ************************************************************************************************************************************************************
+2017-12-18 10:22:18,061 p=26870 u=packetferret |  TASK [# JUNOS - CREATE USER #] ****************************************************************************************************************************************************************
+2017-12-18 10:22:18,558 p=26884 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:22:18,559 p=26884 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:22:18,559 p=26884 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:22:18,559 p=26884 u=packetferret |  using connection plugin netconf
+2017-12-18 10:22:18,560 p=26884 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:22:18,560 p=26884 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:22:28,586 p=26870 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:22:28,587 p=26870 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.retry
+
+2017-12-18 10:22:28,587 p=26870 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:22:28,587 p=26870 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:22:37,779 p=26975 u=packetferret |  PLAY [### JUNOS - CREATE USER ###] ************************************************************************************************************************************************************
+2017-12-18 10:22:37,803 p=26975 u=packetferret |  TASK [# JUNOS - CREATE USER #] ****************************************************************************************************************************************************************
+2017-12-18 10:22:38,274 p=26984 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user root
+2017-12-18 10:22:38,275 p=26984 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4c38478c28
+2017-12-18 10:22:38,275 p=26984 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:22:38,275 p=26984 u=packetferret |  using connection plugin netconf
+2017-12-18 10:22:38,276 p=26984 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:22:38,276 p=26984 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:22:48,304 p=26975 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:22:48,306 p=26975 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_user.retry
+
+2017-12-18 10:22:48,306 p=26975 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:22:48,306 p=26975 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:23:43,524 p=27085 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:23:43,548 p=27085 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:23:44,242 p=27100 u=packetferret |  creating new control socket for host leaf04_re:8830 as user root
+2017-12-18 10:23:44,242 p=27100 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/970562d4c7
+2017-12-18 10:23:44,242 p=27100 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:23:44,242 p=27100 u=packetferret |  using connection plugin netconf
+2017-12-18 10:23:44,244 p=27100 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:23:44,244 p=27100 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:23:44,292 p=27098 u=packetferret |  creating new control socket for host leaf02_re:8830 as user root
+2017-12-18 10:23:44,292 p=27098 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/277a7cb7e3
+2017-12-18 10:23:44,292 p=27098 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:23:44,292 p=27098 u=packetferret |  using connection plugin netconf
+2017-12-18 10:23:44,293 p=27098 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:23:44,294 p=27098 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:23:44,447 p=27099 u=packetferret |  creating new control socket for host leaf03_re:8830 as user root
+2017-12-18 10:23:44,447 p=27099 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4a5db9edcc
+2017-12-18 10:23:44,447 p=27099 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:23:44,447 p=27099 u=packetferret |  using connection plugin netconf
+2017-12-18 10:23:44,449 p=27099 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:23:44,449 p=27099 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:23:44,542 p=27097 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user root
+2017-12-18 10:23:44,542 p=27097 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4c38478c28
+2017-12-18 10:23:44,542 p=27097 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:23:44,542 p=27097 u=packetferret |  using connection plugin netconf
+2017-12-18 10:23:44,543 p=27097 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:23:44,544 p=27097 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:23:54,267 p=27085 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:23:54,318 p=27085 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:23:54,472 p=27085 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:23:54,570 p=27085 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:23:54,571 p=27085 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:23:54,571 p=27085 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:23:54,572 p=27085 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:23:54,572 p=27085 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:23:54,572 p=27085 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:23:54,572 p=27085 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:05,145 p=27216 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:24:05,173 p=27216 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:24:05,923 p=27231 u=packetferret |  creating new control socket for host leaf04_re:8830 as user root
+2017-12-18 10:24:05,923 p=27231 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/970562d4c7
+2017-12-18 10:24:05,923 p=27231 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:05,923 p=27231 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:05,925 p=27231 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:24:05,926 p=27231 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:05,955 p=27230 u=packetferret |  creating new control socket for host leaf03_re:8830 as user root
+2017-12-18 10:24:05,956 p=27230 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4a5db9edcc
+2017-12-18 10:24:05,956 p=27230 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:05,956 p=27230 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:05,958 p=27230 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:24:05,959 p=27230 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:06,232 p=27228 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user root
+2017-12-18 10:24:06,232 p=27228 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4c38478c28
+2017-12-18 10:24:06,232 p=27228 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:06,232 p=27228 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:06,234 p=27228 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:24:06,235 p=27228 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:06,243 p=27229 u=packetferret |  creating new control socket for host leaf02_re:8830 as user root
+2017-12-18 10:24:06,243 p=27229 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/277a7cb7e3
+2017-12-18 10:24:06,243 p=27229 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:06,244 p=27229 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:06,245 p=27229 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:24:06,245 p=27229 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:15,948 p=27216 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:15,983 p=27216 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:16,258 p=27216 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:16,271 p=27216 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:16,271 p=27216 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:24:16,272 p=27216 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:24:16,272 p=27216 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:16,272 p=27216 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:16,272 p=27216 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:16,272 p=27216 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:22,592 p=27348 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:24:22,621 p=27348 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:24:23,543 p=27363 u=packetferret |  creating new control socket for host leaf04_re:8830 as user vagrant
+2017-12-18 10:24:23,543 p=27363 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e00737af98
+2017-12-18 10:24:23,543 p=27363 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:23,544 p=27363 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:23,545 p=27363 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:24:23,546 p=27363 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:23,595 p=27362 u=packetferret |  creating new control socket for host leaf03_re:8830 as user vagrant
+2017-12-18 10:24:23,595 p=27362 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/dc001ab4ac
+2017-12-18 10:24:23,595 p=27362 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:23,595 p=27362 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:23,597 p=27362 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:24:23,597 p=27362 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:23,788 p=27360 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user vagrant
+2017-12-18 10:24:23,789 p=27360 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/29f1c2c69f
+2017-12-18 10:24:23,789 p=27360 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:23,789 p=27360 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:23,790 p=27360 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:24:23,791 p=27360 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:23,791 p=27361 u=packetferret |  creating new control socket for host leaf02_re:8830 as user vagrant
+2017-12-18 10:24:23,791 p=27361 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e9287ef878
+2017-12-18 10:24:23,791 p=27361 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:24:23,792 p=27361 u=packetferret |  using connection plugin netconf
+2017-12-18 10:24:23,793 p=27361 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:24:23,794 p=27361 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:24:33,570 p=27348 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:33,622 p=27348 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:33,817 p=27348 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:33,819 p=27348 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:24:33,821 p=27348 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:25:08,741 p=27500 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:25:08,767 p=27500 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:25:09,555 p=27511 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user vagrant
+2017-12-18 10:25:09,556 p=27511 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/29f1c2c69f
+2017-12-18 10:25:09,556 p=27511 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:25:09,556 p=27511 u=packetferret |  using connection plugin netconf
+2017-12-18 10:25:09,557 p=27511 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:25:09,558 p=27511 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:25:09,676 p=27514 u=packetferret |  creating new control socket for host leaf03_re:8830 as user vagrant
+2017-12-18 10:25:09,676 p=27514 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/dc001ab4ac
+2017-12-18 10:25:09,676 p=27514 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:25:09,676 p=27514 u=packetferret |  using connection plugin netconf
+2017-12-18 10:25:09,677 p=27514 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:25:09,678 p=27514 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:25:09,812 p=27513 u=packetferret |  creating new control socket for host leaf02_re:8830 as user vagrant
+2017-12-18 10:25:09,812 p=27513 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e9287ef878
+2017-12-18 10:25:09,812 p=27513 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:25:09,812 p=27513 u=packetferret |  using connection plugin netconf
+2017-12-18 10:25:09,813 p=27513 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:25:09,814 p=27513 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:25:09,893 p=27515 u=packetferret |  creating new control socket for host leaf04_re:8830 as user vagrant
+2017-12-18 10:25:09,893 p=27515 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e00737af98
+2017-12-18 10:25:09,893 p=27515 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:25:09,893 p=27515 u=packetferret |  using connection plugin netconf
+2017-12-18 10:25:09,894 p=27515 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:25:09,894 p=27515 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:25:19,583 p=27500 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:25:19,703 p=27500 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:25:19,839 p=27500 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:25:19,921 p=27500 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:25:19,922 p=27500 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:27:09,138 p=27877 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:27:09,165 p=27877 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:27:09,183 p=27877 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - APPLY CONFIGURATION #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 10:27:09,188 p=27877 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - APPLY CONFIGURATION #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 10:27:09,189 p=27877 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - APPLY CONFIGURATION #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 10:27:09,652 p=27890 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user vagrant
+2017-12-18 10:27:09,652 p=27890 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e97341680f
+2017-12-18 10:27:09,652 p=27890 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:27:09,652 p=27890 u=packetferret |  using connection plugin netconf
+2017-12-18 10:27:09,653 p=27890 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:27:09,654 p=27890 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:27:19,679 p=27877 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:27:19,680 p=27877 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:27:51,381 p=27987 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:27:51,406 p=27987 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:27:51,918 p=27996 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user vagrant
+2017-12-18 10:27:51,918 p=27996 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e97341680f
+2017-12-18 10:27:51,919 p=27996 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:27:51,919 p=27996 u=packetferret |  using connection plugin netconf
+2017-12-18 10:27:51,920 p=27996 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:27:51,920 p=27996 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:28:01,948 p=27987 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:28:01,949 p=27987 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:28:01,950 p=27987 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:28:01,950 p=27987 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:42:40,760 p=30427 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:42:40,789 p=30427 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:42:41,273 p=30436 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user vagrant
+2017-12-18 10:42:41,273 p=30436 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e97341680f
+2017-12-18 10:42:41,273 p=30436 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:42:41,273 p=30436 u=packetferret |  using connection plugin netconf
+2017-12-18 10:42:41,274 p=30436 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:42:41,275 p=30436 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:42:51,302 p=30427 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:42:51,303 p=30427 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:42:51,303 p=30427 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:42:51,303 p=30427 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:42:53,809 p=30516 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] *********************************************************************************************************************************************************
+2017-12-18 10:42:53,837 p=30516 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] ********************************************************************************************************************************
+2017-12-18 10:42:53,857 p=30516 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:42:53,861 p=30516 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:42:53,865 p=30516 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 10:42:54,459 p=30530 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:42:54,459 p=30530 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 10:42:54,459 p=30530 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:42:54,459 p=30530 u=packetferret |  using connection plugin network_cli
+2017-12-18 10:42:54,487 paramiko.transport starting thread (client mode): 0xdf4f9950L
+2017-12-18 10:42:54,488 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 10:42:54,499 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 10:42:54,499 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 10:42:54,500 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 10:42:54,500 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 10:42:54,500 paramiko.transport HostKey agreed: ecdsa-sha2-nistp256
+2017-12-18 10:42:54,500 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 10:42:54,500 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 10:42:54,500 paramiko.transport Compression agreed: none
+2017-12-18 10:42:54,509 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 10:42:54,509 paramiko.transport Switch to new keys ...
+2017-12-18 10:42:54,519 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 10:42:54,550 paramiko.transport userauth is OK
+2017-12-18 10:42:54,555 paramiko.transport Authentication (publickey) successful!
+2017-12-18 10:42:54,583 p=30530 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 10:42:54,583 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 10:42:54,584 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 10:42:54,584 paramiko.transport Secsh channel 0 opened.
+2017-12-18 10:42:54,586 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 10:42:54,587 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 10:42:54,588 p=30530 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 10:42:54,590 p=30530 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 10:42:55,618 p=30530 u=packetferret |  firing event: on_open_shell()
+2017-12-18 10:42:55,945 p=30530 u=packetferret |  ssh connection has completed successfully
+2017-12-18 10:42:55,945 p=30530 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.485847
+2017-12-18 10:42:55,945 p=30530 u=packetferret |  local socket is set to listening
+2017-12-18 10:42:56,459 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:56,460 p=30530 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:42:56,460 p=30530 u=packetferret |  updating play_context for connection
+2017-12-18 10:42:56,460 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:56,460 p=30530 u=packetferret |  socket operation is RUN
+2017-12-18 10:42:56,460 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:56,923 p=30545 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  socket operation is CONTEXT
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  updating play_context for connection
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:56,924 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,144 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,144 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,151 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,151 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,151 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,216 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,216 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,216 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,281 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,281 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,281 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,346 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,347 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,347 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,415 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,415 p=30530 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 10:42:57,415 p=30530 u=packetferret |  socket operation is EXEC
+2017-12-18 10:42:57,744 p=30530 u=packetferret |  socket operation completed with rc 0
+2017-12-18 10:42:57,758 p=30516 u=packetferret |  changed: [leaf01_re]
+2017-12-18 10:42:57,759 p=30516 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.retry
+
+2017-12-18 10:42:57,759 p=30516 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:42:57,760 p=30516 u=packetferret |  leaf01_re                  : ok=1    changed=1    unreachable=0    failed=0   
+2017-12-18 10:42:57,760 p=30516 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:42:57,760 p=30516 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:42:57,760 p=30516 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  shutdown persistent connection requested
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  closing local listener
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  closing the connection
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  closing ssh connection to device
+2017-12-18 10:43:27,744 p=30530 u=packetferret |  firing event: on_close_shell()
+2017-12-18 10:43:27,744 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 10:43:27,745 p=30530 u=packetferret |  cli session is now closed
+2017-12-18 10:43:27,760 paramiko.transport EOF in transport thread
+2017-12-18 10:43:27,776 p=30530 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 10:43:27,776 p=30530 u=packetferret |  removing the local control socket
+2017-12-18 10:43:27,777 p=30530 u=packetferret |  shutdown complete
+2017-12-18 10:43:27,777 p=30530 u=packetferret |  shutdown persistent connection requested
+2017-12-18 10:43:27,777 p=30530 u=packetferret |  persistent connection is not active
+2017-12-18 10:43:27,777 p=30530 u=packetferret |  shutdown local socket, connection was active for 0:00:33.317785 secs
+2017-12-18 10:44:24,366 p=30891 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:44:24,392 p=30891 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] ********************************************************************************************************************************************************
+2017-12-18 10:44:24,874 p=30901 u=packetferret |  creating new control socket for host localhost:2204 as user ansible
+2017-12-18 10:44:24,874 p=30901 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/b2c394822d
+2017-12-18 10:44:24,874 p=30901 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:44:24,874 p=30901 u=packetferret |  using connection plugin netconf
+2017-12-18 10:44:24,875 p=30901 u=packetferret |  failed to create control socket for host localhost
+2017-12-18 10:44:24,875 p=30901 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:44:34,901 p=30891 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:44:34,902 p=30891 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:44:34,902 p=30891 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:44:34,902 p=30891 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:47:05,479 p=31067 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:47:05,505 p=31067 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 10:47:06,275 p=31078 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:47:06,275 p=31078 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:47:06,276 p=31078 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:47:06,276 p=31078 u=packetferret |  using connection plugin netconf
+2017-12-18 10:47:06,277 p=31078 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:47:06,278 p=31078 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:47:06,301 p=31084 u=packetferret |  creating new control socket for host leaf04_re:2204 as user root
+2017-12-18 10:47:06,301 p=31084 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/955fe051ac
+2017-12-18 10:47:06,301 p=31084 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:47:06,301 p=31084 u=packetferret |  using connection plugin netconf
+2017-12-18 10:47:06,303 p=31084 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:47:06,303 p=31084 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:47:06,334 p=31083 u=packetferret |  creating new control socket for host leaf03_re:2204 as user root
+2017-12-18 10:47:06,334 p=31083 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/6c26152962
+2017-12-18 10:47:06,334 p=31083 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:47:06,334 p=31083 u=packetferret |  using connection plugin netconf
+2017-12-18 10:47:06,336 p=31083 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:47:06,336 p=31083 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:47:06,493 p=31082 u=packetferret |  creating new control socket for host leaf02_re:2204 as user root
+2017-12-18 10:47:06,493 p=31082 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4cb723957e
+2017-12-18 10:47:06,493 p=31082 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:47:06,493 p=31082 u=packetferret |  using connection plugin netconf
+2017-12-18 10:47:06,494 p=31082 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:47:06,495 p=31082 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:47:16,304 p=31067 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:47:16,330 p=31067 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:47:16,364 p=31067 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:47:16,529 p=31067 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:47:16,530 p=31067 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:47:16,530 p=31067 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:47:16,531 p=31067 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:47:16,531 p=31067 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:47:16,531 p=31067 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:47:16,531 p=31067 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:49:26,263 p=31366 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:49:26,293 p=31366 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 10:49:26,972 p=31383 u=packetferret |  creating new control socket for host leaf03_re:830 as user root
+2017-12-18 10:49:26,973 p=31383 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e1d79c941
+2017-12-18 10:49:26,973 p=31383 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:49:26,973 p=31383 u=packetferret |  using connection plugin netconf
+2017-12-18 10:49:26,974 p=31383 u=packetferret |  failed to create control socket for host leaf03_re
+2017-12-18 10:49:26,975 p=31383 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:49:27,060 p=31384 u=packetferret |  creating new control socket for host leaf04_re:830 as user root
+2017-12-18 10:49:27,061 p=31384 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/753c514269
+2017-12-18 10:49:27,061 p=31384 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:49:27,061 p=31384 u=packetferret |  using connection plugin netconf
+2017-12-18 10:49:27,063 p=31384 u=packetferret |  failed to create control socket for host leaf04_re
+2017-12-18 10:49:27,063 p=31384 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:49:27,215 p=31381 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:49:27,215 p=31381 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:49:27,215 p=31381 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:49:27,215 p=31381 u=packetferret |  using connection plugin netconf
+2017-12-18 10:49:27,216 p=31381 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:49:27,217 p=31381 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:49:27,257 p=31382 u=packetferret |  creating new control socket for host leaf02_re:830 as user root
+2017-12-18 10:49:27,257 p=31382 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/649093089d
+2017-12-18 10:49:27,257 p=31382 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:49:27,257 p=31382 u=packetferret |  using connection plugin netconf
+2017-12-18 10:49:27,258 p=31382 u=packetferret |  failed to create control socket for host leaf02_re
+2017-12-18 10:49:27,258 p=31382 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:49:37,000 p=31366 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:49:37,094 p=31366 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:49:37,242 p=31366 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:49:37,287 p=31366 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:49:37,288 p=31366 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:49:37,289 p=31366 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:49:37,289 p=31366 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:49:37,289 p=31366 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:49:37,289 p=31366 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:49:37,289 p=31366 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:50:05,523 p=31567 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 10:50:05,548 p=31567 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 10:50:05,574 p=31567 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 10:50:05,575 p=31567 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 10:50:05,580 p=31567 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 10:50:06,044 p=31579 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 10:50:06,044 p=31579 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 10:50:06,044 p=31579 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 10:50:06,044 p=31579 u=packetferret |  using connection plugin netconf
+2017-12-18 10:50:06,045 p=31579 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 10:50:06,046 p=31579 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 111, in __init__
+    self.connection = connection_loader.get(play_context.connection, play_context, sys.stdin)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 363, in get
+    self._module_cache[path] = self._load_module_source(name, path)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/loader.py", line 339, in _load_module_source
+    module = imp.load_source(full_name, path, module_file)
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 90, in <module>
+    raise AnsibleError("ncclient is not installed")
+AnsibleError: ncclient is not installed
+
+2017-12-18 10:50:16,071 p=31567 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 10:50:16,072 p=31567 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:00:33,667 p=1018 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 11:00:33,704 p=1018 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 11:00:33,729 p=1018 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 11:00:33,731 p=1018 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 11:00:33,738 p=1018 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'root', u'host': u'{{ ansible_host }}', u'password': u'Juniper', u'port': u'{{ ansible_port }}'}: 'ansible_port' is undefined"}
+2017-12-18 11:00:34,203 p=1032 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:00:34,203 p=1032 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 11:00:34,203 p=1032 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:00:34,203 p=1032 u=packetferret |  using connection plugin netconf
+2017-12-18 11:00:34,230 p=1032 u=packetferret |  network_os is set to junos
+2017-12-18 11:00:34,233 p=1032 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:00:34,247 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:00:34,368 p=1032 u=packetferret |  connecting to host 127.0.0.1 returned an error
+2017-12-18 11:00:34,368 p=1032 u=packetferret |  Unknown host key [28:76:d4:ec:e0:8e:9b:64:a4:79:fc:01:89:3d:0d:20] for [127.0.0.1]
+2017-12-18 11:00:44,229 p=1018 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 11:00:44,230 p=1018 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 11:00:44,230 p=1018 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 11:00:44,230 p=1018 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:00:44,230 p=1018 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:00:44,231 p=1018 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:00:44,231 p=1018 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:13,201 p=1451 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 11:12:13,234 p=1451 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 11:12:13,255 p=1451 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:12:13,259 p=1451 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:12:13,263 p=1451 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:12:13,860 p=1464 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user vagrant
+2017-12-18 11:12:13,860 p=1464 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e97341680f
+2017-12-18 11:12:13,860 p=1464 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:12:13,860 p=1464 u=packetferret |  using connection plugin netconf
+2017-12-18 11:12:13,889 p=1464 u=packetferret |  network_os is set to junos
+2017-12-18 11:12:13,891 p=1464 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:12:13,903 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:12:14,025 p=1464 u=packetferret |  connecting to host 127.0.0.1 returned an error
+2017-12-18 11:12:14,025 p=1464 u=packetferret |  Unknown host key [28:76:d4:ec:e0:8e:9b:64:a4:79:fc:01:89:3d:0d:20] for [127.0.0.1]
+2017-12-18 11:12:23,887 p=1451 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 11:12:23,888 p=1451 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 11:12:23,888 p=1451 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 11:12:23,888 p=1451 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:23,888 p=1451 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:23,889 p=1451 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:23,889 p=1451 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:40,347 p=1568 u=packetferret |  ERROR! the playbook: provisioning/junos_netconf. could not be found
+2017-12-18 11:12:42,740 p=1716 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] *********************************************************************************************************************************************************
+2017-12-18 11:12:42,764 p=1716 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] ********************************************************************************************************************************
+2017-12-18 11:12:42,785 p=1716 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:42,788 p=1716 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:42,795 p=1716 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:43,394 p=1731 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:12:43,394 p=1731 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 11:12:43,394 p=1731 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:12:43,394 p=1731 u=packetferret |  using connection plugin network_cli
+2017-12-18 11:12:43,422 paramiko.transport starting thread (client mode): 0x68de6810L
+2017-12-18 11:12:43,423 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 11:12:43,430 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 11:12:43,430 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:12:43,430 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 11:12:43,431 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 11:12:43,431 paramiko.transport HostKey agreed: ecdsa-sha2-nistp256
+2017-12-18 11:12:43,431 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 11:12:43,431 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 11:12:43,431 paramiko.transport Compression agreed: none
+2017-12-18 11:12:43,436 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 11:12:43,437 paramiko.transport Switch to new keys ...
+2017-12-18 11:12:43,438 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 11:12:43,477 paramiko.transport userauth is OK
+2017-12-18 11:12:43,481 paramiko.transport Authentication (publickey) successful!
+2017-12-18 11:12:43,502 p=1731 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 11:12:43,502 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 11:12:43,503 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 11:12:43,503 paramiko.transport Secsh channel 0 opened.
+2017-12-18 11:12:43,504 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:12:43,506 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:12:43,508 p=1731 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 11:12:43,513 p=1731 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 11:12:44,542 p=1731 u=packetferret |  firing event: on_open_shell()
+2017-12-18 11:12:44,866 p=1731 u=packetferret |  ssh connection has completed successfully
+2017-12-18 11:12:44,866 p=1731 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.471515
+2017-12-18 11:12:44,866 p=1731 u=packetferret |  local socket is set to listening
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  updating play_context for connection
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  socket operation is RUN
+2017-12-18 11:12:45,395 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:45,974 p=1747 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:12:45,974 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:12:45,975 p=1731 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:12:45,975 p=1731 u=packetferret |  updating play_context for connection
+2017-12-18 11:12:45,975 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:45,975 p=1731 u=packetferret |  socket operation is EXEC
+2017-12-18 11:12:45,975 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:46,222 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:12:46,222 p=1731 u=packetferret |  socket operation is EXEC
+2017-12-18 11:12:46,232 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:46,245 p=1716 u=packetferret |  ok: [leaf01_re]
+2017-12-18 11:12:46,246 p=1716 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.retry
+
+2017-12-18 11:12:46,246 p=1716 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 11:12:46,246 p=1716 u=packetferret |  leaf01_re                  : ok=1    changed=0    unreachable=0    failed=0   
+2017-12-18 11:12:46,246 p=1716 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:46,247 p=1716 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:46,247 p=1716 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:12:58,971 p=1847 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] *********************************************************************************************************************************************************
+2017-12-18 11:12:58,996 p=1847 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] ********************************************************************************************************************************
+2017-12-18 11:12:59,019 p=1847 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:59,022 p=1847 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:59,026 p=1847 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'ansible_ssh_port' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml': line 7, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    tasks:\n      - name: \"# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #\"\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: 'ansible_ssh_port' is undefined"}
+2017-12-18 11:12:59,487 p=1862 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  updating play_context for connection
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  socket operation is RUN
+2017-12-18 11:12:59,488 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:59,990 p=1869 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:12:59,990 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:12:59,990 p=1731 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:12:59,991 p=1731 u=packetferret |  updating play_context for connection
+2017-12-18 11:12:59,991 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:12:59,991 p=1731 u=packetferret |  socket operation is EXEC
+2017-12-18 11:12:59,991 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:13:00,246 p=1731 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:13:00,246 p=1731 u=packetferret |  socket operation is EXEC
+2017-12-18 11:13:00,253 p=1731 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:13:00,267 p=1847 u=packetferret |  ok: [leaf01_re]
+2017-12-18 11:13:00,269 p=1847 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.retry
+
+2017-12-18 11:13:00,269 p=1847 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 11:13:00,269 p=1847 u=packetferret |  leaf01_re                  : ok=1    changed=0    unreachable=0    failed=0   
+2017-12-18 11:13:00,269 p=1847 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:00,270 p=1847 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:00,270 p=1847 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:03,672 p=1961 u=packetferret |  ERROR! the playbook: provisioning/junos_netconf. could not be found
+2017-12-18 11:13:06,709 p=2034 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] ****************************************************************************************************************************************************
+2017-12-18 11:13:06,744 p=2034 u=packetferret |  TASK [load configure lines into device] *******************************************************************************************************************************************************
+2017-12-18 11:13:06,772 p=2034 u=packetferret |  fatal: [leaf02_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:13:06,775 p=2034 u=packetferret |  fatal: [leaf03_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:13:06,779 p=2034 u=packetferret |  fatal: [leaf04_re]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined\n\nThe error appears to have been in '/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml': line 22, column 9, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n      - name: load configure lines into device\n        ^ here\n\nexception type: <class 'ansible.errors.AnsibleUndefinedVariable'>\nexception: {u'username': u'{{ ansible_user }}', u'host': u'{{ ansible_host }}', u'ssh_keyfile': u'{{ ansible_ssh_private_key_file }}', u'port': u'{{ ansible_port }}'}: 'ansible_ssh_private_key_file' is undefined"}
+2017-12-18 11:13:07,370 p=2046 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user vagrant
+2017-12-18 11:13:07,370 p=2046 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/e97341680f
+2017-12-18 11:13:07,370 p=2046 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:13:07,370 p=2046 u=packetferret |  using connection plugin netconf
+2017-12-18 11:13:07,401 p=2046 u=packetferret |  network_os is set to junos
+2017-12-18 11:13:07,403 p=2046 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:13:07,416 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:13:07,538 p=2046 u=packetferret |  connecting to host 127.0.0.1 returned an error
+2017-12-18 11:13:07,538 p=2046 u=packetferret |  Unknown host key [28:76:d4:ec:e0:8e:9b:64:a4:79:fc:01:89:3d:0d:20] for [127.0.0.1]
+2017-12-18 11:13:17,396 p=2034 u=packetferret |  fatal: [leaf01_re]: FAILED! => {"changed": false, "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"}
+2017-12-18 11:13:17,397 p=2034 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.retry
+
+2017-12-18 11:13:17,398 p=2034 u=packetferret |  PLAY RECAP ************************************************************************************************************************************************************************************
+2017-12-18 11:13:17,398 p=2034 u=packetferret |  leaf01_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:17,398 p=2034 u=packetferret |  leaf02_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:17,398 p=2034 u=packetferret |  leaf03_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:17,398 p=2034 u=packetferret |  leaf04_re                  : ok=0    changed=0    unreachable=0    failed=1   
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  closing local listener
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  closing the connection
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  closing ssh connection to device
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  firing event: on_close_shell()
+2017-12-18 11:13:30,254 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 11:13:30,254 p=1731 u=packetferret |  cli session is now closed
+2017-12-18 11:13:30,295 paramiko.transport EOF in transport thread
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  removing the local control socket
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  shutdown complete
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  persistent connection is not active
+2017-12-18 11:13:30,318 p=1731 u=packetferret |  shutdown local socket, connection was active for 0:00:46.923770 secs
