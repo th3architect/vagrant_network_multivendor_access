@@ -4,9 +4,9 @@
   connection: local
   gather_facts: no
   roles:
-    # - junos_system
-    # - junos_chassis
-    # - junos_security
+    - junos_system
+    # - junos_chassis ####### QFX ONLY ######
+    # - junos_security ####### SRX ONLY ######
     - junos_interfaces
     - junos_snmp
     - junos_forwarding_options
