@@ -8,8 +8,8 @@ snmp:
       clients:
         - 10.255.0.0/16
         - 10.255.1.0/16
-  trapOptions:
-    - source-address "{{ ansible_host }}"
+  # trapOptions:
+  #   - source-address "{{ ansible_host }}"
   trapGroup:
     - name: trap
       version: v2
