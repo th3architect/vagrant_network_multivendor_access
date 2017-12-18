@@ -2174,3 +2174,1529 @@ AnsibleError: ncclient is not installed
 2017-12-18 11:13:30,318 p=1731 u=packetferret |  shutdown persistent connection requested
 2017-12-18 11:13:30,318 p=1731 u=packetferret |  persistent connection is not active
 2017-12-18 11:13:30,318 p=1731 u=packetferret |  shutdown local socket, connection was active for 0:00:46.923770 secs
+2017-12-18 11:41:32,052 p=5124 u=packetferret |  ansible-playbook 2.4.2.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/packetferret/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.14 (default, Nov  3 2017, 10:55:25) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
+2017-12-18 11:41:32,052 p=5124 u=packetferret |  Using /etc/ansible/ansible.cfg as config file
+2017-12-18 11:41:32,053 p=5124 u=packetferret |  setting up inventory plugins
+2017-12-18 11:41:32,061 p=5124 u=packetferret |  Parsed /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory inventory source with ini plugin
+2017-12-18 11:41:32,191 p=5124 u=packetferret |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2017-12-18 11:41:32,260 p=5124 u=packetferret |  PLAYBOOK: all.yml **************************************************************
+2017-12-18 11:41:32,261 p=5124 u=packetferret |  6 plays in provisioning/all.yml
+2017-12-18 11:41:32,287 p=5124 u=packetferret |  PLAY [### PROJECT - BUILD TEMPORARY FOLDERS TO HOST CONFIGURATIONS AS THEY'RE COMPILED ###] ***
+2017-12-18 11:41:32,305 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:32,319 p=5124 u=packetferret |  TASK [# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S FILES #] ****************
+2017-12-18 11:41:32,319 p=5124 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:7
+2017-12-18 11:41:32,469 p=5124 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:41:32,571 p=5124 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "absent"
+}
+2017-12-18 11:41:32,574 p=5124 u=packetferret |  TASK [# CREATE TEMPORARY FOLDERS #] ********************************************
+2017-12-18 11:41:32,574 p=5124 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:11
+2017-12-18 11:41:32,588 p=5124 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:41:32,696 p=5124 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0775", 
+    "owner": "packetferret", 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "size": 40, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:41:32,697 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:32,697 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:32,700 p=5124 u=packetferret |  PLAY [### CUMULUS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ****************
+2017-12-18 11:41:32,700 p=5124 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:41:32,701 p=5124 u=packetferret |  PLAY [### CUMULUS - APPLY CONFIGURATION ###] ***********************************
+2017-12-18 11:41:32,701 p=5124 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:41:32,703 p=5124 u=packetferret |  PLAY [### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] *****************
+2017-12-18 11:41:32,704 p=5124 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:41:32,705 p=5124 u=packetferret |  PLAY [### ARISTA - APPLY CONFIGURATION ###] ************************************
+2017-12-18 11:41:32,705 p=5124 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:41:32,707 p=5124 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] ******************************************
+2017-12-18 11:41:32,709 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:32,712 p=5124 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] *****************
+2017-12-18 11:41:32,712 p=5124 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml:7
+2017-12-18 11:41:33,313 p=5217 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:41:33,314 p=5217 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 11:41:33,314 p=5217 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:41:33,314 p=5217 u=packetferret |  using connection plugin network_cli
+2017-12-18 11:41:33,337 paramiko.transport starting thread (client mode): 0xeda5f6d0L
+2017-12-18 11:41:33,337 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 11:41:33,352 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 11:41:33,352 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:41:33,353 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 11:41:33,353 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 11:41:33,354 paramiko.transport HostKey agreed: ssh-ed25519
+2017-12-18 11:41:33,354 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 11:41:33,354 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 11:41:33,354 paramiko.transport Compression agreed: none
+2017-12-18 11:41:33,403 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 11:41:33,403 paramiko.transport Switch to new keys ...
+2017-12-18 11:41:33,438 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 11:41:33,444 paramiko.transport userauth is OK
+2017-12-18 11:41:33,450 paramiko.transport Authentication (publickey) successful!
+2017-12-18 11:41:33,453 p=5217 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 11:41:33,453 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 11:41:33,454 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 11:41:33,454 paramiko.transport Secsh channel 0 opened.
+2017-12-18 11:41:33,456 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:41:33,457 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:41:33,458 p=5217 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 11:41:33,462 p=5217 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 11:41:34,490 p=5217 u=packetferret |  firing event: on_open_shell()
+2017-12-18 11:41:34,818 p=5217 u=packetferret |  ssh connection has completed successfully
+2017-12-18 11:41:34,818 p=5217 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.504475
+2017-12-18 11:41:34,819 p=5217 u=packetferret |  local socket is set to listening
+2017-12-18 11:41:35,314 p=5217 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:41:35,314 p=5217 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:41:35,314 p=5217 u=packetferret |  updating play_context for connection
+2017-12-18 11:41:35,314 p=5217 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:41:35,314 p=5217 u=packetferret |  socket operation is RUN
+2017-12-18 11:41:35,315 p=5217 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:41:35,851 p=5235 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  updating play_context for connection
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  socket operation is EXEC
+2017-12-18 11:41:35,852 p=5217 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:41:35,987 p=5124 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_netconf.py
+2017-12-18 11:41:36,128 p=5217 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:41:36,128 p=5217 u=packetferret |  socket operation is EXEC
+2017-12-18 11:41:36,142 p=5217 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:41:36,159 p=5124 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "commands": [], 
+    "invocation": {
+        "module_args": {
+            "host": null, 
+            "listens_on": 22, 
+            "netconf_port": 22, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "transport": null, 
+            "username": null
+        }
+    }
+}
+2017-12-18 11:41:36,160 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:36,160 p=5124 u=packetferret |  META: ran handlers
+2017-12-18 11:41:36,161 p=5124 u=packetferret |  PLAY RECAP *********************************************************************
+2017-12-18 11:41:36,161 p=5124 u=packetferret |  leaf01_re                  : ok=3    changed=2    unreachable=0    failed=0   
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  closing local listener
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  closing the connection
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  closing ssh connection to device
+2017-12-18 11:42:06,143 p=5217 u=packetferret |  firing event: on_close_shell()
+2017-12-18 11:42:06,143 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 11:42:06,144 p=5217 u=packetferret |  cli session is now closed
+2017-12-18 11:42:06,183 paramiko.transport EOF in transport thread
+2017-12-18 11:42:06,207 p=5217 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 11:42:06,207 p=5217 u=packetferret |  removing the local control socket
+2017-12-18 11:42:06,208 p=5217 u=packetferret |  shutdown complete
+2017-12-18 11:42:06,208 p=5217 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:42:06,208 p=5217 u=packetferret |  persistent connection is not active
+2017-12-18 11:42:06,208 p=5217 u=packetferret |  shutdown local socket, connection was active for 0:00:32.893766 secs
+2017-12-18 11:42:44,594 p=6108 u=packetferret |  ansible-playbook 2.4.2.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/packetferret/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.14 (default, Nov  3 2017, 10:55:25) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
+2017-12-18 11:42:44,594 p=6108 u=packetferret |  Using /etc/ansible/ansible.cfg as config file
+2017-12-18 11:42:44,596 p=6108 u=packetferret |  setting up inventory plugins
+2017-12-18 11:42:44,603 p=6108 u=packetferret |  Parsed /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory inventory source with ini plugin
+2017-12-18 11:42:44,736 p=6108 u=packetferret |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2017-12-18 11:42:44,794 p=6108 u=packetferret |  PLAYBOOK: all.yml **************************************************************
+2017-12-18 11:42:44,794 p=6108 u=packetferret |  8 plays in provisioning/all.yml
+2017-12-18 11:42:44,815 p=6108 u=packetferret |  PLAY [### PROJECT - BUILD TEMPORARY FOLDERS TO HOST CONFIGURATIONS AS THEY'RE COMPILED ###] ***
+2017-12-18 11:42:44,827 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:44,840 p=6108 u=packetferret |  TASK [# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S FILES #] ****************
+2017-12-18 11:42:44,840 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:7
+2017-12-18 11:42:44,994 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:42:45,095 p=6108 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "absent"
+}
+2017-12-18 11:42:45,098 p=6108 u=packetferret |  TASK [# CREATE TEMPORARY FOLDERS #] ********************************************
+2017-12-18 11:42:45,098 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:11
+2017-12-18 11:42:45,111 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:42:45,206 p=6108 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0775", 
+    "owner": "packetferret", 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "size": 40, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:42:45,206 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:45,206 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:45,209 p=6108 u=packetferret |  PLAY [### CUMULUS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ****************
+2017-12-18 11:42:45,209 p=6108 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:42:45,210 p=6108 u=packetferret |  PLAY [### CUMULUS - APPLY CONFIGURATION ###] ***********************************
+2017-12-18 11:42:45,210 p=6108 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:42:45,211 p=6108 u=packetferret |  PLAY [### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] *****************
+2017-12-18 11:42:45,212 p=6108 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:42:45,212 p=6108 u=packetferret |  PLAY [### ARISTA - APPLY CONFIGURATION ###] ************************************
+2017-12-18 11:42:45,213 p=6108 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:42:45,214 p=6108 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] ******************************************
+2017-12-18 11:42:45,216 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:45,219 p=6108 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] *****************
+2017-12-18 11:42:45,219 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml:7
+2017-12-18 11:42:45,759 p=6193 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:42:45,759 p=6193 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 11:42:45,759 p=6193 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:42:45,760 p=6193 u=packetferret |  using connection plugin network_cli
+2017-12-18 11:42:45,783 paramiko.transport starting thread (client mode): 0xaf2d26d0L
+2017-12-18 11:42:45,783 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 11:42:45,796 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 11:42:45,796 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:42:45,797 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 11:42:45,797 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 11:42:45,797 paramiko.transport HostKey agreed: ssh-ed25519
+2017-12-18 11:42:45,798 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 11:42:45,798 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 11:42:45,798 paramiko.transport Compression agreed: none
+2017-12-18 11:42:45,806 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 11:42:45,807 paramiko.transport Switch to new keys ...
+2017-12-18 11:42:45,815 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 11:42:45,848 paramiko.transport userauth is OK
+2017-12-18 11:42:45,853 paramiko.transport Authentication (publickey) successful!
+2017-12-18 11:42:45,879 p=6193 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 11:42:45,879 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 11:42:45,880 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 11:42:45,880 paramiko.transport Secsh channel 0 opened.
+2017-12-18 11:42:45,881 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:42:45,882 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:42:45,884 p=6193 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 11:42:45,887 p=6193 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 11:42:46,916 p=6193 u=packetferret |  firing event: on_open_shell()
+2017-12-18 11:42:47,240 p=6193 u=packetferret |  ssh connection has completed successfully
+2017-12-18 11:42:47,240 p=6193 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.480619
+2017-12-18 11:42:47,240 p=6193 u=packetferret |  local socket is set to listening
+2017-12-18 11:42:47,760 p=6193 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:42:47,760 p=6193 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:42:47,760 p=6193 u=packetferret |  updating play_context for connection
+2017-12-18 11:42:47,760 p=6193 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:42:47,761 p=6193 u=packetferret |  socket operation is RUN
+2017-12-18 11:42:47,761 p=6193 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:42:48,407 p=6205 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:42:48,408 p=6193 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:42:48,408 p=6193 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:42:48,408 p=6193 u=packetferret |  updating play_context for connection
+2017-12-18 11:42:48,408 p=6193 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:42:48,409 p=6193 u=packetferret |  socket operation is EXEC
+2017-12-18 11:42:48,409 p=6193 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:42:48,558 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_netconf.py
+2017-12-18 11:42:48,674 p=6193 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:42:48,674 p=6193 u=packetferret |  socket operation is EXEC
+2017-12-18 11:42:48,681 p=6193 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:42:48,693 p=6108 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "commands": [], 
+    "invocation": {
+        "module_args": {
+            "host": null, 
+            "listens_on": 22, 
+            "netconf_port": 22, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "transport": null, 
+            "username": null
+        }
+    }
+}
+2017-12-18 11:42:48,694 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:48,694 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:48,697 p=6108 u=packetferret |  PLAY [### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ******************
+2017-12-18 11:42:48,698 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:48,701 p=6108 u=packetferret |  TASK [junos_interfaces : building interfaces configuration] ********************
+2017-12-18 11:42:48,701 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_interfaces/tasks/main.yml:2
+2017-12-18 11:42:48,833 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-12-18 11:42:48,996 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/copy.py
+2017-12-18 11:42:49,081 p=6108 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+    "diff": [], 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": true, 
+            "group": null, 
+            "local_follow": null, 
+            "mode": null, 
+            "original_basename": "interfaces.j2", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513618968.72-119784806080761/source", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513618968.72-119784806080761/source", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:42:49,086 p=6108 u=packetferret |  TASK [junos_build_config : check if directory is present] **********************
+2017-12-18 11:42:49,086 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:2
+2017-12-18 11:42:49,100 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:42:49,200 p=6108 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "diff": {
+        "after": {
+            "path": "configuration"
+        }, 
+        "before": {
+            "path": "configuration"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "configuration", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "02775", 
+    "owner": "packetferret", 
+    "path": "configuration", 
+    "size": 4096, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:42:49,206 p=6108 u=packetferret |  TASK [junos_build_config : assemble configurations and copy to configuration] ***
+2017-12-18 11:42:49,206 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:6
+2017-12-18 11:42:49,342 p=6108 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/assemble.py
+2017-12-18 11:42:49,442 p=6108 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "configuration/leaf01_re.conf", 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "configuration/leaf01_re.conf", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "ignore_hidden": false, 
+            "mode": null, 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": false, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/ansible//leaf01_re/tmp", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "msg": "OK", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:42:49,443 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:49,443 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:49,446 p=6108 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] *************************************
+2017-12-18 11:42:49,447 p=6108 u=packetferret |  META: ran handlers
+2017-12-18 11:42:49,450 p=6108 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] *****************************************
+2017-12-18 11:42:49,450 p=6108 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml:7
+2017-12-18 11:42:49,983 p=6347 u=packetferret |  creating new control socket for host 127.0.0.1:8830 as user root
+2017-12-18 11:42:49,983 p=6347 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/4c38478c28
+2017-12-18 11:42:49,983 p=6347 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:42:49,983 p=6347 u=packetferret |  using connection plugin netconf
+2017-12-18 11:42:50,014 p=6347 u=packetferret |  network_os is set to junos
+2017-12-18 11:42:50,017 p=6347 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:42:50,018 ncclient.transport.ssh Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+2017-12-18 11:42:50,021 ncclient.transport.ssh Traceback (most recent call last):
+2017-12-18 11:42:50,021 ncclient.transport.ssh   File "/usr/lib/python2.7/site-packages/paramiko/transport.py", line 1854, in run
+2017-12-18 11:42:50,021 ncclient.transport.ssh     self._check_banner()
+2017-12-18 11:42:50,021 ncclient.transport.ssh   File "/usr/lib/python2.7/site-packages/paramiko/transport.py", line 2005, in _check_banner
+2017-12-18 11:42:50,021 ncclient.transport.ssh     'Error reading SSH protocol banner' + str(e)
+2017-12-18 11:42:50,021 ncclient.transport.ssh SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+2017-12-18 11:42:50,021 ncclient.transport.ssh 
+2017-12-18 11:42:50,025 p=6347 u=packetferret |  failed to create control socket for host 127.0.0.1
+2017-12-18 11:42:50,026 p=6347 u=packetferret |  Traceback (most recent call last):
+  File "/usr/bin/ansible-connection", line 315, in main
+    server = Server(socket_path, pc)
+  File "/usr/bin/ansible-connection", line 112, in __init__
+    self.connection._connect()
+  File "/usr/lib/python2.7/site-packages/ansible/plugins/connection/netconf.py", line 158, in _connect
+    ssh_config=ssh_config
+  File "/usr/lib/python2.7/site-packages/ncclient/manager.py", line 154, in connect
+    return connect_ssh(*args, **kwds)
+  File "/usr/lib/python2.7/site-packages/ncclient/manager.py", line 119, in connect_ssh
+    session.connect(*args, **kwds)
+  File "/usr/lib/python2.7/site-packages/ncclient/transport/ssh.py", line 393, in connect
+    raise SSHError('Negotiation failed')
+SSHError: Negotiation failed
+
+2017-12-18 11:43:00,011 p=6108 u=packetferret |  fatal: [leaf01_re]: FAILED! => {
+    "changed": false, 
+    "msg": "unable to open shell. Please see: https://docs.ansible.com/ansible/network_debug_troubleshooting.html#unable-to-open-shell"
+}
+2017-12-18 11:43:00,012 p=6108 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/all.retry
+
+2017-12-18 11:43:00,012 p=6108 u=packetferret |  PLAY RECAP *********************************************************************
+2017-12-18 11:43:00,012 p=6108 u=packetferret |  leaf01_re                  : ok=6    changed=3    unreachable=0    failed=1   
+2017-12-18 11:43:18,681 p=6193 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:43:18,681 p=6193 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:43:18,681 p=6193 u=packetferret |  closing local listener
+2017-12-18 11:43:18,681 p=6193 u=packetferret |  closing the connection
+2017-12-18 11:43:18,681 p=6193 u=packetferret |  closing ssh connection to device
+2017-12-18 11:43:18,682 p=6193 u=packetferret |  firing event: on_close_shell()
+2017-12-18 11:43:18,682 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 11:43:18,682 p=6193 u=packetferret |  cli session is now closed
+2017-12-18 11:43:18,722 paramiko.transport EOF in transport thread
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  removing the local control socket
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  shutdown complete
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  persistent connection is not active
+2017-12-18 11:43:18,746 p=6193 u=packetferret |  shutdown local socket, connection was active for 0:00:32.986534 secs
+2017-12-18 11:50:21,346 p=7320 u=packetferret |  ansible-playbook 2.4.2.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/packetferret/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.14 (default, Nov  3 2017, 10:55:25) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
+2017-12-18 11:50:21,346 p=7320 u=packetferret |  Using /etc/ansible/ansible.cfg as config file
+2017-12-18 11:50:21,347 p=7320 u=packetferret |  setting up inventory plugins
+2017-12-18 11:50:21,352 p=7320 u=packetferret |  Parsed /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory inventory source with ini plugin
+2017-12-18 11:50:21,478 p=7320 u=packetferret |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2017-12-18 11:50:21,539 p=7320 u=packetferret |  PLAYBOOK: all.yml **************************************************************
+2017-12-18 11:50:21,539 p=7320 u=packetferret |  8 plays in provisioning/all.yml
+2017-12-18 11:50:21,560 p=7320 u=packetferret |  PLAY [### PROJECT - BUILD TEMPORARY FOLDERS TO HOST CONFIGURATIONS AS THEY'RE COMPILED ###] ***
+2017-12-18 11:50:21,573 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:21,586 p=7320 u=packetferret |  TASK [# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S FILES #] ****************
+2017-12-18 11:50:21,586 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:7
+2017-12-18 11:50:21,707 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:50:21,810 p=7320 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "absent"
+}
+2017-12-18 11:50:21,814 p=7320 u=packetferret |  TASK [# CREATE TEMPORARY FOLDERS #] ********************************************
+2017-12-18 11:50:21,814 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:11
+2017-12-18 11:50:21,827 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:50:21,942 p=7320 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0775", 
+    "owner": "packetferret", 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "size": 40, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:50:21,943 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:21,944 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:21,948 p=7320 u=packetferret |  PLAY [### CUMULUS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ****************
+2017-12-18 11:50:21,948 p=7320 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:50:21,950 p=7320 u=packetferret |  PLAY [### CUMULUS - APPLY CONFIGURATION ###] ***********************************
+2017-12-18 11:50:21,950 p=7320 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:50:21,952 p=7320 u=packetferret |  PLAY [### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] *****************
+2017-12-18 11:50:21,953 p=7320 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:50:21,954 p=7320 u=packetferret |  PLAY [### ARISTA - APPLY CONFIGURATION ###] ************************************
+2017-12-18 11:50:21,954 p=7320 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:50:21,957 p=7320 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] ******************************************
+2017-12-18 11:50:21,960 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:21,964 p=7320 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] *****************
+2017-12-18 11:50:21,964 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml:7
+2017-12-18 11:50:22,536 p=7414 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:50:22,536 p=7414 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 11:50:22,536 p=7414 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:50:22,537 p=7414 u=packetferret |  using connection plugin network_cli
+2017-12-18 11:50:22,564 paramiko.transport starting thread (client mode): 0x43b616d0L
+2017-12-18 11:50:22,564 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 11:50:22,573 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 11:50:22,573 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:50:22,574 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 11:50:22,574 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 11:50:22,574 paramiko.transport HostKey agreed: ssh-ed25519
+2017-12-18 11:50:22,574 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 11:50:22,574 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 11:50:22,574 paramiko.transport Compression agreed: none
+2017-12-18 11:50:22,620 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 11:50:22,621 paramiko.transport Switch to new keys ...
+2017-12-18 11:50:22,628 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 11:50:22,661 paramiko.transport userauth is OK
+2017-12-18 11:50:22,667 paramiko.transport Authentication (publickey) successful!
+2017-12-18 11:50:22,692 p=7414 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 11:50:22,693 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 11:50:22,694 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 11:50:22,694 paramiko.transport Secsh channel 0 opened.
+2017-12-18 11:50:22,695 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:50:22,697 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:50:22,698 p=7414 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 11:50:22,702 p=7414 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 11:50:23,731 p=7414 u=packetferret |  firing event: on_open_shell()
+2017-12-18 11:50:24,057 p=7414 u=packetferret |  ssh connection has completed successfully
+2017-12-18 11:50:24,058 p=7414 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.521109
+2017-12-18 11:50:24,058 p=7414 u=packetferret |  local socket is set to listening
+2017-12-18 11:50:24,536 p=7414 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:50:24,536 p=7414 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:50:24,536 p=7414 u=packetferret |  updating play_context for connection
+2017-12-18 11:50:24,537 p=7414 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:24,537 p=7414 u=packetferret |  socket operation is RUN
+2017-12-18 11:50:24,537 p=7414 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:25,076 p=7441 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:50:25,076 p=7414 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:50:25,077 p=7414 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:50:25,077 p=7414 u=packetferret |  updating play_context for connection
+2017-12-18 11:50:25,077 p=7414 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:25,077 p=7414 u=packetferret |  socket operation is EXEC
+2017-12-18 11:50:25,077 p=7414 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:25,216 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_netconf.py
+2017-12-18 11:50:25,347 p=7414 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:50:25,347 p=7414 u=packetferret |  socket operation is EXEC
+2017-12-18 11:50:25,359 p=7414 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:25,375 p=7320 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "commands": [], 
+    "invocation": {
+        "module_args": {
+            "host": null, 
+            "listens_on": 22, 
+            "netconf_port": 22, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "transport": null, 
+            "username": null
+        }
+    }
+}
+2017-12-18 11:50:25,375 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:25,375 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:25,379 p=7320 u=packetferret |  PLAY [### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ******************
+2017-12-18 11:50:25,380 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:25,384 p=7320 u=packetferret |  TASK [junos_interfaces : building interfaces configuration] ********************
+2017-12-18 11:50:25,384 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_interfaces/tasks/main.yml:2
+2017-12-18 11:50:25,534 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-12-18 11:50:25,737 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/copy.py
+2017-12-18 11:50:25,846 p=7320 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+    "diff": [], 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": true, 
+            "group": null, 
+            "local_follow": null, 
+            "mode": null, 
+            "original_basename": "interfaces.j2", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513619425.41-238978079987109/source", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513619425.41-238978079987109/source", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:50:25,850 p=7320 u=packetferret |  TASK [junos_build_config : check if directory is present] **********************
+2017-12-18 11:50:25,850 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:2
+2017-12-18 11:50:25,865 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:50:25,981 p=7320 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "diff": {
+        "after": {
+            "path": "configuration"
+        }, 
+        "before": {
+            "path": "configuration"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "configuration", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "02775", 
+    "owner": "packetferret", 
+    "path": "configuration", 
+    "size": 4096, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:50:25,985 p=7320 u=packetferret |  TASK [junos_build_config : assemble configurations and copy to configuration] ***
+2017-12-18 11:50:25,985 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:6
+2017-12-18 11:50:26,124 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/assemble.py
+2017-12-18 11:50:26,227 p=7320 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "configuration/leaf01_re.conf", 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "configuration/leaf01_re.conf", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "ignore_hidden": false, 
+            "mode": null, 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": false, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/ansible//leaf01_re/tmp", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "msg": "OK", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:50:26,228 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:26,228 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:26,231 p=7320 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] *************************************
+2017-12-18 11:50:26,233 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:26,236 p=7320 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] *****************************************
+2017-12-18 11:50:26,236 p=7320 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml:7
+2017-12-18 11:50:26,850 p=7579 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:50:26,850 p=7579 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 11:50:26,850 p=7579 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:50:26,850 p=7579 u=packetferret |  using connection plugin netconf
+2017-12-18 11:50:26,883 p=7579 u=packetferret |  network_os is set to junos
+2017-12-18 11:50:26,885 p=7579 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:50:26,894 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:50:26,948 ncclient.transport.ssh Authentication (publickey) successful!
+2017-12-18 11:50:27,117 ncclient.transport.session initialized: session-id=3712 | server_capabilities=<dictionary-keyiterator object at 0x7f1c4f3b7ba8>
+2017-12-18 11:50:27,117 p=7579 u=packetferret |  ncclient manager object created successfully
+2017-12-18 11:50:27,121 p=7579 u=packetferret |  loaded netconf plugin for network_os junos
+2017-12-18 11:50:27,121 p=7579 u=packetferret |  connection established to 127.0.0.1 in 0:00:00.271013
+2017-12-18 11:50:27,122 p=7579 u=packetferret |  local socket is set to listening
+2017-12-18 11:50:27,849 p=7579 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:50:27,849 p=7579 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:50:27,850 p=7579 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:27,850 p=7579 u=packetferret |  socket operation is RUN
+2017-12-18 11:50:27,850 p=7579 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:28,031 p=7320 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_command.py
+2017-12-18 11:50:28,163 p=7579 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:50:28,163 p=7579 u=packetferret |  socket operation is EXEC
+2017-12-18 11:50:28,163 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2017-12-18 11:50:28,428 p=7579 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:50:28,441 p=7320 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "commands": [
+                "show version"
+            ], 
+            "display": null, 
+            "host": null, 
+            "interval": 1, 
+            "match": "all", 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "retries": 10, 
+            "rpcs": null, 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "transport": null, 
+            "username": null, 
+            "wait_for": null
+        }
+    }, 
+    "stdout": [
+        "fpc0:\n--------------------------------------------------------------------------\nHostname: vqfx-re\nModel: vqfx-10000\nJunos: 15.1X53-D63.9\nJUNOS Base OS boot [15.1X53-D63.9]\nJUNOS Base OS Software Suite [15.1X53-D63.9]\nJUNOS Online Documentation [15.1X53-D63.9]\nJUNOS Crypto Software Suite [15.1X53-D63.9]\nJUNOS Packet Forwarding Engine Support (qfx-10-f) [15.1X53-D63.9]\nJUNOS Kernel Software Suite [15.1X53-D63.9]\nJUNOS Web Management [15.1X53-D63.9]\nJUNOS Enterprise Software Suite [15.1X53-D63.9]\nJUNOS SDN Software Suite [15.1X53-D63.9]\nJUNOS Routing Software Suite [15.1X53-D63.9]\nJUNOS py-base-i386 [15.1X53-D63.9]"
+    ], 
+    "stdout_lines": [
+        [
+            "fpc0:", 
+            "--------------------------------------------------------------------------", 
+            "Hostname: vqfx-re", 
+            "Model: vqfx-10000", 
+            "Junos: 15.1X53-D63.9", 
+            "JUNOS Base OS boot [15.1X53-D63.9]", 
+            "JUNOS Base OS Software Suite [15.1X53-D63.9]", 
+            "JUNOS Online Documentation [15.1X53-D63.9]", 
+            "JUNOS Crypto Software Suite [15.1X53-D63.9]", 
+            "JUNOS Packet Forwarding Engine Support (qfx-10-f) [15.1X53-D63.9]", 
+            "JUNOS Kernel Software Suite [15.1X53-D63.9]", 
+            "JUNOS Web Management [15.1X53-D63.9]", 
+            "JUNOS Enterprise Software Suite [15.1X53-D63.9]", 
+            "JUNOS SDN Software Suite [15.1X53-D63.9]", 
+            "JUNOS Routing Software Suite [15.1X53-D63.9]", 
+            "JUNOS py-base-i386 [15.1X53-D63.9]"
+        ]
+    ]
+}
+2017-12-18 11:50:28,442 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:28,442 p=7320 u=packetferret |  META: ran handlers
+2017-12-18 11:50:28,442 p=7320 u=packetferret |  PLAY RECAP *********************************************************************
+2017-12-18 11:50:28,442 p=7320 u=packetferret |  leaf01_re                  : ok=7    changed=3    unreachable=0    failed=0   
+2017-12-18 11:50:55,359 p=7414 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  closing local listener
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  closing the connection
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  closing ssh connection to device
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  firing event: on_close_shell()
+2017-12-18 11:50:55,360 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 11:50:55,360 p=7414 u=packetferret |  cli session is now closed
+2017-12-18 11:50:55,401 paramiko.transport EOF in transport thread
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  removing the local control socket
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  shutdown complete
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  persistent connection is not active
+2017-12-18 11:50:55,424 p=7414 u=packetferret |  shutdown local socket, connection was active for 0:00:32.887646 secs
+2017-12-18 11:50:58,428 p=7579 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:50:58,428 p=7579 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:50:58,429 p=7579 u=packetferret |  closing local listener
+2017-12-18 11:50:58,429 p=7579 u=packetferret |  closing the connection
+2017-12-18 11:50:58,429 ncclient.operations.rpc Requesting 'CloseSession'
+2017-12-18 11:50:58,437 p=7579 u=packetferret |  removing the local control socket
+2017-12-18 11:50:58,437 p=7579 u=packetferret |  shutdown complete
+2017-12-18 11:50:58,437 p=7579 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:50:58,437 p=7579 u=packetferret |  persistent connection is not active
+2017-12-18 11:50:58,437 p=7579 u=packetferret |  shutdown local socket, connection was active for 0:00:31.586913 secs
+2017-12-18 11:53:18,138 p=8371 u=packetferret |  ansible-playbook 2.4.2.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/packetferret/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.14 (default, Nov  3 2017, 10:55:25) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
+2017-12-18 11:53:18,138 p=8371 u=packetferret |  Using /etc/ansible/ansible.cfg as config file
+2017-12-18 11:53:18,139 p=8371 u=packetferret |  setting up inventory plugins
+2017-12-18 11:53:18,144 p=8371 u=packetferret |  Parsed /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory inventory source with ini plugin
+2017-12-18 11:53:18,274 p=8371 u=packetferret |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2017-12-18 11:53:18,338 p=8371 u=packetferret |  PLAYBOOK: all.yml **************************************************************
+2017-12-18 11:53:18,339 p=8371 u=packetferret |  8 plays in provisioning/all.yml
+2017-12-18 11:53:18,360 p=8371 u=packetferret |  PLAY [### PROJECT - BUILD TEMPORARY FOLDERS TO HOST CONFIGURATIONS AS THEY'RE COMPILED ###] ***
+2017-12-18 11:53:18,377 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:18,390 p=8371 u=packetferret |  TASK [# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S FILES #] ****************
+2017-12-18 11:53:18,390 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:7
+2017-12-18 11:53:18,507 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:53:18,600 p=8371 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }
+    }, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "absent", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "absent"
+}
+2017-12-18 11:53:18,603 p=8371 u=packetferret |  TASK [# CREATE TEMPORARY FOLDERS #] ********************************************
+2017-12-18 11:53:18,603 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/build_directories.yml:11
+2017-12-18 11:53:18,618 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:53:18,739 p=8371 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "diff": {
+        "after": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "directory"
+        }, 
+        "before": {
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "state": "absent"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "/tmp/ansible//leaf01_re/tmp", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "0775", 
+    "owner": "packetferret", 
+    "path": "/tmp/ansible//leaf01_re/tmp", 
+    "size": 40, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:53:18,740 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:18,740 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:18,744 p=8371 u=packetferret |  PLAY [### CUMULUS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ****************
+2017-12-18 11:53:18,744 p=8371 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:53:18,746 p=8371 u=packetferret |  PLAY [### CUMULUS - APPLY CONFIGURATION ###] ***********************************
+2017-12-18 11:53:18,746 p=8371 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:53:18,748 p=8371 u=packetferret |  PLAY [### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] *****************
+2017-12-18 11:53:18,749 p=8371 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:53:18,750 p=8371 u=packetferret |  PLAY [### ARISTA - APPLY CONFIGURATION ###] ************************************
+2017-12-18 11:53:18,751 p=8371 u=packetferret |  skipping: no hosts matched
+2017-12-18 11:53:18,754 p=8371 u=packetferret |  PLAY [### JUNOS - ENABLE NETCONF ###] ******************************************
+2017-12-18 11:53:18,756 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:18,761 p=8371 u=packetferret |  TASK [# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #] *****************
+2017-12-18 11:53:18,761 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_netconf.yml:7
+2017-12-18 11:53:19,341 p=8462 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:53:19,341 p=8462 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/893f9b3ee5
+2017-12-18 11:53:19,341 p=8462 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:53:19,341 p=8462 u=packetferret |  using connection plugin network_cli
+2017-12-18 11:53:19,365 paramiko.transport starting thread (client mode): 0x8fab6d0L
+2017-12-18 11:53:19,365 paramiko.transport Local version/idstring: SSH-2.0-paramiko_2.3.1
+2017-12-18 11:53:19,378 paramiko.transport Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2017-12-18 11:53:19,378 paramiko.transport Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:53:19,379 paramiko.transport kex algos:[u'curve25519-sha256@libssh.org', u'ecdh-sha2-nistp256', u'ecdh-sha2-nistp384', u'ecdh-sha2-nistp521', u'diffie-hellman-group-exchange-sha256', u'diffie-hellman-group-exchange-sha1', u'diffie-hellman-group14-sha1', u'diffie-hellman-group1-sha1'] server key:[u'ssh-rsa', u'ssh-dss', u'ecdsa-sha2-nistp256', u'ssh-ed25519'] client encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] server encrypt:[u'aes128-ctr', u'aes192-ctr', u'aes256-ctr', u'arcfour256', u'arcfour128', u'aes128-gcm@openssh.com', u'aes256-gcm@openssh.com', u'chacha20-poly1305@openssh.com', u'aes128-cbc', u'3des-cbc', u'blowfish-cbc', u'cast128-cbc', u'aes192-cbc', u'aes256-cbc', u'arcfour', u'rijndael-cbc@lysator.liu.se'] client mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] server mac:[u'hmac-md5-etm@openssh.com', u'hmac-sha1-etm@openssh.com', u'umac-64-etm@openssh.com', u'umac-128-etm@openssh.com', u'hmac-sha2-256-etm@openssh.com', u'hmac-sha2-512-etm@openssh.com', u'hmac-ripemd160-etm@openssh.com', u'hmac-sha1-96-etm@openssh.com', u'hmac-md5-96-etm@openssh.com', u'hmac-md5', u'hmac-sha1', u'umac-64@openssh.com', u'umac-128@openssh.com', u'hmac-sha2-256', u'hmac-sha2-256-96', u'hmac-sha2-512', u'hmac-sha2-512-96', u'hmac-ripemd160', u'hmac-ripemd160@openssh.com', u'hmac-sha1-96', u'hmac-md5-96'] client compress:[u'none', u'zlib@openssh.com'] server compress:[u'none', u'zlib@openssh.com'] client lang:[u''] server lang:[u''] kex follows?False
+2017-12-18 11:53:19,379 paramiko.transport Kex agreed: ecdh-sha2-nistp256
+2017-12-18 11:53:19,379 paramiko.transport HostKey agreed: ssh-ed25519
+2017-12-18 11:53:19,379 paramiko.transport Cipher agreed: aes128-ctr
+2017-12-18 11:53:19,379 paramiko.transport MAC agreed: hmac-sha2-256
+2017-12-18 11:53:19,379 paramiko.transport Compression agreed: none
+2017-12-18 11:53:19,389 paramiko.transport kex engine KexNistp256 specified hash_algo <built-in function openssl_sha256>
+2017-12-18 11:53:19,389 paramiko.transport Switch to new keys ...
+2017-12-18 11:53:19,397 paramiko.transport Trying discovered key dd3bb82e850406e9abffa80ac0046ed6 in /home/packetferret/.vagrant.d/insecure_private_key
+2017-12-18 11:53:19,431 paramiko.transport userauth is OK
+2017-12-18 11:53:19,436 paramiko.transport Authentication (publickey) successful!
+2017-12-18 11:53:19,461 p=8462 u=packetferret |  ssh connection done, setting terminal
+2017-12-18 11:53:19,461 paramiko.transport [chan 0] Max packet in: 32768 bytes
+2017-12-18 11:53:19,462 paramiko.transport [chan 0] Max packet out: 32768 bytes
+2017-12-18 11:53:19,462 paramiko.transport Secsh channel 0 opened.
+2017-12-18 11:53:19,464 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:53:19,465 paramiko.transport [chan 0] Sesch channel 0 request ok
+2017-12-18 11:53:19,466 p=8462 u=packetferret |  loaded terminal plugin for network_os junos
+2017-12-18 11:53:19,471 p=8462 u=packetferret |  loaded cliconf plugin for network_os junos
+2017-12-18 11:53:20,499 p=8462 u=packetferret |  firing event: on_open_shell()
+2017-12-18 11:53:20,823 p=8462 u=packetferret |  ssh connection has completed successfully
+2017-12-18 11:53:20,823 p=8462 u=packetferret |  connection established to 127.0.0.1 in 0:00:01.481890
+2017-12-18 11:53:20,823 p=8462 u=packetferret |  local socket is set to listening
+2017-12-18 11:53:21,341 p=8462 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:21,341 p=8462 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:53:21,342 p=8462 u=packetferret |  updating play_context for connection
+2017-12-18 11:53:21,342 p=8462 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:21,342 p=8462 u=packetferret |  socket operation is RUN
+2017-12-18 11:53:21,342 p=8462 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:21,846 p=8478 u=packetferret |  re-using existing socket for root@127.0.0.1:2204
+2017-12-18 11:53:21,846 p=8462 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:21,847 p=8462 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:53:21,847 p=8462 u=packetferret |  updating play_context for connection
+2017-12-18 11:53:21,847 p=8462 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:21,847 p=8462 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:21,847 p=8462 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:21,980 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_netconf.py
+2017-12-18 11:53:22,102 p=8462 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:22,102 p=8462 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:22,110 p=8462 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:22,127 p=8371 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "commands": [], 
+    "invocation": {
+        "module_args": {
+            "host": null, 
+            "listens_on": 22, 
+            "netconf_port": 22, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "ssh_keyfile": null, 
+            "state": "present", 
+            "timeout": null, 
+            "transport": null, 
+            "username": null
+        }
+    }
+}
+2017-12-18 11:53:22,127 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,128 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,131 p=8371 u=packetferret |  PLAY [### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###] ******************
+2017-12-18 11:53:22,132 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,136 p=8371 u=packetferret |  TASK [junos_interfaces : building interfaces configuration] ********************
+2017-12-18 11:53:22,136 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_interfaces/tasks/main.yml:2
+2017-12-18 11:53:22,276 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2017-12-18 11:53:22,435 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/copy.py
+2017-12-18 11:53:22,521 p=8371 u=packetferret |  changed: [leaf01_re] => {
+    "changed": true, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+    "diff": [], 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/tmp/ansible//leaf01_re/tmp/04interfaces.conf.part", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": true, 
+            "group": null, 
+            "local_follow": null, 
+            "mode": null, 
+            "original_basename": "interfaces.j2", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513619602.16-165738110516337/source", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/home/packetferret/.ansible/tmp/ansible-tmp-1513619602.16-165738110516337/source", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:53:22,524 p=8371 u=packetferret |  TASK [junos_build_config : check if directory is present] **********************
+2017-12-18 11:53:22,525 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:2
+2017-12-18 11:53:22,537 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/file.py
+2017-12-18 11:53:22,642 p=8371 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "diff": {
+        "after": {
+            "path": "configuration"
+        }, 
+        "before": {
+            "path": "configuration"
+        }
+    }, 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "delimiter": null, 
+            "diff_peek": null, 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "group": null, 
+            "mode": null, 
+            "original_basename": null, 
+            "owner": null, 
+            "path": "configuration", 
+            "recurse": false, 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": null, 
+            "state": "directory", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "mode": "02775", 
+    "owner": "packetferret", 
+    "path": "configuration", 
+    "size": 4096, 
+    "state": "directory", 
+    "uid": 1000
+}
+2017-12-18 11:53:22,648 p=8371 u=packetferret |  TASK [junos_build_config : assemble configurations and copy to configuration] ***
+2017-12-18 11:53:22,648 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/roles/junos_build_config/tasks/main.yml:6
+2017-12-18 11:53:22,774 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/assemble.py
+2017-12-18 11:53:22,868 p=8371 u=packetferret |  ok: [leaf01_re] => {
+    "changed": false, 
+    "checksum": "201d02b9a8b4f39f51d70004ba62bc5d4d3493f5", 
+    "dest": "configuration/leaf01_re.conf", 
+    "gid": 1000, 
+    "group": "packetferret", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": false, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "configuration/leaf01_re.conf", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "ignore_hidden": false, 
+            "mode": null, 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": false, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/ansible//leaf01_re/tmp", 
+            "unsafe_writes": null, 
+            "validate": null
+        }
+    }, 
+    "md5sum": "a98fed43e32d9624c2e6622b106f7994", 
+    "mode": "0664", 
+    "msg": "OK", 
+    "owner": "packetferret", 
+    "size": 3304, 
+    "src": "/tmp/ansible//leaf01_re/tmp", 
+    "state": "file", 
+    "uid": 1000
+}
+2017-12-18 11:53:22,869 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,869 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,872 p=8371 u=packetferret |  PLAY [### JUNOS - APPLY CONFIGURATION ###] *************************************
+2017-12-18 11:53:22,873 p=8371 u=packetferret |  META: ran handlers
+2017-12-18 11:53:22,884 p=8371 u=packetferret |  TASK [# JUNOS - APPLY CONFIGURATION #] *****************************************
+2017-12-18 11:53:22,884 p=8371 u=packetferret |  task path: /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/junos_apply_configuration.yml:7
+2017-12-18 11:53:23,402 p=8618 u=packetferret |  creating new control socket for host 127.0.0.1:2204 as user root
+2017-12-18 11:53:23,402 p=8618 u=packetferret |  control socket path is /home/packetferret/.ansible/pc/3e3e382490
+2017-12-18 11:53:23,402 p=8618 u=packetferret |  current working directory is /home/packetferret/development/public/vagrant/vagrant_network_multivendor_access
+2017-12-18 11:53:23,403 p=8618 u=packetferret |  using connection plugin netconf
+2017-12-18 11:53:23,434 p=8618 u=packetferret |  network_os is set to junos
+2017-12-18 11:53:23,436 p=8618 u=packetferret |  ssh connection done, stating ncclient
+2017-12-18 11:53:23,446 ncclient.transport.ssh Connected (version 2.0, client OpenSSH_6.6.1)
+2017-12-18 11:53:23,539 ncclient.transport.ssh Authentication (publickey) successful!
+2017-12-18 11:53:23,681 ncclient.transport.session initialized: session-id=3762 | server_capabilities=<dictionary-keyiterator object at 0x7f9d95c5aba8>
+2017-12-18 11:53:23,682 p=8618 u=packetferret |  ncclient manager object created successfully
+2017-12-18 11:53:23,683 p=8618 u=packetferret |  loaded netconf plugin for network_os junos
+2017-12-18 11:53:23,683 p=8618 u=packetferret |  connection established to 127.0.0.1 in 0:00:00.280571
+2017-12-18 11:53:23,683 p=8618 u=packetferret |  local socket is set to listening
+2017-12-18 11:53:24,402 p=8618 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:24,402 p=8618 u=packetferret |  socket operation is CONTEXT
+2017-12-18 11:53:24,402 p=8618 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:24,402 p=8618 u=packetferret |  socket operation is RUN
+2017-12-18 11:53:24,402 p=8618 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:24,538 p=8371 u=packetferret |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/network/junos/junos_config.py
+2017-12-18 11:53:24,654 p=8618 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:24,654 p=8618 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:24,654 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2017-12-18 11:53:24,686 p=8618 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:24,687 p=8618 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:24,687 p=8618 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:24,687 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2017-12-18 11:53:24,801 p=8618 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:24,801 p=8618 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:24,802 p=8618 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:24,802 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2017-12-18 11:53:25,767 p=8618 u=packetferret |  socket operation completed with rc 1
+2017-12-18 11:53:25,768 p=8618 u=packetferret |  incoming request accepted on persistent socket
+2017-12-18 11:53:25,768 p=8618 u=packetferret |  socket operation is EXEC
+2017-12-18 11:53:25,768 ncclient.operations.rpc Requesting 'ExecuteRpc'
+2017-12-18 11:53:25,933 p=8618 u=packetferret |  socket operation completed with rc 0
+2017-12-18 11:53:25,946 p=8371 u=packetferret |  fatal: [leaf01_re]: FAILED! => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "backup": false, 
+            "comment": "applied by ansible", 
+            "confirm": 0, 
+            "confirm_commit": false, 
+            "host": null, 
+            "lines": null, 
+            "password": null, 
+            "port": null, 
+            "provider": {
+                "host": "127.0.0.1", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "port": 2204, 
+                "ssh_keyfile": null, 
+                "timeout": null, 
+                "transport": null, 
+                "username": "root"
+            }, 
+            "replace": null, 
+            "rollback": null, 
+            "src": "interfaces {\n    ge-0/0/0 {\n        description LEGACY_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0050;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/1 {\n        description OOB_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0010;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/2 {\n        description USERS_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0020;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/3 {\n        description DMZ_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0030;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/4 {\n        description TEST_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0040;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/5 {\n        description TRUNK_TO_RACK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode trunk;\n                vlan {\n                    members [ vlan_0010 vlan_0020 vlan_0030 vlan_0040 vlan_0050 ];\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/6 {\n        description LEGACY_NETWORK;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0050;\n                }\n                storm-control default;\n            }\n        }\n    }\n    ge-0/0/7 {\n        description LIVING_ROOM;\n        unit 0 {\n            family ethernet-switching {\n                interface-mode access;\n                vlan {\n                    members vlan_0020;\n                }\n                storm-control default;\n            }\n        }\n    }\n    me0 {\n        description management;\n        unit 0 {\n            family inet {\n                address 10.40.0.2/16;\n            }\n        }\n    }\n    lo0 {\n        description loopback0;\n        unit 0 {\n            family inet {\n                address 172.16.20.2/32;\n            }\n        }\n    }\n    irb {\n        unit 1 {\n            family inet {\n                address 10.1.0.2/16;\n            }\n            description default;\n        }\n        unit 10 {\n            family inet {\n                address 10.10.0.2/16;\n            }\n            description OOB_NETWORK;\n        }\n        unit 20 {\n            family inet {\n                address 10.20.0.2/16;\n            }\n            description USERS_NETWORK;\n        }\n        unit 30 {\n            family inet {\n                address 10.30.0.2/16;\n            }\n            description DMZ_NETWORK;\n        }\n    }\n}\n", 
+            "src_format": "text", 
+            "ssh_keyfile": null, 
+            "timeout": null, 
+            "transport": null, 
+            "update": "replace", 
+            "username": null, 
+            "zeroize": false
+        }
+    }, 
+    "msg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><rpc-reply xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\" xmlns:junos=\"http://xml.juniper.net/junos/15.1X53/junos\" xmlns:nc=\"urn:ietf:params:xml:ns:netconf:base:1.0\" message-id=\"urn:uuid:a6b9ec1c-fc6f-4693-853a-3958627dbf7b\">\n<commit-results>\n<rpc-error>\n<error-type>protocol</error-type>\n<error-tag>operation-failed</error-tag>\n<error-severity>error</error-severity>\n<source-daemon>\nl2ald\n</source-daemon>\n<error-message>\nIn routing-instance default-switch vlan vlan_0050 configured under interface ge-0/0/0.0 does not exist\n</error-message>\n</rpc-error>\n<rpc-error>\n<error-type>protocol</error-type>\n<error-tag>operation-failed</error-tag>\n<error-severity>error</error-severity>\n<error-message>\nconfiguration check-out failed\n</error-message>\n</rpc-error>\n</commit-results>\n</rpc-reply>"
+}
+2017-12-18 11:53:25,947 p=8371 u=packetferret |  	to retry, use: --limit @/home/packetferret/development/public/vagrant/vagrant_network_multivendor_access/provisioning/all.retry
+
+2017-12-18 11:53:25,947 p=8371 u=packetferret |  PLAY RECAP *********************************************************************
+2017-12-18 11:53:25,947 p=8371 u=packetferret |  leaf01_re                  : ok=6    changed=3    unreachable=0    failed=1   
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  closing local listener
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  closing the connection
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  closing ssh connection to device
+2017-12-18 11:53:52,110 p=8462 u=packetferret |  firing event: on_close_shell()
+2017-12-18 11:53:52,111 paramiko.transport [chan 0] EOF sent (0)
+2017-12-18 11:53:52,111 p=8462 u=packetferret |  cli session is now closed
+2017-12-18 11:53:52,150 paramiko.transport EOF in transport thread
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  ssh connection has been closed successfully
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  removing the local control socket
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  shutdown complete
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  persistent connection is not active
+2017-12-18 11:53:52,175 p=8462 u=packetferret |  shutdown local socket, connection was active for 0:00:32.833577 secs
+2017-12-18 11:53:55,933 p=8618 u=packetferret |  persistent connection idle timeout triggered, timeout value is 30 secs
+2017-12-18 11:53:55,933 p=8618 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:53:55,935 p=8618 u=packetferret |  closing local listener
+2017-12-18 11:53:55,935 p=8618 u=packetferret |  closing the connection
+2017-12-18 11:53:55,936 ncclient.operations.rpc Requesting 'CloseSession'
+2017-12-18 11:53:55,951 p=8618 u=packetferret |  removing the local control socket
+2017-12-18 11:53:55,952 p=8618 u=packetferret |  shutdown complete
+2017-12-18 11:53:55,952 p=8618 u=packetferret |  shutdown persistent connection requested
+2017-12-18 11:53:55,952 p=8618 u=packetferret |  persistent connection is not active
+2017-12-18 11:53:55,952 p=8618 u=packetferret |  shutdown local socket, connection was active for 0:00:32.549289 secs

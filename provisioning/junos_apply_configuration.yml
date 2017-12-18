@@ -5,10 +5,13 @@
     connection: local
     tasks:
       - name: "# JUNOS - APPLY CONFIGURATION #"
-        junos_command:
+        junos_config:
           provider:
             host: "{{ ansible_ssh_host }}"
-            port: 8830
+            port: "{{ ansible_port }}"
             username: root
             password: Juniper
-          commands: show version
+          src: "{{ configuration_absolute }}"
+          src_format: text
+          comment: "applied by ansible"
+          update: replace
