@@ -10,12 +10,16 @@
     - junos_interfaces
     # - junos_snmp
     # - junos_forwarding_options
-    # - junos_routing_options
+    - junos_routing_options
     - junos_protocols
     - junos_policy_options
+    ####### MX ONLY #######
     # - junos_routingInstances
+    ####### QFX ONLY ######
     # - junos_virtual_chassis
     - junos_vlans
+    ####### SRX ONLY ######
     # - junos_applications
+    ####### SRX ONLY ######
     # - junos_access
     - junos_build_config
