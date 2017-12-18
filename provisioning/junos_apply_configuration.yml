@@ -4,6 +4,17 @@
     gather_facts: False
     connection: local
     tasks:
+      - name: "# JUNOS - DELETE DEFAULT INTERFACE CONFIGURATION #"
+        junos_config:
+          provider:
+            host: "{{ ansible_ssh_host }}"
+            port: "{{ ansible_port }}"
+            username: root
+            password: Juniper
+          lines:
+            - wildcard delete interfaces xe-0/0/[0-9]
+            - wildcard delete interfaces et-0/0/[0-9]
+
       - name: "# JUNOS - APPLY CONFIGURATION #"
         junos_config:
           provider:
