@@ -1,13 +1,86 @@
 ---
-  - name: "# ### DEPLOY INTERFACE CONFIGURATIONS ### #"
-    hosts: cumulus
+  - name: "### CUMULUS - APPLY CONFIGURATION ###"
+    hosts: aggregation
     become: True
     tasks:
 
-      - name: "# PUSH CONFIGURATION TO REMOTE HOST #"
+      - name: "# CUMULUS - PUSH INTERFACES #"
         copy:
-          src: "{{ build_directory }}/interfaces.conf"
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_interfaces.conf"
           dest: /etc/network/interfaces
           owner: root
           group: root
           mode: 0644
+
+      - name: "# CUMULUS - REMOVE NETRULES #"
+        file:
+          path: /etc/udev/rules.d/70-persistent-net.rules
+          state: absent
+
+      - name: "# CUMULUS - PUSH NETRULES #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_netrules.conf"
+          dest: /etc/udev/rules.d/70-persistent-net.rules
+          owner: root
+          group: root
+          mode: 0644
+
+      - name: "# CUMULUS - PUSH DAEMONS #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_daemons.conf"
+          dest: /etc/frr/daemons
+          owner: frr
+          group: frr
+          mode: 0644
+
+      - name: "# CUMULUS - PUSH FRR #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_frr.conf"
+          dest: /etc/frr/frr.conf
+          owner: frr
+          group: frr
+          mode: 0640
+
+      - name: "# CUMULUS - RESTART FRR SERVICE ###"
+        systemd:
+          name: frr
+          state: restarted
+
+      - name: "# CUMULUS - ENABLE FRR SERVICE ON BOOT #"
+        service:
+          name: frr
+          enabled: yes
+
+      - name: "# CUMULUS - PREVENT DEFAULT INTERFACE REMAPPING #"
+        file:
+          path: "/etc/hw_init.d/S10rename_eth_swp.sh"
+          state: absent
+
+      - name: "# CUMULUS - STOP ZTP SERVICE ###"
+        systemd:
+          name: ztp
+          state: stopped
+
+      - name: "# CUMULUS - DISABLE ZTP SERVICE ON BOOT #"
+        service:
+          name: ztp
+          enabled: no
+
+      - name: "# CUMULUS - GRANT EDIT PERMISSIONS FOR VAGRANT USER  #"
+        lineinfile:
+          path: /etc/netd.conf
+          regexp: '^users_with_edit = root, cumulus'
+          line: 'users_with_edit = root, cumulus, vagrant'
+
+      - name: "# CUMULUS - GRANT SHOW PERMISSIONS FOR VAGRANT USER #"
+        lineinfile:
+          path: /etc/netd.conf
+          regexp: '^users_with_show = root, cumulus'
+          line: 'users_with_show = root, cumulus, vagrant'
+
+      - name: "# CUMULUS - RESTART SERVER #"
+        shell: nohup bash -c 'sleep 10; shutdown now -r "Rebooting to Remap Interfaces"' &
+        ignore_errors: true
+
+      # - name: waiting for server to come back after reboot
+      #   local_action: wait_for host={{ inventory_hostname }} state=started port=22 delay=30 timeout=300 connect_timeout=15

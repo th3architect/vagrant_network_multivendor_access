@@ -1,5 +1,5 @@
 ---
-- name: building interfaces configuration
-  template: >
-    src=interfaces.j2
-    dest={{ build_directory }}/interfaces.conf
+  - name: "# CUMULUS - BUILD INTERFACES CONFIGURATION #"
+    template:
+      src: interfaces.j2
+      dest: "{{ configuration_directory }}/{{ inventory_hostname }}_interfaces.conf"

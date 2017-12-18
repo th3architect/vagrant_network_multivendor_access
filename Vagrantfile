@@ -119,7 +119,6 @@ Vagrant.configure(2) do |config|
   config.vm.define 'spine01' do |spine01|
     spine01.vm.box = arista
     spine01.vm.network "forwarded_port", guest: 80, host: 8111
-    spine01.vm.network "forwarded_port", guest: 22, host: 2201
     spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation01_spine01', ip: '169.254.1.11', auto_config: false
     spine01.vm.network 'private_network', virtualbox__intnet: 'aggregation02_spine01', ip: '169.254.1.11', auto_config: false
     spine01.vm.network 'private_network', virtualbox__intnet: 'spine01_leaf01', ip: '169.254.1.11', auto_config: false
@@ -166,6 +165,8 @@ Vagrant.configure(2) do |config|
       leaf01_re.vm.hostname = "leaf01"
       leaf01_re.vm.box = junos_re
       leaf01_re.ssh.insert_key = false
+      leaf01_re.vm.network "forwarded_port", guest: 830, host: 8830
+      leaf01_re.vm.network "forwarded_port", guest: 8080, host: 18080
 
       # DO NOT REMOVE / NO VMtools installed
       leaf01_re.vm.synced_folder '.', '/vagrant', disabled: true
@@ -303,12 +304,13 @@ Vagrant.configure(2) do |config|
       ansible.groups = {
           "aggregation" => ["aggregation0[1:2]"],
           "spine" => ["spine0[1:2]"],
-          "leaf" => ["leaf0[1:4]_re"],
+          # "leaf" => ["leaf0[1:4]_re"],
           "arista:children" => ["spine"],
-          "juniper:children" => ["leaf"],
+          # "juniper:children" => ["leaf"],
           "cumulus:children" => ["aggregation"],
-          "all:children" => ["arista", "cumulus", "juniper"]
+          "all:children" => ["arista", "cumulus"]
       }
+      # ansible.verbose = "vvvv"
       ansible.compatibility_mode = "2.0"
       ansible.playbook = "provisioning/all.yml"
   end

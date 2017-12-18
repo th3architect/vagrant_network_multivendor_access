@@ -1,5 +1,5 @@
 ---
-  - name: '### BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+  - name: '### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
     hosts: spine
     connection: local
     gather_facts: false

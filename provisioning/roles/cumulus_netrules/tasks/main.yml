@@ -1,0 +1,10 @@
+---
+  - name: "# CUMULUS - REMOVE NETRULES CONFIGURATION IF IT EXISTS #"
+    file:
+      path: "{{ configuration_directory }}/{{ inventory_hostname }}_netrules.conf"
+      state: absent
+
+  - name: "# CUMULUS - BUILD NETRULES CONFIGURATION #"
+    template:
+      src: "netrules.j2"
+      dest: "{{ configuration_directory }}/{{ inventory_hostname }}_netrules.conf"

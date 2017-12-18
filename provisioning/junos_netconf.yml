@@ -1,0 +1,15 @@
+---
+  - name: "### JUNOS - ENABLE NETCONF ###"
+    hosts: leaf
+    gather_facts: False
+    connection: local
+    tasks:
+      - name: "# JUNOS - FORCE DEVICE TO LISTEN FOR NETCONF SESSIONS #"
+        junos_netconf:
+          provider:
+            host: "{{ ansible_ssh_host }}"
+            port: "{{ ansible_ssh_port }}"
+            username: root
+            password: Juniper
+          listens_on: 22
+          state: present

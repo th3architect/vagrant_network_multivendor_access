@@ -4,5 +4,7 @@
   - import_playbook: cumulus_apply_configuration.yml
   - import_playbook: arista_provision.yml
   - import_playbook: arista_apply_configuration.yml
+  - import_playbook: junos_netconf.yml
+  # - import_playbook: junos_user.yml
   # - import_playbook: junos_provision.yml
   # - import_playbook: junos_apply_configuration.yml
