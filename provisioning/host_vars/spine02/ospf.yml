@@ -1,3 +1,16 @@
+ospf:
+  area:
+    - id: 0.0.0.0
+      interface:
+        - iface: Et3
+          type: p2p
+        - iface: Et4
+          type: p2p
+        - iface: Et5
+          type: p2p
+        - iface: Et6
+          type: p2p
+  export: REDISTRIBUTE-DIRECT
 # ospf:
 #   router_id: 192.168.102.1
 #   process_id: "1"
