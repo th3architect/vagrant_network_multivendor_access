@@ -22,9 +22,10 @@ interfaces {
                     members {{ subinterface.family.vlans }};
                 }
 {% endif %}
-                storm-control default;
 {% elif subinterface.family.inet == 'dhcp-client' %}
                 {{ subinterface.family.inet }};
+{% elif subinterface.family.mode == 'inet' and subinterface.family.inet == 'dhcp' %}
+                dhcp;
 {% elif subinterface.family.mode == 'inet' %}
                 address {{ subinterface.family.inet }};
 {% endif %}

@@ -165,8 +165,6 @@ Vagrant.configure(2) do |config|
       leaf01_re.vm.hostname = "leaf01"
       leaf01_re.vm.box = junos_re
       leaf01_re.ssh.insert_key = false
-      leaf01_re.vm.network "forwarded_port", guest: 830, host: 8830
-      leaf01_re.vm.network "forwarded_port", guest: 8080, host: 18080
 
       # DO NOT REMOVE / NO VMtools installed
       leaf01_re.vm.synced_folder '.', '/vagrant', disabled: true
