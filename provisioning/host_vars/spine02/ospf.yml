@@ -15,4 +15,4 @@ ospf:
           type: p2p
   export:
     - policy: REDISTRIBUTE-DIRECT
-      protocol: local
+      protocol: connected

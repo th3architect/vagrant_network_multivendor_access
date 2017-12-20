@@ -15,7 +15,7 @@ ospf:
           type: p2p
   export:
     - policy: REDISTRIBUTE-DIRECT
-      protocol: local
+      protocol: connected
 # ospf:
 #   router_id: 192.168.102.1
 #   process_id: "1"
