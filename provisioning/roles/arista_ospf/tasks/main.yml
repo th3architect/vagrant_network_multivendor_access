@@ -2,5 +2,4 @@
 - name: build arista_ospf
   template: >
     src=ospf.j2
-    dest={{ build_directory }}/009_ospf
-
+    dest={{ build_directory }}/099_ospf
