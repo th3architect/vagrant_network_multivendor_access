@@ -1,13 +1,9 @@
 {% if ospf is defined %}
 {% for area in ospf.area %}
 router ospf 1
-{% for interface in interfaces.physical_single %}
-{% if interface.name == 'lo0' %}
-{% for loopback in interface.subinterface %}
-   router-id {{ loopback.family.inet }}
- {% endfor %}
- {% endif %}
-{% endfor %}
+{% if routing_options.router_id is defined %}
+   router-id {{ routing_options.router_id }}
+{% endif %}
 {% if ospf.export is defined %}
 {% for statement in ospf.export %}
 {% if statement.policy is defined %}
