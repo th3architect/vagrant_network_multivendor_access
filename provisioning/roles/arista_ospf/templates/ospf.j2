@@ -1,6 +1,6 @@
 {% if ospf is defined %}
 {% for area in ospf.area %}
-router ospf {{ area.id }}
+router ospf 1
 {% for interface in interfaces.physical_single %}
 {% if interface.name == 'lo0' %}
 {% for loopback in interface.subinterface %}
