@@ -57,3 +57,6 @@ ansible.log
 
 # configuration files
 provisioning/configuration/*
+
+# Ansible retry files
+provisioning/*.retry
