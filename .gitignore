@@ -54,3 +54,6 @@ test/vagrant-spec/boxes/*.box
 
 # Ansible log file
 ansible.log
+
+# configuration files
+provisioning/configuration/*
