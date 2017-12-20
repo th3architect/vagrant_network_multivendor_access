@@ -16,7 +16,7 @@ router ospf {{ area.id }}
 {% endfor %}
 {% endif %}
 {% if area.networks is defined %}
-{% for network in ospf.area.networks %}
+{% for network in area.networks %}
     network {{ network.prefix }} area {{ network.area }}
 {% endfor %}
 {% endif %}
