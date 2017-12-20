@@ -27,7 +27,7 @@
 
 arista = 'arista_vEOS_4_20'
 junos_pfe = 'juniper/vqfx10k-pfe'
-junos_re = 'juniper/vqfx10k-re'
+junos = 'juniper/vqfx10k-re'
 cumulus = 'CumulusCommunity/cumulus-vx'
 
 Vagrant.configure(2) do |config|
@@ -39,13 +39,13 @@ Vagrant.configure(2) do |config|
   # sp2 = "spine02"
   # agg1 = "aggregation01"
   # agg2 = "aggregation02"
-  # leaf01_re = "leaf01_re"
+  # leaf01 = "leaf01"
   # leaf01_pfe = "leaf01_pfe"
-  # leaf02_re = "leaf02_re"
+  # leaf02 = "leaf02"
   # leaf02_pfe = "leaf02_pfe"
-  # leaf03_re = "leaf03_re"
+  # leaf03 = "leaf03"
   # leaf03_pfe = "leaf03_pfe"
-  # leaf04_re = "leaf04_re"
+  # leaf04 = "leaf04"
   # leaf04_pfe = "leaf04_pfe"
   wbid = ENV['USER']
   offset = 0
@@ -158,27 +158,27 @@ Vagrant.configure(2) do |config|
   end
 
   # ########################################
-  # ### leaf01_re: Packet Routing Engine  ##
+  # ### leaf01: Packet Routing Engine  ##
   # ########################################
-  config.vm.define 'leaf01_re' do |leaf01_re|
+  config.vm.define 'leaf01' do |leaf01|
   config.vm.boot_timeout = 240
-      leaf01_re.vm.hostname = "leaf01"
-      leaf01_re.vm.box = junos_re
-      leaf01_re.ssh.insert_key = false
-      leaf01_re.vm.network "forwarded_port", guest: 8080, host: 18080
+      leaf01.vm.hostname = "leaf01"
+      leaf01.vm.box = junos
+      leaf01.ssh.insert_key = false
+      leaf01.vm.network "forwarded_port", guest: 8080, host: 18080
       # DO NOT REMOVE / NO VMtools installed
-      leaf01_re.vm.synced_folder '.', '/vagrant', disabled: true
+      leaf01.vm.synced_folder '.', '/vagrant', disabled: true
 
       # Management Ports
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_internal"
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_internal"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
 
       ## Dataplane ports
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf01"
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf01"
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan1"
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan2"
-      leaf01_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan3"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf01"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf01"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan1"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan2"
+      leaf01.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf01_lan3"
   end
 
   # ###########################################
@@ -196,28 +196,28 @@ Vagrant.configure(2) do |config|
   end
 
   # ########################################
-  # ### leaf02_re: Packet Routing Engine  ##
+  # ### leaf02: Packet Routing Engine  ##
   # ########################################
-  config.vm.define 'leaf02_re' do |leaf02_re|
+  config.vm.define 'leaf02' do |leaf02|
   config.vm.boot_timeout = 240
-      leaf02_re.vm.hostname = "leaf02"
-      leaf02_re.vm.box = junos_re
-      leaf02_re.ssh.insert_key = false
-      leaf02_re.vm.network "forwarded_port", guest: 8080, host: 28080
+      leaf02.vm.hostname = "leaf02"
+      leaf02.vm.box = junos
+      leaf02.ssh.insert_key = false
+      leaf02.vm.network "forwarded_port", guest: 8080, host: 28080
 
       # DO NOT REMOVE / NO VMtools installed
-      leaf02_re.vm.synced_folder '.', '/vagrant', disabled: true
+      leaf02.vm.synced_folder '.', '/vagrant', disabled: true
 
       # Management Ports
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_internal"
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_internal"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
 
       ## Dataplane ports
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf02"
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf02"
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan1"
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan2"
-      leaf02_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan3"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf02"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf02"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan1"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan2"
+      leaf02.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf02_lan3"
   end
 
   # ###########################################
@@ -235,28 +235,28 @@ Vagrant.configure(2) do |config|
   end
 
   # ########################################
-  # ### leaf03_re: Packet Routing Engine  ##
+  # ### leaf03: Packet Routing Engine  ##
   # ########################################
-  config.vm.define 'leaf03_re' do |leaf03_re|
+  config.vm.define 'leaf03' do |leaf03|
   config.vm.boot_timeout = 240
-      leaf03_re.vm.hostname = "leaf03"
-      leaf03_re.vm.box = junos_re
-      leaf03_re.ssh.insert_key = false
-      leaf03_re.vm.network "forwarded_port", guest: 8080, host: 38080
+      leaf03.vm.hostname = "leaf03"
+      leaf03.vm.box = junos
+      leaf03.ssh.insert_key = false
+      leaf03.vm.network "forwarded_port", guest: 8080, host: 38080
 
       # DO NOT REMOVE / NO VMtools installed
-      leaf03_re.vm.synced_folder '.', '/vagrant', disabled: true
+      leaf03.vm.synced_folder '.', '/vagrant', disabled: true
 
       # Management Ports
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_internal"
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_internal"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
 
       ## Dataplane ports
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf03"
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf03"
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan1"
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan2"
-      leaf03_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan3"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf03"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf03"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan1"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan2"
+      leaf03.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf03_lan3"
   end
 
   # ###########################################
@@ -274,28 +274,28 @@ Vagrant.configure(2) do |config|
   end
 
   # ########################################
-  # ### leaf04_re: Packet Routing Engine  ##
+  # ### leaf04: Packet Routing Engine  ##
   # ########################################
-  config.vm.define 'leaf04_re' do |leaf04_re|
+  config.vm.define 'leaf04' do |leaf04|
   config.vm.boot_timeout = 240
-      leaf04_re.vm.hostname = "leaf04"
-      leaf04_re.vm.box = junos_re
-      leaf04_re.ssh.insert_key = false
-      leaf04_re.vm.network "forwarded_port", guest: 8080, host: 48080
+      leaf04.vm.hostname = "leaf04"
+      leaf04.vm.box = junos
+      leaf04.ssh.insert_key = false
+      leaf04.vm.network "forwarded_port", guest: 8080, host: 48080
 
       # DO NOT REMOVE / NO VMtools installed
-      leaf04_re.vm.synced_folder '.', '/vagrant', disabled: true
+      leaf04.vm.synced_folder '.', '/vagrant', disabled: true
 
       # Management Ports
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_internal"
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_internal"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "reserved-bridge"
 
       ## Dataplane ports
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf04"
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf04"
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan1"
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan2"
-      leaf04_re.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan3"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine01_leaf04"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "spine02_leaf04"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan1"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan2"
+      leaf04.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "leaf04_lan3"
   end
 
   # ######################################
@@ -305,7 +305,7 @@ Vagrant.configure(2) do |config|
       ansible.groups = {
           "aggregation" => ["aggregation0[1:2]"],
           "spine" => ["spine0[1:2]"],
-          "leaf" => ["leaf0[1:4]_re"],
+          "leaf" => ["leaf0[1:4]"],
           "arista:children" => ["spine"],
           "juniper:children" => ["leaf"],
           "cumulus:children" => ["aggregation"],
