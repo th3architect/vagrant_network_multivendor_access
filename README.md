@@ -13,7 +13,7 @@ Vagrantfile for setting up an Arista, Juniper, and Cumulus Linux campus network
                                      |                / \              |
                                      |              /     \            |
                                   +---------------+         +---------------+
-                          arista  |    spine01    |---------|    spine02    |
+                          arista  |    spine01    |         |    spine02    |
                                   +---------------+         +---------------+
                                   /  |      \       \      /        /  |  \
                               /      |         \      / \       /      |     \
