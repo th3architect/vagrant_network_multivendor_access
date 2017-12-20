@@ -165,7 +165,7 @@ Vagrant.configure(2) do |config|
       leaf01.vm.hostname = "leaf01"
       leaf01.vm.box = junos
       leaf01.ssh.insert_key = false
-      leaf01.vm.network "forwarded_port", guest: 8080, host: 18080
+      leaf01.vm.network "forwarded_port", guest: 8080, host: 8181
       # DO NOT REMOVE / NO VMtools installed
       leaf01.vm.synced_folder '.', '/vagrant', disabled: true
 
@@ -203,7 +203,7 @@ Vagrant.configure(2) do |config|
       leaf02.vm.hostname = "leaf02"
       leaf02.vm.box = junos
       leaf02.ssh.insert_key = false
-      leaf02.vm.network "forwarded_port", guest: 8080, host: 28080
+      leaf02.vm.network "forwarded_port", guest: 8080, host: 8282
 
       # DO NOT REMOVE / NO VMtools installed
       leaf02.vm.synced_folder '.', '/vagrant', disabled: true
@@ -242,7 +242,7 @@ Vagrant.configure(2) do |config|
       leaf03.vm.hostname = "leaf03"
       leaf03.vm.box = junos
       leaf03.ssh.insert_key = false
-      leaf03.vm.network "forwarded_port", guest: 8080, host: 38080
+      leaf03.vm.network "forwarded_port", guest: 8080, host: 8383
 
       # DO NOT REMOVE / NO VMtools installed
       leaf03.vm.synced_folder '.', '/vagrant', disabled: true
@@ -281,7 +281,7 @@ Vagrant.configure(2) do |config|
       leaf04.vm.hostname = "leaf04"
       leaf04.vm.box = junos
       leaf04.ssh.insert_key = false
-      leaf04.vm.network "forwarded_port", guest: 8080, host: 48080
+      leaf04.vm.network "forwarded_port", guest: 8080, host: 8484
 
       # DO NOT REMOVE / NO VMtools installed
       leaf04.vm.synced_folder '.', '/vagrant', disabled: true
