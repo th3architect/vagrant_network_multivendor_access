@@ -12,6 +12,7 @@
             username: root
             password: Juniper
           lines:
+            - delete protocols
             - wildcard delete interfaces xe-0/0/[0-9]
             - wildcard delete interfaces et-0/0/[0-9]
 
