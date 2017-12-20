@@ -87,7 +87,7 @@ protocols:
             type: p2p
           - iface: xe-0/0/1.0
             type: p2p
-    export: REDISTRIBUTE-DIRECT
+    export: POLICY_EXPORT_LOCAL_INTERFACES
   # bgp:
   #   group:
   #     - name: external_peers
