@@ -1,5 +1,5 @@
 {% if ospf is defined %}
-{% for area is ospf.area %}
+{% for area in ospf.area %}
 router ospf {{ area.id }}
 {% for interface in interfaces.physical_single %}
 {% for loopback in interface.subinterface %}
