@@ -16,6 +16,12 @@ interface {{ interface.name }}
 {% elif subinterface.family.mode == 'inet' %}
    no switchport
    ip address {{ subinterface.family.inet }}
+{% if subinterface.ospf is defined %}
+{% for ospf in subinterface.ospf %}
+   ip ospf network {{ ospf.network }}
+   ip ospf area {{ ospf.area }}
+{% endfor %}
+{% endif %}
 {% else %}
 {% if subinterface.family.type == 'access' %}
    switchport mode access
