@@ -17,9 +17,9 @@ interface {{ interface.name }}
    no switchport
    ip address {{ subinterface.family.inet }}
 {% if subinterface.ospf is defined %}
-{% for ospf in subinterface.ospf %}
-   ip ospf network {{ ospf.network }}
-   ip ospf area {{ ospf.area }}
+{% for subinterface_ospf in subinterface.ospf %}
+   ip ospf network {{ subinterface_ospf.network }}
+   ip ospf area {{ subinterface_ospf.area }}
 {% endfor %}
 {% endif %}
 {% else %}
