@@ -1,6 +1,6 @@
 routing_options:
   nonstop_routing: False
-  router_id: 172.16.20.12
+  router_id: 172.16.20.2
   autonomous_system: '1.2'
   # static:
   #   - 0.0.0.0/0 next-hop 10.40.0.1
