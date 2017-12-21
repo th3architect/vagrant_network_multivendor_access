@@ -5,9 +5,9 @@ bgp:
   redistribute:
     - protocol: connected
     - protocol: ospf
-      route_map: BGP_DISTRIBUTION
-      ospf_type:
-        - external
+      ospf_match:
+        - type: external
+          route_map: BGP_DISTRIBUTION
   distance:
     external: 20
     internal: 200
