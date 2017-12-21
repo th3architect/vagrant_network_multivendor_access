@@ -2,6 +2,12 @@ bgp:
   autonomous_system: 102.1
   router_id: 192.168.102.2
   maximum_paths: 32
+  redistribute:
+    - protocol: connected
+    - protocol: ospf
+      route_map: BGP_DISTRIBUTION
+      ospf_type:
+        - external
   distance:
     external: 20
     internal: 200
