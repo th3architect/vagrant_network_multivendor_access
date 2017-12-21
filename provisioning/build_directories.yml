@@ -4,11 +4,18 @@
     connection: local
     gather_facts: no
     tasks:
-      - name: "# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S FILES #"
+
+      - name: "# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S TEMPORARY FOLDERS #"
         file:
           path: "{{ build_directory }}"
           state: absent
+
       - name: "# CREATE TEMPORARY FOLDERS #"
         file:
           path: "{{ build_directory }}"
+          state: directory
+
+      - name: "# ENSURE CONFIGURATION FOLDER EXISTS #"
+        file:
+          path: "{{ configuration_directory }}"
           state: directory
