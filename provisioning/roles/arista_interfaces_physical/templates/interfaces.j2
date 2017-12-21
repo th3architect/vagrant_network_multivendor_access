@@ -17,10 +17,8 @@ interface {{ interface.name }}
    no switchport
    ip address {{ subinterface.family.inet }}
 {% if subinterface.ospf is defined %}
-{% for subinterface_ospf in subinterface.ospf %}
-   ip ospf network {{ subinterface_ospf.network }}
-   ip ospf area {{ subinterface_ospf.area }}
-{% endfor %}
+   ip ospf network {{ subinterface.ospf.network }}
+   ip ospf area {{ subinterface.ospf.area }}
 {% endif %}
 {% else %}
 {% if subinterface.family.type == 'access' %}
