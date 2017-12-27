@@ -1,21 +1,21 @@
 ---
-- name: '### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
-  hosts: leaf
-  connection: local
-  gather_facts: no
-  roles:
-    - junos_system
-    # - junos_chassis ####### QFX ONLY ######
-    # - junos_security ####### SRX ONLY ######
-    - junos_interfaces
-    - junos_snmp
-    - junos_forwarding_options
-    - junos_routing_options
-    - junos_protocols
-    - junos_policy_options
-    # - junos_routingInstances ####### MX ONLY #######
-    # - junos_virtual_chassis ####### QFX ONLY ######
-    - junos_vlans
-    # - junos_applications ####### SRX ONLY ######
-    # - junos_access ####### SRX ONLY ######
-    - junos_build_config
+  - name: '### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+    hosts: leaf
+    connection: local
+    gather_facts: no
+    roles:
+      - junos_system
+      # - junos_chassis ####### QFX ONLY ######
+      # - junos_security ####### SRX ONLY ######
+      - junos_interfaces
+      - junos_snmp
+      - junos_forwarding_options
+      - junos_routing_options
+      - junos_protocols
+      - junos_policy_options
+      # - junos_routingInstances ####### MX ONLY #######
+      # - junos_virtual_chassis ####### QFX ONLY ######
+      - junos_vlans
+      # - junos_applications ####### SRX ONLY ######
+      # - junos_access ####### SRX ONLY ######
+      - junos_build_config

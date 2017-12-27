@@ -27,7 +27,11 @@ system:
     user:
       - name: ansible
         uid: 2101
-        encryptPass: '$5$W9klZ.yt$L19UjdXNi3dRJbTUtCM99qSf2BIOcQzplAnFY6YNWkA'
+        encryptPass: '$1$cwB59j4k$4bwkQGzyt32awvpYeCoYJ0'
+        permissions: SUPER_USER
+      - name: ansibletower
+        uid: 2102
+        encryptPass: '$5$9sxWwCt0$tY7GdqsEHOQslnt6uxtud9eUaw3hWO3tN1how7SgzA2'
         permissions: SUPER_USER
   passwordRequirements: minimum-length 8
   services:
@@ -83,3 +87,6 @@ aaa_tmp:
     - name: cvpadmin
       privilege: 15
       secret: "sha512 $6$i1wYXKTOekzKY648$kTUM2S/KMGh.vgRVYEQZdoDcWJsF4zk.uFIDxdBB.rJjL34Br3hKDJ.NMJSwFYu7nzLlzDCEWIRhCn4DnQHU71"
+    - name: ansibletower
+      privilege: 15
+      secret: "ansible1"

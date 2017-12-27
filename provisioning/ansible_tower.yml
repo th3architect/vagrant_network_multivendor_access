@@ -1,0 +1,146 @@
+---
+  - name: "### PROJECT - BUILD TEMPORARY FOLDERS TO HOST CONFIGURATIONS AS THEY'RE COMPILED ###"
+    hosts: all
+    connection: local
+    gather_facts: no
+    tasks:
+
+      - name: "# REMOVE ANY PREVIOUS ITERATION OF THE PROJECT'S TEMPORARY FOLDERS #"
+        file:
+          path: "{{ build_directory }}"
+          state: absent
+
+      - name: "# CREATE TEMPORARY FOLDERS #"
+        file:
+          path: "{{ build_directory }}"
+          state: directory
+
+      - name: "# ENSURE CONFIGURATION FOLDER EXISTS #"
+        file:
+          path: "{{ configuration_directory }}"
+          state: directory
+
+  - name: '### CUMULUS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+    hosts: aggregation
+    connection: local
+    gather_facts: false
+    roles:
+      - cumulus_interfaces
+      - cumulus_netrules
+      - cumulus_frr
+
+  - name: "### CUMULUS - APPLY CONFIGURATION ###"
+    hosts: aggregation
+    become: True
+    tasks:
+
+      - name: "# CUMULUS - PUSH INTERFACES #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_interfaces.conf"
+          dest: /etc/network/interfaces
+          owner: root
+          group: root
+          mode: 0644
+
+      - name: "# CUMULUS - PUSH DAEMONS #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_daemons.conf"
+          dest: /etc/frr/daemons
+          owner: frr
+          group: frr
+          mode: 0644
+
+      - name: "# CUMULUS - PUSH FRR #"
+        copy:
+          src: "{{ configuration_directory }}/{{ inventory_hostname }}_frr.conf"
+          dest: /etc/frr/frr.conf
+          owner: frr
+          group: frr
+          mode: 0640
+
+      - name: "# CUMULUS - RESTART FRR SERVICE ###"
+        systemd:
+          name: frr
+          state: restarted
+
+  - name: '### ARISTA - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+    hosts: spine
+    connection: local
+    gather_facts: false
+    roles:
+      - arista_system
+      - arista_aaa
+      - arista_stp
+      - arista_vlans
+      - arista_vrfs
+      - arista_interfaces_portchannels
+      - arista_interfaces_physical
+      - arista_interfaces_vlans
+      - arista_routing
+      - arista_bgp
+      - arista_mlag
+      - arista_banner
+      - arista_prefix_lists
+      - arista_route_maps
+      - arista_ospf
+      - arista_management
+      - arista_monitoring
+      - arista_build_config
+
+  - name: '### ARISTA - APPLY CONFIGURATION ###'
+    hosts: spine
+    connection: local
+    gather_facts: False
+    tasks:
+
+      - name: "# ARISTA - APPLY CONFIGURATION #"
+        eos_config:
+          src: "{{ configuration_absolute }}"
+          authorize: true
+          provider:
+            host: "{{ ansible_host }}"
+            username: vagrant
+            password: vagrant
+            # validate_certs: False
+            # port: "{{ eapi_port }}"
+            # use_ssl: False
+            transport: cli
+
+  - name: '### JUNOS - BUILD THE CONFIGURATION PIECE-BY-PIECE ###'
+    hosts: leaf
+    connection: local
+    gather_facts: no
+    roles:
+      - junos_system
+      # - junos_chassis ####### QFX ONLY ######
+      # - junos_security ####### SRX ONLY ######
+      - junos_interfaces
+      - junos_snmp
+      - junos_forwarding_options
+      - junos_routing_options
+      - junos_protocols
+      - junos_policy_options
+      # - junos_routingInstances ####### MX ONLY #######
+      # - junos_virtual_chassis ####### QFX ONLY ######
+      - junos_vlans
+      # - junos_applications ####### SRX ONLY ######
+      # - junos_access ####### SRX ONLY ######
+      - junos_build_config
+
+  - name: "### JUNOS - APPLY CONFIGURATION ###"
+    hosts: leaf
+    gather_facts: False
+    connection: local
+    tasks:
+
+      - name: "# JUNOS - APPLY CONFIGURATION #"
+        junos_config:
+          provider:
+            host: "{{ ansible_ssh_host }}"
+            port: "{{ ansible_port }}"
+            username: ansible
+            password: ansible1
+          src: "{{ configuration_absolute }}"
+          src_format: text
+          comment: "applied by ansible"
+          update: replace
