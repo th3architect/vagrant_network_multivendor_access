@@ -26,8 +26,29 @@ router bgp {{ bgp.autonomous_system }}
     neighbor {{ neighbor.ip_address }} next-hop-self
 {% endif %}
 {% endfor %}
-!
 {% endif %}
+{# ### REDISTRIBUTION ### #}
+{% if bgp.redistribute is defined %}
+{% for redistribute_policy in bgp.redistribute %}
+{# OSPF #}
+{% if redistribute_policy.protocol is defined and redistribute_policy.protocol == 'ospf' %}
+{% for match in redistribute_policy.ospf_match %}
+{% if match.route_map is defined %}
+    redistribute ospf match {{ match.type }} route-map {{ match.route_map }}
+{% else %}
+    redistribute ospf match {{ match.type }}
+{% endif %}
+{% endfor %}
+{% else %}
+{% if redistribute_policy.route_map is defined %}
+    redistribute {{ redistribute_policy.protocol }} route-map {{ redistribute_policy.route_map }}
+{% else %}
+    redistribute {{ redistribute_policy.protocol }}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+!
 {# ### PEER GROUP NEIGHBOR ### #}
 {% if bgp.peer_group is defined %}
 {% for group in bgp.peer_group %}
